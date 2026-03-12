@@ -1,0 +1,416 @@
+{
+    "$schema": "https://webmcp.org/schema/v1/plan.json",
+    "version": "1.0.0",
+    "application": {
+        "name": "Supratik's Command Centre",
+        "description": "An agentic fleet management dashboard for orchestrating and monitoring autonomous AI agents. Provides full CRUD operations on the agent fleet, authentication, category filtering, and agent execution capabilities.",
+        "type": "single-page-application",
+        "framework": "React + Vite + TypeScript",
+        "baseUrl": "/"
+    },
+    "dualLayerArchitecture": {
+        "serverRPC": {
+            "endpoint": "/.well-known/webmcp.json",
+            "transport": "JSON-RPC-over-postMessage",
+            "description": "Discovery manifest for remote agents. Since this is a client-side SPA, the RPC handler executes in-browser via a global window.__webmcp_rpc dispatcher."
+        },
+        "browserNative": {
+            "provider": "WebMCPProvider.tsx",
+            "api": "navigator.modelContext.registerTool()",
+            "standard": "W3C ModelContext API",
+            "description": "Client-side provider component injected at root level. Registers all tools into the browser's native model context for discovery by browser-embedded AI agents."
+        }
+    },
+    "tools": [
+        {
+            "name": "list_agents",
+            "description": "Returns the complete list of all AI agents in the Command Centre fleet, including their ID, name, codeName, description, category, status, URL, icon, accent color, tags, version, uptime, and personality data. Supports optional filtering by category slug and status.",
+            "category": "read",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "description": "Optional category slug to filter agents (e.g., 'social', 'communication', 'data', 'finance', 'engineering', 'automation'). Omit or pass 'all' to return all agents."
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ],
+                        "description": "Optional status filter. Only returns agents matching this operational status."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "agents": {
+                        "type": "array",
+                        "description": "Array of agent objects matching the filter criteria."
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "Total number of agents returned."
+                    },
+                    "appliedFilters": {
+                        "type": "object",
+                        "description": "Echo of the filters that were applied."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "reasoning": "Primary discovery tool. Enables agents to survey the entire fleet without knowing individual IDs."
+        },
+        {
+            "name": "get_agent",
+            "description": "Retrieves a single agent's full profile by its unique ID. Returns all metadata including personality traits, operational details, and deployment URL.",
+            "category": "read",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agent to retrieve (e.g., 'ig-farmer', 'reddit-karma', 'mailer-agent')."
+                    }
+                },
+                "required": [
+                    "agentId"
+                ],
+                "additionalProperties": false
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "agent": {
+                        "type": "object",
+                        "description": "Full agent profile object, or null if not found."
+                    },
+                    "found": {
+                        "type": "boolean",
+                        "description": "Whether the agent was found in the fleet."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "reasoning": "Enables precise lookup when the agent ID is already known from a previous list_agents or search_agents call."
+        },
+        {
+            "name": "search_agents",
+            "description": "Performs a fuzzy semantic search across all agents using a natural language query. Searches across name, codeName, description, category, tags, and personality traits. Returns ranked results with match reasoning.",
+            "category": "read",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Natural language search query (e.g., 'email automation', 'social media growth', 'database management', 'financial analytics')."
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "additionalProperties": false
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "description": "Array of matched agent objects with relevance scores."
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "Number of matching agents."
+                    },
+                    "query": {
+                        "type": "string",
+                        "description": "Echo of the original search query."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "reasoning": "Semantic bridge tool. Allows agents to find capabilities using intent rather than exact IDs."
+        },
+        {
+            "name": "add_agent",
+            "description": "Creates a new AI agent in the Command Centre fleet with the specified configuration. The agent is persisted to localStorage and immediately visible in the dashboard.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Display name for the agent (e.g., 'ContentWriter')."
+                    },
+                    "codeName": {
+                        "type": "string",
+                        "description": "Tactical code name in UPPER_CASE-XX format (e.g., 'SCRIBE-01')."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Operational description of the agent's capabilities, 10-200 characters."
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "social",
+                            "communication",
+                            "data",
+                            "finance",
+                            "engineering",
+                            "automation"
+                        ],
+                        "description": "Category classification for the agent."
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ],
+                        "description": "Initial operational status. Defaults to 'inactive'."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Deployment URL for the agent's backend service."
+                    },
+                    "icon": {
+                        "type": "string",
+                        "description": "Single emoji character representing the agent."
+                    },
+                    "accentColor": {
+                        "type": "string",
+                        "description": "Hex color code for the agent's accent theme (e.g., '#10b981')."
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Array of lowercase tag strings for categorization."
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "Semver version string (e.g., 'v1.0.0')."
+                    }
+                },
+                "required": [
+                    "name",
+                    "codeName",
+                    "description",
+                    "category"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "State-mutating tool. Requires authentication check before execution."
+        },
+        {
+            "name": "update_agent",
+            "description": "Updates one or more properties of an existing agent identified by its unique ID. Only the provided fields are modified; all other fields remain unchanged.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agent to update."
+                    },
+                    "updates": {
+                        "type": "object",
+                        "description": "Partial agent object containing only the fields to update. Valid fields: name, codeName, description, category, status, url, icon, accentColor, tags, version, uptime.",
+                        "additionalProperties": true
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "updates"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "Granular mutation tool. Ensures only specified fields are touched to prevent accidental data loss."
+        },
+        {
+            "name": "remove_agent",
+            "description": "Permanently deletes an agent from the Command Centre fleet by its unique ID. This action is irreversible and removes all associated data from localStorage.",
+            "category": "write",
+            "requiresAuth": true,
+            "requiresUserInteraction": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agent to permanently delete."
+                    }
+                },
+                "required": [
+                    "agentId"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "Destructive operation. Must use requestUserInteraction on browser-native layer before execution."
+        },
+        {
+            "name": "list_categories",
+            "description": "Returns all available agent categories with their display metadata including ID, name, icon emoji, and gradient CSS class. Useful for building filter interfaces or understanding the classification taxonomy.",
+            "category": "read",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
+            "reasoning": "Read-only reference data. Zero-input discovery tool for understanding the classification system."
+        },
+        {
+            "name": "toggle_agent_status",
+            "description": "Changes the operational status of an agent to one of: 'active' (fully operational), 'paused' (temporarily disarmed), or 'inactive' (hidden from fleet). Returns the updated agent state.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agent whose status will change."
+                    },
+                    "newStatus": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ],
+                        "description": "The target operational status."
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "newStatus"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "Convenience wrapper around update_agent specifically for the most common fleet management operation."
+        },
+        {
+            "name": "get_fleet_stats",
+            "description": "Returns aggregate statistics about the entire agent fleet including total count, counts by status (active/paused/inactive), counts by category, and average uptime.",
+            "category": "read",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
+            "reasoning": "Dashboard-level intelligence. Allows agents to get a high-level fleet health overview without iterating through individual agents."
+        },
+        {
+            "name": "authenticate",
+            "description": "Authenticates the operator session using a password credential. Sets a persistent authentication flag in localStorage. Returns success status.",
+            "category": "auth",
+            "requiresUserInteraction": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "description": "The authentication credential for admin access."
+                    }
+                },
+                "required": [
+                    "password"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "Sensitive credential operation. Must use requestUserInteraction on browser-native layer. Never log or echo the password."
+        },
+        {
+            "name": "get_auth_status",
+            "description": "Checks whether the current session is authenticated for admin operations. Returns a boolean flag indicating auth state.",
+            "category": "auth",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
+            "reasoning": "Pre-flight check tool. Agents should call this before attempting write operations to avoid unnecessary auth errors."
+        },
+        {
+            "name": "logout",
+            "description": "Terminates the current authenticated session. Clears the auth flag from localStorage. Subsequent write operations will require re-authentication.",
+            "category": "auth",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
+            "reasoning": "Session cleanup tool. Should be called when an agent finishes administrative operations."
+        },
+        {
+            "name": "navigate_to_page",
+            "description": "Programmatically navigates the application to a specified route. Supports: '/' (Fleet Home), '/login' (Login page), '/admin' (Admin Dashboard), '/agent/{agentId}' (Agent Workspace).",
+            "category": "navigation",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "route": {
+                        "type": "string",
+                        "description": "The target route path. Use '/agent/{agentId}' with the actual agent ID substituted for agent workspace navigation."
+                    }
+                },
+                "required": [
+                    "route"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "Enables agent-driven UI navigation. Useful for orchestrating multi-step workflows that span multiple pages."
+        },
+        {
+            "name": "execute_agent_task",
+            "description": "Sends a task payload to a deployed agent's backend for execution. Requires the agent to have a live (non-placeholder) URL. Supports optional BYOK API key injection. Returns the agent's response.",
+            "category": "execute",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agent to execute the task against."
+                    },
+                    "taskInput": {
+                        "type": "string",
+                        "description": "The task description or payload to send to the agent's backend."
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "Optional BYOK OpenAI API key for unlimited runs. Leave empty for trial runs."
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "taskInput"
+                ],
+                "additionalProperties": false
+            },
+            "reasoning": "The highest-value tool. Enables autonomous agents to invoke other agents, creating meta-agentic orchestration patterns."
+        }
+    ],
+    "securityModel": {
+        "authMechanism": "localStorage-flag",
+        "sensitiveTools": [
+            "authenticate",
+            "remove_agent"
+        ],
+        "writeToolsRequireAuth": true,
+        "sessionPropagation": "All write tools check localStorage('agentic_auth') === 'true' before execution. Sensitive tools trigger W3C requestUserInteraction flow on the browser-native layer."
+    },
+    "discoveryMeta": {
+        "wellKnownPath": "/.well-known/webmcp.json",
+        "metaTag": "<meta name=\"webmcp\" content=\"/.well-known/webmcp.json\" />",
+        "browserApi": "navigator.modelContext"
+    }
+}

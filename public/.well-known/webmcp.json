@@ -1,0 +1,338 @@
+{
+    "protocol": "WebMCP",
+    "version": "1.0.0",
+    "application": {
+        "name": "Supratik's Command Centre",
+        "description": "Agentic fleet management dashboard for orchestrating and monitoring autonomous AI agents. Provides full CRUD operations, authentication, category filtering, semantic search, and agent task execution.",
+        "type": "single-page-application",
+        "framework": "React + Vite + TypeScript"
+    },
+    "discovery": {
+        "browserNative": {
+            "api": "navigator.modelContext",
+            "standard": "W3C ModelContext API",
+            "status": "active",
+            "toolCount": 14
+        },
+        "rpc": {
+            "transport": "postMessage",
+            "protocol": "JSON-RPC 2.0",
+            "methods": [
+                "webmcp.discover",
+                "webmcp.execute"
+            ],
+            "globalDispatcher": "window.__webmcp_rpc"
+        }
+    },
+    "tools": [
+        {
+            "name": "list_agents",
+            "description": "Returns the complete list of all AI agents with optional filtering by category and status.",
+            "category": "read",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "description": "Category slug filter. Omit or 'all' for unfiltered."
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ],
+                        "description": "Status filter."
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "get_agent",
+            "description": "Retrieves a single agent's full profile by unique ID.",
+            "category": "read",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string",
+                        "description": "Unique agent identifier."
+                    }
+                },
+                "required": [
+                    "agentId"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "search_agents",
+            "description": "Fuzzy semantic search across agents by natural language query.",
+            "category": "read",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Natural language search query."
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "add_agent",
+            "description": "Creates a new AI agent in the fleet.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "codeName": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "social",
+                            "communication",
+                            "data",
+                            "finance",
+                            "engineering",
+                            "automation"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ]
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "accentColor": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "version": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "codeName",
+                    "description",
+                    "category"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "update_agent",
+            "description": "Updates one or more properties of an existing agent.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string"
+                    },
+                    "updates": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "updates"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "remove_agent",
+            "description": "Permanently deletes an agent. Requires user interaction approval.",
+            "category": "write",
+            "requiresAuth": true,
+            "requiresUserInteraction": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "agentId"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "list_categories",
+            "description": "Returns all available agent categories with metadata.",
+            "category": "read",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "toggle_agent_status",
+            "description": "Changes an agent's operational status.",
+            "category": "write",
+            "requiresAuth": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string"
+                    },
+                    "newStatus": {
+                        "type": "string",
+                        "enum": [
+                            "active",
+                            "paused",
+                            "inactive"
+                        ]
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "newStatus"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "get_fleet_stats",
+            "description": "Returns aggregate fleet statistics.",
+            "category": "read",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "authenticate",
+            "description": "Authenticates the session. Requires user interaction.",
+            "category": "auth",
+            "requiresAuth": false,
+            "requiresUserInteraction": true,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "password": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "get_auth_status",
+            "description": "Checks current authentication state.",
+            "category": "auth",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "logout",
+            "description": "Terminates the authenticated session.",
+            "category": "auth",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "navigate_to_page",
+            "description": "Navigates to a specific application route.",
+            "category": "navigation",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "route": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "route"
+                ],
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "execute_agent_task",
+            "description": "Dispatches a task to a deployed agent's backend. Supports BYOK.",
+            "category": "execute",
+            "requiresAuth": false,
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "agentId": {
+                        "type": "string"
+                    },
+                    "taskInput": {
+                        "type": "string"
+                    },
+                    "apiKey": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "agentId",
+                    "taskInput"
+                ],
+                "additionalProperties": false
+            }
+        }
+    ],
+    "security": {
+        "authMechanism": "localStorage-flag",
+        "writeToolsRequireAuth": true,
+        "sensitiveToolsRequireInteraction": [
+            "authenticate",
+            "remove_agent"
+        ]
+    }
+}
