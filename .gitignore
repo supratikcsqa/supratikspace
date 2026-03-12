@@ -1,9 +1,18 @@
+# ===========================
 # Environment & Secrets
+# ===========================
 .env
 .env.*
+.env.local
+.env.production
+.env.staging
 *.pem
+*.key
+*.cert
 
+# ===========================
 # Python
+# ===========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,32 +21,88 @@ __pycache__/
 dist/
 build/
 *.egg
+*.whl
 
+# ===========================
 # Virtual Environments
+# ===========================
 venv/
 .venv/
 env/
+ENV/
 
-# IDE
+# ===========================
+# IDE & Editor
+# ===========================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.settings/
 
-# OS
+# ===========================
+# OS Generated
+# ===========================
 .DS_Store
 Thumbs.db
 desktop.ini
+ehthumbs.db
 
-# Node (if any frontend)
+# ===========================
+# Node / Frontend (if any)
+# ===========================
 node_modules/
 package-lock.json
+yarn.lock
+.npm/
+.yarn/
 
-# Logs
+# ===========================
+# Vercel
+# ===========================
+.vercel/
+.vercel
+
+# ===========================
+# Railway
+# ===========================
+.railway/
+
+# ===========================
+# Docker (local builds)
+# ===========================
+*.tar
+docker-compose.override.yml
+
+# ===========================
+# Logs & Debugging
+# ===========================
 *.log
+npm-debug.log*
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Testing / Coverage
+# ===========================
+# Testing & Coverage
+# ===========================
 .coverage
+.coverage.*
 htmlcov/
 .pytest_cache/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ===========================
+# Build Artifacts
+# ===========================
+*.pyc
+*.pyo
+.cache/
+.build/
+out/
+.next/
