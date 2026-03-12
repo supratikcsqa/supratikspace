@@ -228,4 +228,27 @@ export const agents: Agent[] = [
             ]
         }
     },
+    {
+        id: 'generate-agent',
+        name: 'Generate Agent API',
+        codeName: 'PROMPT-FACTORY',
+        description: 'Full 3-Stage Agentic Prompt Factory API with BYOK SaaS output. Enrich → Architect → SaaS Blueprint.',
+        category: 'automation',
+        status: 'active',
+        url: 'https://generate-agent-saas-production.up.railway.app',
+        icon: '🧱',
+        accentColor: '#8B5CF6',
+        tags: ['meta-agent', 'saas', 'engineering'],
+        version: 'v1.0.0',
+        uptime: '100%',
+        personality: {
+            motto: "Why code an agent when you can generate one?",
+            style: 'ai',
+            traits: ['Meta Architect', 'Cognitive Designer'],
+            details: [
+                { label: 'Pipeline Stages', value: '3 (Enrich/Arch/SaaS)' },
+                { label: 'BYOK', value: 'Unlimited' }
+            ]
+        }
+    },
 ];
