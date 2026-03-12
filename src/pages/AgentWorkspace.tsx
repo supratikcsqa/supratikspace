@@ -30,6 +30,9 @@ const AgentWorkspace: React.FC = () => {
         );
     }
 
+    // Check if agent has a real deployed backend
+    const isLive = agent.url && !agent.url.includes('yourdomain.com');
+
     const handleSubmit = async () => {
         if (!taskInput.trim()) return;
         setLoading(true);
@@ -123,109 +126,134 @@ const AgentWorkspace: React.FC = () => {
                     )}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Left: Input Panel */}
-                    <div className="lg:col-span-2 space-y-6">
-                        {/* BYOK Section */}
-                        <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
-                            <div className="flex items-center gap-3 mb-4">
-                                <Key size={16} className="text-slate-400" />
-                                <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest">
-                                    API Key (Optional — BYOK)
-                                </h3>
-                            </div>
-                            <input
-                                type="password"
-                                placeholder="sk-proj-... (Leave blank for 3 free trial runs)"
-                                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono text-slate-700 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
-                                value={apiKey}
-                                onChange={(e) => setApiKey(e.target.value)}
-                            />
-                            <p className="text-[10px] text-slate-400 mt-2 font-mono">
-                                {apiKey
-                                    ? '🔐 Using your own key — unlimited runs.'
-                                    : `⚡ ${3 - runsUsed} free trial run${3 - runsUsed !== 1 ? 's' : ''} remaining.`}
-                            </p>
-                        </div>
-
-                        {/* Task Input */}
-                        <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
-                            <div className="flex items-center gap-3 mb-4">
-                                <Send size={16} className="text-slate-400" />
-                                <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest">
-                                    Your Task
-                                </h3>
-                            </div>
-                            <textarea
-                                placeholder="Describe what you want the agent to do..."
-                                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all min-h-[140px] resize-none"
-                                value={taskInput}
-                                onChange={(e) => setTaskInput(e.target.value)}
-                            />
-                            <button
-                                onClick={handleSubmit}
-                                disabled={loading || !taskInput.trim()}
-                                className="mt-4 w-full py-3.5 rounded-xl font-bold tracking-[0.2em] text-xs uppercase text-white shadow-lg transition-all hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
-                                style={{
-                                    backgroundColor: loading ? '#94a3b8' : agent.accentColor,
-                                    boxShadow: `0 10px 30px -10px ${agent.accentColor}40`,
-                                }}
-                            >
-                                {loading ? (
-                                    <>
-                                        <Loader2 size={14} className="animate-spin" />
-                                        Processing...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Zap size={14} />
-                                        Execute Agent
-                                    </>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Right: Info Panel */}
-                    <div className="space-y-6">
-                        {/* Traits & Details */}
-                        {agent.personality && (
+                {isLive ? (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* Left: Input Panel */}
+                        <div className="lg:col-span-2 space-y-6">
+                            {/* BYOK Section */}
                             <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
-                                <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">Agent Intel</h3>
-                                <div className="space-y-3">
-                                    {agent.personality.traits.map((trait, i) => (
-                                        <div key={i} className="flex items-center gap-2 px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 text-xs font-medium text-slate-600">
-                                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: agent.accentColor }} />
-                                            {trait}
-                                        </div>
-                                    ))}
+                                <div className="flex items-center gap-3 mb-4">
+                                    <Key size={16} className="text-slate-400" />
+                                    <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest">
+                                        API Key (Optional — BYOK)
+                                    </h3>
                                 </div>
-                                {agent.personality.details && (
-                                    <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                                        {agent.personality.details.map((d, i) => (
-                                            <div key={i} className="flex justify-between items-center">
-                                                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">{d.label}</span>
-                                                <span className="text-xs font-bold text-slate-700">{d.value}</span>
+                                <input
+                                    type="password"
+                                    placeholder="sk-proj-... (Leave blank for 3 free trial runs)"
+                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono text-slate-700 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
+                                    value={apiKey}
+                                    onChange={(e) => setApiKey(e.target.value)}
+                                />
+                                <p className="text-[10px] text-slate-400 mt-2 font-mono">
+                                    {apiKey
+                                        ? '🔐 Using your own key — unlimited runs.'
+                                        : `⚡ ${3 - runsUsed} free trial run${3 - runsUsed !== 1 ? 's' : ''} remaining.`}
+                                </p>
+                            </div>
+
+                            {/* Task Input */}
+                            <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <Send size={16} className="text-slate-400" />
+                                    <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest">
+                                        Your Task
+                                    </h3>
+                                </div>
+                                <textarea
+                                    placeholder="Describe what you want the agent to do..."
+                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all min-h-[140px] resize-none"
+                                    value={taskInput}
+                                    onChange={(e) => setTaskInput(e.target.value)}
+                                />
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={loading || !taskInput.trim()}
+                                    className="mt-4 w-full py-3.5 rounded-xl font-bold tracking-[0.2em] text-xs uppercase text-white shadow-lg transition-all hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
+                                    style={{
+                                        backgroundColor: loading ? '#94a3b8' : agent.accentColor,
+                                        boxShadow: `0 10px 30px -10px ${agent.accentColor}40`,
+                                    }}
+                                >
+                                    {loading ? (
+                                        <>
+                                            <Loader2 size={14} className="animate-spin" />
+                                            Processing...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Zap size={14} />
+                                            Execute Agent
+                                        </>
+                                    )}
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Right: Info Panel */}
+                        <div className="space-y-6">
+                            {/* Traits & Details */}
+                            {agent.personality && (
+                                <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
+                                    <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">Agent Intel</h3>
+                                    <div className="space-y-3">
+                                        {agent.personality.traits.map((trait, i) => (
+                                            <div key={i} className="flex items-center gap-2 px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 text-xs font-medium text-slate-600">
+                                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: agent.accentColor }} />
+                                                {trait}
                                             </div>
                                         ))}
                                     </div>
-                                )}
-                            </div>
-                        )}
+                                    {agent.personality.details && (
+                                        <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
+                                            {agent.personality.details.map((d, i) => (
+                                                <div key={i} className="flex justify-between items-center">
+                                                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">{d.label}</span>
+                                                    <span className="text-xs font-bold text-slate-700">{d.value}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
 
-                        {/* Tags */}
-                        <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
-                            <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">Tags</h3>
-                            <div className="flex flex-wrap gap-2">
+                            {/* Tags */}
+                            <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-6">
+                                <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">Tags</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {agent.tags.map((tag, i) => (
+                                        <span key={i} className="px-3 py-1 bg-slate-50 border border-slate-100 rounded-lg text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="max-w-2xl mx-auto">
+                        <div className="bg-white rounded-2xl border-2 border-dashed border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-12 text-center">
+                            <div className="text-5xl mb-4">🚧</div>
+                            <h3 className="text-xl font-display font-bold text-slate-900 mb-2">Deployment Pending</h3>
+                            <p className="text-sm text-slate-500 font-light mb-6 max-w-md mx-auto">
+                                This agent's backend has not been deployed yet. Use the <code className="px-2 py-0.5 bg-slate-100 rounded text-[11px] font-mono">/deploy-agent</code> command to scaffold, test, and deploy it to Railway.
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-2 mb-6">
                                 {agent.tags.map((tag, i) => (
                                     <span key={i} className="px-3 py-1 bg-slate-50 border border-slate-100 rounded-lg text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
+                            <button
+                                onClick={() => navigate('/')}
+                                className="px-6 py-3 bg-slate-900 text-white rounded-xl font-bold tracking-[0.15em] text-[10px] uppercase shadow-lg hover:-translate-y-0.5 transition-all"
+                            >
+                                ← Return to Fleet
+                            </button>
                         </div>
                     </div>
-                </div>
+                )}
 
                 {/* Result Area */}
                 <AnimatePresence>
