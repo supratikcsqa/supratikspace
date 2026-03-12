@@ -1,108 +1,24 @@
-# ===========================
-# Environment & Secrets
-# ===========================
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
 .env
-.env.*
 .env.local
 .env.production
-.env.staging
-*.pem
-*.key
-*.cert
 
-# ===========================
-# Python
-# ===========================
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg-info/
-dist/
-build/
-*.egg
-*.whl
-
-# ===========================
-# Virtual Environments
-# ===========================
-venv/
-.venv/
-env/
-ENV/
-
-# ===========================
-# IDE & Editor
-# ===========================
+# IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-.project
-.settings/
 
-# ===========================
-# OS Generated
-# ===========================
+# OS
 .DS_Store
 Thumbs.db
-desktop.ini
-ehthumbs.db
 
-# ===========================
-# Node / Frontend (if any)
-# ===========================
-node_modules/
-package-lock.json
-yarn.lock
-.npm/
-.yarn/
+# Agent backends (deployed separately on Railway)
+*-saas/
 
-# ===========================
-# Vercel
-# ===========================
-.vercel/
-.vercel
-
-# ===========================
-# Railway
-# ===========================
-.railway/
-
-# ===========================
-# Docker (local builds)
-# ===========================
-*.tar
-docker-compose.override.yml
-
-# ===========================
-# Logs & Debugging
-# ===========================
-*.log
-npm-debug.log*
-pip-log.txt
-pip-delete-this-directory.txt
-
-# ===========================
-# Testing & Coverage
-# ===========================
-.coverage
-.coverage.*
-htmlcov/
-.pytest_cache/
-.tox/
-.nox/
-nosetests.xml
-coverage.xml
-*.cover
-
-# ===========================
-# Build Artifacts
-# ===========================
-*.pyc
-*.pyo
-.cache/
-.build/
-out/
-.next/
+# Workflow configs
+.agent/
