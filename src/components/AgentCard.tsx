@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import { ArrowUpRight, CheckCircle2, Clock, Zap, MessageSquare, Shield, Terminal, Code2, Cpu } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Clock, Zap, MessageSquare, Shield, Terminal, Code2, Cpu, ExternalLink, Layers } from 'lucide-react';
 import type { Agent } from '../data/agents';
 
 interface AgentCardProps {
@@ -198,14 +198,14 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent, index, onLaunch }) => {
                         >
                             <div className="flex flex-col items-start">
                                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase leading-none mb-1">
-                                    {isPaused ? 'Protocol Locked' : 'Launch Agent'}
+                                    {isPaused ? 'Protocol Locked' : agent.type === 'native' ? 'Launch Agent' : 'Open External'}
                                 </span>
                                 <span className={`text-[8px] font-mono opacity-50 uppercase tracking-widest ${isPaused ? 'hidden' : 'block'}`}>
-                                    Redirection Active
+                                    {agent.type === 'native' ? 'Internal Workspace' : 'Redirection Active'}
                                 </span>
                             </div>
                             <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm group-hover/btn:bg-white/20 transition-colors">
-                                {isPaused ? <Shield size={14} /> : <ArrowUpRight size={16} />}
+                                {isPaused ? <Shield size={14} /> : agent.type === 'native' ? <Layers size={16} /> : <ExternalLink size={16} />}
                             </div>
                         </div>
                     </div>

@@ -136,7 +136,12 @@ const Frontend: React.FC = () => {
 
     const handleLaunchAgent = (agent: typeof agents[0]) => {
         if (agent.status === 'paused') return;
-        navigate(`/agent/${agent.id}`);
+        // External agents redirect to their URL, native agents use internal workspace
+        if (agent.type === 'native') {
+            navigate(`/agent/${agent.id}`);
+        } else {
+            window.open(agent.url, '_blank');
+        }
     };
 
     return (

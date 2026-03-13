@@ -1,4 +1,5 @@
 export type AgentStatus = 'active' | 'inactive' | 'paused';
+export type AgentType = 'native' | 'external';
 
 export interface AgentPersonality {
     motto: string;
@@ -17,6 +18,7 @@ export interface Agent {
     description: string;
     category: string;
     status: AgentStatus;
+    type: AgentType;
     url: string;
     icon: string;
     accentColor: string;
@@ -51,6 +53,7 @@ export const agents: Agent[] = [
         description: 'Instagram growth automation. Engagement farming and analytics.',
         category: 'social',
         status: 'active',
+        type: 'external',
         url: 'https://igfarmer.yourdomain.com',
         icon: '📸',
         accentColor: '#E1306C',
@@ -74,6 +77,7 @@ export const agents: Agent[] = [
         description: 'Reddit karma optimization and viral detection engine.',
         category: 'social',
         status: 'active',
+        type: 'external',
         url: 'https://redditkarma.yourdomain.com',
         icon: '🔺',
         accentColor: '#FF4500',
@@ -97,6 +101,7 @@ export const agents: Agent[] = [
         description: 'Intelligent email outreach and template generation.',
         category: 'communication',
         status: 'active',
+        type: 'external',
         url: 'https://maileragent.yourdomain.com',
         icon: '📧',
         accentColor: '#00B4D8',
@@ -120,6 +125,7 @@ export const agents: Agent[] = [
         description: 'Database management and schema optimization suite.',
         category: 'data',
         status: 'active',
+        type: 'external',
         url: 'https://dbhandles.yourdomain.com',
         icon: '🗃️',
         accentColor: '#00C853',
@@ -143,6 +149,7 @@ export const agents: Agent[] = [
         description: 'Financial analytics, expense tracking and tax optimization.',
         category: 'finance',
         status: 'active',
+        type: 'external',
         url: 'https://financeagent.yourdomain.com',
         icon: '💰',
         accentColor: '#FFD700',
@@ -166,6 +173,7 @@ export const agents: Agent[] = [
         description: 'Expert frontend implementation with pixel-perfect precision. Focuses on performance, accessibility, and high-end micro-interactions.',
         category: 'engineering',
         status: 'active',
+        type: 'external',
         url: 'https://feengineer.yourdomain.com',
         icon: '🎨',
         accentColor: '#00D4FF',
@@ -189,6 +197,7 @@ export const agents: Agent[] = [
         description: 'Machine learning model development and production integration. Specializing in data pipelines and scalable intelligent systems.',
         category: 'engineering',
         status: 'active',
+        type: 'external',
         url: 'https://aiengineer.yourdomain.com',
         icon: '🧠',
         accentColor: '#3B82F6',
@@ -212,6 +221,7 @@ export const agents: Agent[] = [
         description: 'Converts product webpage summaries into viral 60s UGC scripts. BYOK-enabled with 3 free trial runs.',
         category: 'automation',
         status: 'active',
+        type: 'native',
         url: 'https://ugc-script-engineer-saas-production.up.railway.app',
         icon: '🎬',
         accentColor: '#F43F5E',
@@ -235,6 +245,7 @@ export const agents: Agent[] = [
         description: 'Full 3-Stage Agentic Prompt Factory API with BYOK SaaS output. Enrich → Architect → SaaS Blueprint.',
         category: 'automation',
         status: 'active',
+        type: 'native',
         url: 'https://generate-agent-saas-production.up.railway.app',
         icon: '🧱',
         accentColor: '#8B5CF6',

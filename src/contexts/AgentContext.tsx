@@ -14,10 +14,22 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [agents, setAgents] = useState<Agent[]>([]);
 
     // Load from local storage or fallback to default data
+    // Also migrate existing data to include new fields (like 'type')
     useEffect(() => {
         const savedAgents = localStorage.getItem('agentic_fleet_data');
         if (savedAgents) {
-            setAgents(JSON.parse(savedAgents));
+            const parsed: Agent[] = JSON.parse(savedAgents);
+            // Merge with defaults to pick up new fields (e.g., 'type')
+            const merged = parsed.map(saved => {
+                const defaultAgent = defaultAgents.find(d => d.id === saved.id);
+                // Ensure 'type' field exists, falling back to default or 'external'
+                return {
+                    ...saved,
+                    type: saved.type || (defaultAgent?.type) || 'external',
+                } as Agent;
+            });
+            setAgents(merged);
+            localStorage.setItem('agentic_fleet_data', JSON.stringify(merged));
         } else {
             setAgents(defaultAgents);
             localStorage.setItem('agentic_fleet_data', JSON.stringify(defaultAgents));

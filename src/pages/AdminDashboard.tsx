@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useAgents } from '../contexts/AgentContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Plus, Edit2, Trash2, ShieldCheck, Activity, PauseCircle } from 'lucide-react';
-import { Agent, AgentStatus, categories } from '../data/agents';
+import { LogOut, Plus, Edit2, Trash2, ShieldCheck, Activity, PauseCircle, ExternalLink, Layers } from 'lucide-react';
+import { Agent, AgentStatus, AgentType, categories } from '../data/agents';
 
 const AdminDashboard: React.FC = () => {
     const { agents, updateAgent, addAgent, removeAgent } = useAgents();
@@ -40,6 +40,7 @@ const AdminDashboard: React.FC = () => {
             description: 'Describe new agent capabilities here.',
             category: 'social',
             status: 'inactive',
+            type: 'external',
             url: 'https://example.com',
             icon: '🤖',
             accentColor: '#10b981',
@@ -57,6 +58,10 @@ const AdminDashboard: React.FC = () => {
             case 'paused': return <PauseCircle size={14} className="text-amber-500" />;
             case 'inactive': return <Activity size={14} className="text-slate-400" />;
         }
+    };
+
+    const getAgentType = (agent: Agent): AgentType => {
+        return (editingId === agent.id && formData.type) ? formData.type : (agent.type || 'external');
     };
 
     return (
@@ -94,9 +99,38 @@ const AdminDashboard: React.FC = () => {
                                 <div>
                                     <h3 className="text-lg font-bold text-slate-900 mb-1 leading-none">{agent.name}</h3>
                                     <p className="text-[10px] text-slate-400 font-mono tracking-wider uppercase mb-2">{agent.codeName}</p>
-                                    <div className="flex items-center gap-1.5 px-2 py-1 bg-slate-50 border border-slate-100 rounded-lg max-w-max">
-                                        {getStatusIcon(agent.status)}
-                                        <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">{agent.status}</span>
+                                    <div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-1.5 px-2 py-1 bg-slate-50 border border-slate-100 rounded-lg max-w-max">
+                                            {getStatusIcon(agent.status)}
+                                            <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">{agent.status}</span>
+                                        </div>
+                                        {/* Type Badge (always visible) */}
+                                        {editingId === agent.id ? (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    const currentType = getAgentType(agent);
+                                                    const newType: AgentType = currentType === 'native' ? 'external' : 'native';
+                                                    setFormData({ ...formData, type: newType });
+                                                }}
+                                                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[9px] font-bold uppercase tracking-widest transition-all cursor-pointer ${getAgentType(agent) === 'native'
+                                                        ? 'bg-violet-50 border-violet-200 text-violet-600 hover:bg-violet-100'
+                                                        : 'bg-sky-50 border-sky-200 text-sky-600 hover:bg-sky-100'
+                                                    }`}
+                                            >
+                                                {getAgentType(agent) === 'native' ? <Layers size={11} /> : <ExternalLink size={11} />}
+                                                {getAgentType(agent) === 'native' ? 'Native' : 'External'}
+                                                <span className="text-[7px] opacity-50 ml-0.5">(flip)</span>
+                                            </button>
+                                        ) : (
+                                            <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[9px] font-bold uppercase tracking-widest ${(agent.type || 'external') === 'native'
+                                                    ? 'bg-violet-50 border-violet-100 text-violet-600'
+                                                    : 'bg-sky-50 border-sky-100 text-sky-600'
+                                                }`}>
+                                                {(agent.type || 'external') === 'native' ? <Layers size={11} /> : <ExternalLink size={11} />}
+                                                {(agent.type || 'external') === 'native' ? 'Native' : 'External'}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +147,9 @@ const AdminDashboard: React.FC = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1.5">Target URL Redirect</label>
+                                        <label className="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1.5">
+                                            {getAgentType(agent) === 'native' ? 'Backend API URL' : 'Target URL Redirect'}
+                                        </label>
                                         <input
                                             className="w-full text-sm font-mono text-slate-700 bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-emerald-500"
                                             value={formData.url || ''}
