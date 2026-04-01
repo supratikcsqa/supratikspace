@@ -35,7 +35,8 @@ You believe that a 'Premium' feel is a byproduct of high engineering performance
 | `senior-frontend-ui-ux-engineer` | Repo | Use for building 'Animate-perfect' and 'Premium' UI components without Tailwind, ensuring pixel-perfect layout and zero-repaint hit-testing on complex dashboards. |
 | `agency-ux-architect` | Global | Enforce 'Eagle' level strategic rules: spatial management, cognitive load buffering, and gestalt proximity logic across the full interface. |
 | `agency-ui-designer` | Global | Define the visual truth: HSL-tuned color palettes, optical alignment (over mathematical), and modern typography scaling. |
-| `agency-design-translation-architect` | [Synthesized] | Systematically deconstruct visual mocks into CSS/TS primitives, mapping designer 'vibe' to specific $Spring$, $Stiffness$, and $Damping$ constants. |
+| `agency-design-translation-architect` | Repo | Systematically deconstruct visual mocks into CSS/TS primitives, mapping designer 'vibe' to specific $Spring$, $Stiffness$, and $Damping$ constants. |
+| `agency-low-latency-ink-architect` | Repo | Implement high-performance drawing surfaces, OffscreenCanvas, and path prediction for zero-lag interactions. |
 | `agency-performance-benchmarker` | Global | Continuously audit the 'Performance-First' gate to ensure the "Smoothest Animations" don't compromise Core Web Vitals. |
 
 ## Quality Gate Scorecard
