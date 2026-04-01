@@ -1,0 +1,122 @@
+- generic [ref=e740]:
+  - complementary [ref=e741]:
+    - generic [ref=e742]:
+      - paragraph [ref=e743]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e744]
+      - paragraph [ref=e745]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e746]:
+      - generic [ref=e747]:
+        - paragraph [ref=e748]: Create
+        - generic [ref=e749]: Create inside Riya
+      - generic [ref=e750]:
+        - textbox "Folder name" [ref=e751]
+        - button "Create" [ref=e752] [cursor=pointer]
+      - generic [ref=e753]:
+        - button "Student" [ref=e754] [cursor=pointer]
+        - button "Test" [ref=e755] [cursor=pointer]
+        - button "Folder" [ref=e756] [cursor=pointer]
+    - generic [ref=e757]:
+      - generic [ref=e758]:
+        - paragraph [ref=e759]: Workspace
+        - generic [ref=e760]: 2 folders
+      - generic [ref=e761]:
+        - button "Riya Student" [ref=e762] [cursor=pointer]:
+          - generic [ref=e764]:
+            - strong [ref=e765]: Riya
+            - generic [ref=e766]: Student
+        - button "Monday Test Test" [ref=e767] [cursor=pointer]:
+          - generic [ref=e769]:
+            - strong [ref=e770]: Monday Test
+            - generic [ref=e771]: Test
+    - generic [ref=e772]:
+      - generic [ref=e773]:
+        - text: Students
+        - strong [ref=e774]: "1"
+      - generic [ref=e775]:
+        - text: Tests
+        - strong [ref=e776]: "1"
+      - generic [ref=e777]:
+        - text: Marked pages
+        - strong [ref=e778]: "0"
+    - button "Reset local workspace" [ref=e779] [cursor=pointer]
+  - main [ref=e780]:
+    - generic [ref=e781]:
+      - generic [ref=e782]:
+        - paragraph [ref=e783]: Current view
+        - generic [ref=e784]:
+          - generic [ref=e785]: Workspace
+          - generic [ref=e786]: Riya
+          - generic [ref=e787]: Monday Test
+        - heading "Monday Test" [level=2] [ref=e788]
+        - paragraph [ref=e789]: 1 page in this test. Draw directly on the page and each stroke saves locally.
+      - generic [ref=e791]:
+        - button "Previous" [disabled] [ref=e792]
+        - generic [ref=e793]: 1 / 1
+        - button "Next" [disabled] [ref=e794]
+    - generic [ref=e795]: Edit session discarded.
+    - generic [ref=e796]:
+      - generic [ref=e797]:
+        - generic [ref=e798]:
+          - generic [ref=e799]: Review
+          - paragraph [ref=e800]: Open the page in edit mode for pencil-first marking with scroll lock, draft strokes, and save or cancel controls.
+        - generic [ref=e801]:
+          - button "Edit full screen" [ref=e802] [cursor=pointer]
+          - button "Download PNG" [ref=e803] [cursor=pointer]
+          - generic [ref=e804]: Pages imported and ready to mark.
+      - generic [ref=e807]:
+        - img "hero.png"
+      - generic [ref=e808]:
+        - generic [ref=e809]: Monday Test
+        - generic [ref=e810]: 0 marked
+        - generic [ref=e811]: 1 total
+  - complementary [ref=e812]:
+    - generic [ref=e813]:
+      - generic [ref=e814]:
+        - paragraph [ref=e815]: Pages
+        - generic [ref=e816]: 1 uploaded
+      - button "Add pages" [ref=e817] [cursor=pointer]
+      - button "Choose File"
+      - button "Share marked bundle" [disabled] [ref=e818]
+      - generic [ref=e820]:
+        - button "Page 1 Ready / 1" [ref=e821] [cursor=pointer]:
+          - generic [ref=e822]:
+            - strong [ref=e823]: Page 1
+            - generic [ref=e824]: Ready / 1
+        - generic [ref=e825]:
+          - generic [ref=e826]:
+            - checkbox "AI" [disabled] [ref=e827]
+            - generic [ref=e828]: AI
+          - button "Up" [disabled] [ref=e829]
+          - button "Dn" [disabled] [ref=e830]
+          - button "Del" [ref=e831] [cursor=pointer]
+    - generic [ref=e832]:
+      - generic [ref=e833]:
+        - paragraph [ref=e834]: Marks
+        - generic [ref=e835]: "0"
+      - generic [ref=e836]:
+        - generic [ref=e837]:
+          - text: Total
+          - strong [ref=e838]: "0"
+        - generic [ref=e839]:
+          - text: Possible
+          - strong [ref=e840]: Unknown
+        - generic [ref=e841]:
+          - text: Percent
+          - strong [ref=e842]: Pending
+      - button "Add score row" [ref=e843] [cursor=pointer]
+      - paragraph [ref=e845]: Manual or AI-extracted scores show up here. Use separate fields for awarded and total marks.
+    - generic [ref=e846]:
+      - generic [ref=e847]:
+        - paragraph [ref=e848]: AI total draft
+        - generic [ref=e849]: Not run yet
+      - generic [ref=e850]:
+        - generic [ref=e851]: OpenAI API key
+        - textbox "OpenAI API key" [ref=e852]:
+          - /placeholder: sk-...
+      - generic [ref=e853]:
+        - generic [ref=e854]: Model
+        - textbox "Model" [ref=e855]:
+          - /placeholder: gpt-5
+          - text: gpt-5
+      - button "Calculate from selected pages" [ref=e856] [cursor=pointer]
+      - paragraph [ref=e857]: Select the marked pages you want AI to read, then review and edit the suggested score rows.

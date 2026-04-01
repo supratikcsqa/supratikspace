@@ -1,0 +1,118 @@
+{
+  "slug": "supratikpm-gemini-autoresearch-217ce5",
+  "generatedAt": "2026-03-31T07:00:28.673Z",
+  "source": {
+    "owner": "supratikpm",
+    "repo": "gemini-autoresearch",
+    "repoUrl": "https://github.com/supratikpm/gemini-autoresearch",
+    "branch": "main",
+    "subPath": "",
+    "homepage": "",
+    "stars": 17,
+    "forks": 3,
+    "watchers": 0,
+    "openIssues": 0
+  },
+  "hero": {
+    "title": "gemini-autoresearch",
+    "tagline": "What is this? · 5 minute install · How it works · Commands · Examples · Why Gemini? · Contributing",
+    "description": "Autonomous goal-directed iteration for Gemini CLI. Inspired by Karpathy's autoresearch. Modify → Verify → Keep/Discard → Repeat forever.",
+    "topics": [
+      "ai-agent",
+      "autonomous-agent",
+      "autoresearch",
+      "gemini",
+      "gemini-cli",
+      "karpathy",
+      "skill"
+    ]
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "17"
+    },
+    {
+      "label": "Forks",
+      "value": "3"
+    },
+    {
+      "label": "Watchers",
+      "value": "0"
+    },
+    {
+      "label": "Issues",
+      "value": "0"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "JavaScript",
+      "share": 56
+    },
+    {
+      "name": "Shell",
+      "share": 44
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Built Around Clear Themes",
+      "description": "Tagged around ai-agent, autonomous-agent, autoresearch, gemini so visitors understand the project fast."
+    },
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by JavaScript (56%), Shell (44%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "Add a new domain example or verification script",
+    "Translate the README into another language",
+    "Report a confusing instruction via Issues",
+    "Star the repo if this is useful to you ⭐",
+    "Andrej Karpathy — for autoresearch and the insight that constraint + metric + overnight iteration = compounding gains",
+    "Udit Goenka — for generalising it to Claude Code and proving it works beyond ML"
+  ],
+  "quickstart": [
+    "git clone https://github.com/supratikpm/gemini-autoresearch.git"
+  ],
+  "readmeSections": [
+    {
+      "title": "What is this?",
+      "body": "gemini autoresearch turns Gemini CLI and Antigravity IDE into an autonomous improvement engine — for anything with a measurable outcome.",
+      "bullets": []
+    },
+    {
+      "title": "The big picture",
+      "body": "Think of it like this. Normally when you use an AI assistant:",
+      "bullets": []
+    },
+    {
+      "title": "How it works",
+      "body": "Every iteration follows the same loop, running forever until you interrupt:",
+      "bullets": []
+    },
+    {
+      "title": "Verify vs Guard — what is the difference?",
+      "body": "This dual gate system makes gemini autoresearch safer than any other autoresearch skill:",
+      "bullets": []
+    },
+    {
+      "title": "5-minute install",
+      "body": "See the quickstart commands above for the fastest credible path into the repository.",
+      "bullets": []
+    }
+  ],
+  "readmeLead": [
+    "What is this? · 5 minute install · How it works · Commands · Examples · Why Gemini? · Contributing",
+    "gemini autoresearch turns Gemini CLI and Antigravity IDE into an autonomous improvement engine — for anything with a measurable outcome."
+  ],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/supratikpm-gemini-autoresearch-217ce5",
+    "subdomainUrl": "https://supratikpm-gemini-autoresearch-217ce5.supratik.space"
+  }
+}

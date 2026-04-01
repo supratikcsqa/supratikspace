@@ -1,0 +1,63 @@
+- generic [ref=e3]:
+  - complementary "Library" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Teacher marking desk
+      - heading "Paper Marking Desk" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Upload answer-sheet images in bulk, tap one sheet, and mark directly with touch or pen. Every mark is saved locally in this browser.
+    - generic [ref=e9]:
+      - button "Drop many images here or tap to browse JPG, PNG, or WebP sheets" [ref=e10] [cursor=pointer]
+      - generic [ref=e11]: Drop many images here
+      - generic [ref=e12]: or tap to browse JPG, PNG, or WebP sheets
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - strong [ref=e15]: "0"
+        - generic [ref=e16]: Total sheets
+      - generic [ref=e17]:
+        - strong [ref=e18]: "0"
+        - generic [ref=e19]: Marked
+      - generic [ref=e20]:
+        - strong [ref=e21]: "0"
+        - generic [ref=e22]: Ready
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Library
+        - heading "Answer sheets" [level=2] [ref=e26]
+      - button "Clear all" [disabled] [ref=e27]
+    - generic [ref=e29]: No sheets yet. Upload a batch to start marking.
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: Selected sheet
+        - heading "No sheet selected" [level=2] [ref=e34]
+        - paragraph [ref=e35]: Upload answer-sheet images to begin.
+      - generic [ref=e36]:
+        - button "Download PNG" [disabled] [ref=e37]
+        - button "Remove" [disabled] [ref=e38]
+    - region "Annotation tools" [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: Ink
+        - generic [ref=e42]:
+          - button "Red ink" [ref=e43] [cursor=pointer]
+          - button "Green ink" [ref=e44] [cursor=pointer]
+          - button "Blue ink" [ref=e45] [cursor=pointer]
+          - button "Amber ink" [ref=e46] [cursor=pointer]
+          - button "Ink ink" [ref=e47] [cursor=pointer]
+      - generic [ref=e48]:
+        - generic [ref=e49]: Stroke
+        - slider "Stroke 6px" [ref=e50]: "6"
+        - strong [ref=e51]: 6px
+      - generic [ref=e52]:
+        - generic [ref=e53]: Zoom
+        - slider "Zoom 100%" [ref=e54]: "100"
+        - strong [ref=e55]: 100%
+      - generic [ref=e56]:
+        - button "Undo" [disabled] [ref=e57]
+        - button "Clear marks" [disabled] [ref=e58]
+      - generic [ref=e59]: Library is empty. Add sheets to begin.
+    - generic [ref=e61]:
+      - paragraph [ref=e62]: Ready when you are
+      - heading "Upload answer sheets and start marking with your finger, stylus, or mouse." [level=3] [ref=e63]
+      - paragraph [ref=e64]: "This version is intentionally simple and lightweight: image upload, touch annotations, local auto-save, and quick PNG export."
+    - generic [ref=e65]:
+      - generic [ref=e66]: No sheet selected
+      - generic [ref=e67]: Touch marking uses native pointer events and saves locally after every edit.

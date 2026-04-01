@@ -1,0 +1,105 @@
+- generic [ref=e86]:
+  - complementary [ref=e87]:
+    - generic [ref=e88]:
+      - paragraph [ref=e89]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e90]
+      - paragraph [ref=e91]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - paragraph [ref=e94]: Create
+        - generic [ref=e95]: Create at workspace root
+      - generic [ref=e96]:
+        - textbox "Folder name" [ref=e97]
+        - button "Create" [ref=e98] [cursor=pointer]
+      - generic [ref=e99]:
+        - button "Student" [ref=e100] [cursor=pointer]
+        - button "Test" [ref=e101] [cursor=pointer]
+        - button "Folder" [ref=e102] [cursor=pointer]
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - paragraph [ref=e105]: Workspace
+        - generic [ref=e106]: 1 folders
+      - button "Riya Student" [ref=e108] [cursor=pointer]:
+        - generic [ref=e110]:
+          - strong [ref=e111]: Riya
+          - generic [ref=e112]: Student
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - paragraph [ref=e115]: Snapshot
+        - generic [ref=e116]: This device
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e119]: Students
+          - strong [ref=e120]: "1"
+        - generic [ref=e121]:
+          - generic [ref=e122]: Tests
+          - strong [ref=e123]: "0"
+        - generic [ref=e124]:
+          - generic [ref=e125]: Marked pages
+          - strong [ref=e126]: "0"
+    - button "Reset local workspace" [ref=e127] [cursor=pointer]
+  - main [ref=e128]:
+    - generic [ref=e130]:
+      - paragraph [ref=e131]: Student workspace
+      - generic [ref=e132]:
+        - generic [ref=e133]: Workspace
+        - generic [ref=e134]: Riya
+      - heading "Riya" [level=2] [ref=e135]
+      - paragraph [ref=e136]: Review Riya across recent tests, scores, and completion state without leaving this workspace.
+    - generic [ref=e137]: Student created.
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Test history
+            - 'heading "Riya: test timeline" [level=3] [ref=e143]'
+          - generic [ref=e144]: 0 tests
+        - generic [ref=e146]:
+          - paragraph [ref=e147]: No tests yet
+          - heading "Create the next test from the left rail." [level=3] [ref=e148]
+          - paragraph [ref=e149]: Once pages and scores start coming in, this becomes the student timeline for quick review, sharing, and progress tracking.
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: Student summary
+            - generic [ref=e154]: Student
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: Tests scored
+              - strong [ref=e158]: "0"
+            - generic [ref=e159]:
+              - generic [ref=e160]: Pending marking
+              - strong [ref=e161]: "0"
+            - generic [ref=e162]:
+              - generic [ref=e163]: Overall average
+              - strong [ref=e164]: Not yet
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - paragraph [ref=e167]: Child folders
+            - generic [ref=e168]: "0"
+          - paragraph [ref=e169]: No child folders yet. Create a test or folder here to keep the batch structured.
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - paragraph [ref=e172]: Recent results
+            - generic [ref=e173]: "0"
+          - paragraph [ref=e174]: Scores from child test folders appear here after the first paper is marked and tallied.
+  - complementary [ref=e175]:
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - paragraph [ref=e178]: Summary
+        - generic [ref=e179]: Student
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]: Child folders
+          - strong [ref=e183]: "0"
+        - generic [ref=e184]:
+          - generic [ref=e185]: Tests below
+          - strong [ref=e186]: "0"
+        - generic [ref=e187]:
+          - generic [ref=e188]: Average
+          - strong [ref=e189]: Not yet
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - paragraph [ref=e192]: Recent results
+        - generic [ref=e193]: "0"
+      - paragraph [ref=e194]: Scores from child test folders appear here.

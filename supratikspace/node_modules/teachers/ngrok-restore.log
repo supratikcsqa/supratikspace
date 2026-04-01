@@ -1,0 +1,64 @@
+t=2026-03-31T18:59:15+0530 lvl=info msg="no configuration paths supplied"
+t=2026-03-31T18:59:15+0530 lvl=info msg="using configuration at default config path" path=C:\\Users\\SUPRATIK\\AppData\\Local/ngrok/ngrok.yml
+t=2026-03-31T18:59:15+0530 lvl=info msg="open config file" path=C:\\Users\\SUPRATIK\\AppData\\Local\\ngrok\\ngrok.yml err=nil
+t=2026-03-31T18:59:15+0530 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-03-31T18:59:15+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-03-31T18:59:16+0530 lvl=info msg="update available" obj=updater
+t=2026-03-31T18:59:17+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-03-31T18:59:17+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-03-31T18:59:18+0530 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:4320 url=https://nonconscientious-nicola-stormier.ngrok-free.dev
+t=2026-03-31T19:02:34+0530 lvl=info msg="join connections" obj=join id=a0b3b8747f1c l=127.0.0.1:4320 r=49.37.38.252:58590
+t=2026-03-31T19:02:35+0530 lvl=info msg="join connections" obj=join id=732a3acf9b33 l=127.0.0.1:4320 r=49.37.38.252:58590
+t=2026-03-31T22:40:21+0530 lvl=info msg="join connections" obj=join id=21c2271d96f6 l=127.0.0.1:4320 r=106.196.5.37:58262
+t=2026-03-31T22:40:21+0530 lvl=info msg="join connections" obj=join id=98c03b4cbb49 l=127.0.0.1:4320 r=106.196.5.37:58262
+t=2026-03-31T22:41:55+0530 lvl=info msg="join connections" obj=join id=5fad23b6ad3b l=127.0.0.1:4320 r=116.206.202.251:50812
+t=2026-03-31T22:41:55+0530 lvl=info msg="join connections" obj=join id=0c293b5b3c86 l=127.0.0.1:4320 r=116.206.202.251:50812
+t=2026-04-01T00:59:20+0530 lvl=info msg="update available" obj=updater
+t=2026-04-01T06:59:23+0530 lvl=info msg="update available" obj=updater
+t=2026-04-01T12:36:17+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=a9ca48e32ab4 clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T12:36:19+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T12:36:22+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T12:36:22+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-01T13:06:52+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=e5fc176a3eb1 clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T13:06:53+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T13:06:54+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T13:06:55+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T13:06:55+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-01T13:06:58+0530 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.equinox.io/check\": context deadline exceeded"
+t=2026-04-01T15:25:53+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=9a573c3ee01e clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T15:25:54+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T16:11:15+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: i/o timeout"
+t=2026-04-01T16:11:16+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T16:11:17+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T16:11:17+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-01T19:21:41+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=e134c7525e8c clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T19:21:42+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T19:21:42+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T19:21:43+0530 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.equinox.io/check\": dial tcp: lookup update.equinox.io: no such host"
+t=2026-04-01T19:21:43+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T19:21:44+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T19:21:44+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-01T20:26:37+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=d9ea2f99b89c clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T20:26:38+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T20:26:38+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T20:26:39+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T20:26:41+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T20:26:41+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-01T20:52:03+0530 lvl=info msg=start pg=/status id=16813893b56dcd6f
+t=2026-04-01T20:52:03+0530 lvl=info msg=start pg=/api/tunnels id=8f199caa95b7c544
+t=2026-04-01T20:52:03+0530 lvl=info msg=end pg=/api/tunnels id=8f199caa95b7c544 status=200 dur=11.9038ms
+t=2026-04-01T20:52:03+0530 lvl=info msg=end pg=/status id=16813893b56dcd6f status=200 dur=16.6456ms
+t=2026-04-01T20:53:15+0530 lvl=info msg="join connections" obj=join id=204ecc7bb490 l=127.0.0.1:4320 r=[2405:201:8008:b2ce:690b:12e3:e10f:d0eb]:39092
+t=2026-04-01T20:53:18+0530 lvl=info msg="join connections" obj=join id=2b1d0a9c79a8 l=127.0.0.1:4320 r=49.37.38.252:52260
+t=2026-04-01T20:53:18+0530 lvl=info msg="join connections" obj=join id=744740071047 l=127.0.0.1:4320 r=49.37.38.252:52260
+t=2026-04-01T21:22:48+0530 lvl=info msg=start pg=/api/tunnels id=ec2ccd4fc82fb603
+t=2026-04-01T21:22:48+0530 lvl=warn msg="invalid tunnel configuration" pg=/api/tunnels id=ec2ccd4fc82fb603 err="Invalid protocol name 'https'"
+t=2026-04-01T21:22:48+0530 lvl=info msg=end pg=/api/tunnels id=ec2ccd4fc82fb603 status=400 dur=11.6802ms
+t=2026-04-01T21:22:57+0530 lvl=info msg=start pg=/api/tunnels id=358a077705885634
+t=2026-04-01T21:22:57+0530 lvl=warn msg="invalid tunnel configuration" pg=/api/tunnels id=358a077705885634 err="yaml: unmarshal errors:\n  line 2: field bind_tls not found in type config.HTTPv2Tunnel"
+t=2026-04-01T21:22:57+0530 lvl=info msg=end pg=/api/tunnels id=358a077705885634 status=400 dur=10.7036ms
+t=2026-04-01T21:23:22+0530 lvl=info msg=start pg=/api/tunnels id=66853261d9415770
+t=2026-04-01T21:23:22+0530 lvl=info msg="started tunnel" obj=tunnels name=sunny-copy-checking addr=http://localhost:4311 url=https://nonconscientious-nicola-stormier.ngrok-free.dev
+t=2026-04-01T21:23:22+0530 lvl=info msg=end pg=/api/tunnels id=66853261d9415770 status=201 dur=387.9951ms
+t=2026-04-01T21:23:22+0530 lvl=info msg=start pg=/api/tunnels id=969f7dc8eafc0e65
+t=2026-04-01T21:23:22+0530 lvl=info msg=end pg=/api/tunnels id=969f7dc8eafc0e65 status=200 dur=1.0301ms

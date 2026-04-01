@@ -1,0 +1,37 @@
+# Agentic Army — Command Centre
+
+The centralized dashboard for managing, launching, and interacting with autonomous AI agents. Built with **React + Vite + TypeScript + TailwindCSS**.
+
+## Features
+- **Agent Fleet Grid**: Visual overview of all deployed agents with status indicators.
+- **Agent Workspace**: In-app interface to interact with any agent — BYOK support, task input, live results.
+- **BYOK Gateway**: Users can bring their own OpenAI key for unlimited runs, or use 3 free trial runs.
+- **Admin Dashboard**: Password-protected panel to add, edit, or terminate agents.
+- **Command Palette**: `Ctrl+K` quick search across all agents.
+
+## Tech Stack
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: TailwindCSS + Framer Motion
+- **Backend**: Individual agents deployed as FastAPI micro-services on Railway
+- **Database**: Supabase (agent registry, prompt versions, run logs, evals)
+
+## Deployment (Vercel)
+1. Connect this repo to Vercel.
+2. Framework Preset: **Vite**
+3. Build Command: `npm run build`
+4. Output Directory: `dist`
+5. No environment variables required for the frontend.
+
+## Local Development
+```bash
+npm install
+npm run dev
+```
+
+## Architecture
+```
+Command Centre (Vercel)  →  Agent Workspace Page  →  Railway API (FastAPI)
+        ↓                                                    ↓
+   Agent Registry                                      Supabase DB
+   (agents.ts)                                    (runs, evals, versions)
+```

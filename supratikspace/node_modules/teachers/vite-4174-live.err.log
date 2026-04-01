@@ -1,0 +1,569 @@
+[2m2:30:51 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m2:30:52 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m2:31:42 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m2:31:43 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m2:32:39 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m2:32:40 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: isPortraitViewport is not defined
+[39m > render src/main.ts:474:19
+    472 |    const history = selectedFolder ? getFolderHistory(state.workspace, selectedFolder.id) : []
+    473 |    const historySummary = getFolderAnalyticsSummary(history)
+    474 |    const portrait = isPortraitViewport()
+        |                     ^
+    475 |  
+    476 |    document.body.style.overflow = state.editSession ? 'hidden' : ''
+ > boot src/main.ts:128:2
+ > src/main.ts:125:5
+
+[2m3:02:30 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3053:19
+    3051 |  
+    3052 |  function getObjectUrl(sheet: SheetRecord): string {
+    3053 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3054 |  
+    3055 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1358:31
+ > render src/main.ts:661:15
+ > boot src/main.ts:302:4
+ > src/main.ts:290:5
+
+[2m3:02:33 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3053:19
+    3051 |  
+    3052 |  function getObjectUrl(sheet: SheetRecord): string {
+    3053 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3054 |  
+    3055 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1221:51
+ > render src/main.ts:659:15
+ > boot src/main.ts:302:4
+ > src/main.ts:290:5
+
+[2m3:02:34 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3053:19
+    3051 |  
+    3052 |  function getObjectUrl(sheet: SheetRecord): string {
+    3053 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3054 |  
+    3055 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2066:20
+ > src/main.ts:1137:49
+ > renderTestOrganizerScreen src/main.ts:1137:27
+ > render src/main.ts:663:15
+ > boot src/main.ts:302:4
+ > src/main.ts:290:5
+
+[2m3:04:09 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3053:19
+    3051 |  
+    3052 |  function getObjectUrl(sheet: SheetRecord): string {
+    3053 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3054 |  
+    3055 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2066:20
+ > src/main.ts:1137:49
+ > renderTestOrganizerScreen src/main.ts:1137:27
+ > render src/main.ts:663:15
+ > boot src/main.ts:302:4
+ > src/main.ts:290:5
+
+[2m3:05:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3054:19
+    3052 |  
+    3053 |  function getObjectUrl(sheet: SheetRecord): string {
+    3054 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3055 |  
+    3056 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2067:20
+ > src/main.ts:1138:49
+ > renderTestOrganizerScreen src/main.ts:1138:27
+ > render src/main.ts:664:15
+ > boot src/main.ts:303:4
+ > src/main.ts:291:5
+
+[2m5:23:40 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3054:19
+    3052 |  
+    3053 |  function getObjectUrl(sheet: SheetRecord): string {
+    3054 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3055 |  
+    3056 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1359:31
+ > render src/main.ts:662:15
+ > boot src/main.ts:303:4
+ > src/main.ts:291:5
+
+[2m5:23:44 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3054:19
+    3052 |  
+    3053 |  function getObjectUrl(sheet: SheetRecord): string {
+    3054 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3055 |  
+    3056 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2067:20
+ > src/main.ts:1138:49
+ > renderTestOrganizerScreen src/main.ts:1138:27
+ > render src/main.ts:664:15
+ > boot src/main.ts:303:4
+ > src/main.ts:291:5
+
+[2m5:23:44 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3054:19
+    3052 |  
+    3053 |  function getObjectUrl(sheet: SheetRecord): string {
+    3054 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3055 |  
+    3056 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1222:51
+ > render src/main.ts:660:15
+ > boot src/main.ts:303:4
+ > src/main.ts:291:5
+
+[2m5:27:07 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3059:19
+    3057 |  
+    3058 |  function getObjectUrl(sheet: SheetRecord): string {
+    3059 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3060 |  
+    3061 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2072:20
+ > src/main.ts:1143:49
+ > renderTestOrganizerScreen src/main.ts:1143:27
+ > render src/main.ts:664:15
+ > boot src/main.ts:303:4
+ > src/main.ts:291:5
+
+[2m5:40:41 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1372:31
+ > render src/main.ts:670:15
+ > boot src/main.ts:302:2
+ > src/main.ts:299:5
+
+[2m5:40:44 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1235:51
+ > render src/main.ts:668:15
+ > boot src/main.ts:311:4
+ > src/main.ts:299:5
+
+[2m5:40:57 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2080:20
+ > src/main.ts:1151:49
+ > renderTestOrganizerScreen src/main.ts:1151:27
+ > render src/main.ts:672:15
+ > boot src/main.ts:302:2
+ > src/main.ts:299:5
+
+[2m5:45:59 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1372:31
+ > render src/main.ts:670:15
+ > boot src/main.ts:302:2
+ > src/main.ts:299:5
+
+[2m5:46:07 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2080:20
+ > src/main.ts:1151:49
+ > renderTestOrganizerScreen src/main.ts:1151:27
+ > render src/main.ts:672:15
+ > boot src/main.ts:302:2
+ > src/main.ts:299:5
+
+[2m5:46:11 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3067:19
+    3065 |  
+    3066 |  function getObjectUrl(sheet: SheetRecord): string {
+    3067 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3068 |  
+    3069 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1235:51
+ > render src/main.ts:668:15
+ > boot src/main.ts:311:4
+ > src/main.ts:299:5
+
+[2m5:49:52 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3070:19
+    3068 |  
+    3069 |  function getObjectUrl(sheet: SheetRecord): string {
+    3070 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3071 |  
+    3072 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1238:51
+ > render src/main.ts:676:15
+ > boot src/main.ts:317:4
+ > src/main.ts:307:5
+
+[2m5:49:56 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3070:19
+    3068 |  
+    3069 |  function getObjectUrl(sheet: SheetRecord): string {
+    3070 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3071 |  
+    3072 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1375:31
+ > render src/main.ts:678:15
+ > boot src/main.ts:317:4
+ > src/main.ts:307:5
+
+[2m5:49:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3070:19
+    3068 |  
+    3069 |  function getObjectUrl(sheet: SheetRecord): string {
+    3070 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3071 |  
+    3072 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2083:20
+ > src/main.ts:1154:49
+ > renderTestOrganizerScreen src/main.ts:1154:27
+ > render src/main.ts:680:15
+ > boot src/main.ts:317:4
+ > src/main.ts:307:5
+
+[2m8:42:33 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: renderHomeTaskCard is not defined
+[39m > src/main.ts:899:54
+    897 |                : `
+    898 |                  <div class="home-card-grid">
+    899 |                    ${featuredTests.map((testFolder) => renderHomeTaskCard(testFolder, false)).join('')}
+        |                                                        ^
+    900 |                  </div>
+    901 |                `
+ > renderHomeDashboard src/main.ts:899:34
+ > render src/main.ts:690:13
+ > boot src/main.ts:337:2
+
+[2m8:42:33 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: renderHomeTaskCard is not defined
+[39m > src/main.ts:899:54
+    897 |                : `
+    898 |                  <div class="home-card-grid">
+    899 |                    ${featuredTests.map((testFolder) => renderHomeTaskCard(testFolder, false)).join('')}
+        |                                                        ^
+    900 |                  </div>
+    901 |                `
+ > renderHomeDashboard src/main.ts:899:34
+ > render src/main.ts:690:13
+ > boot src/main.ts:337:2
+
+[2m8:42:33 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: renderHomeTaskCard is not defined
+[39m > src/main.ts:899:54
+    897 |                : `
+    898 |                  <div class="home-card-grid">
+    899 |                    ${featuredTests.map((testFolder) => renderHomeTaskCard(testFolder, false)).join('')}
+        |                                                        ^
+    900 |                  </div>
+    901 |                `
+ > renderHomeDashboard src/main.ts:899:34
+ > render src/main.ts:690:13
+ > boot src/main.ts:337:2
+
+[2m8:42:33 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: renderHomeTaskCard is not defined
+[39m > src/main.ts:899:54
+    897 |                : `
+    898 |                  <div class="home-card-grid">
+    899 |                    ${featuredTests.map((testFolder) => renderHomeTaskCard(testFolder, false)).join('')}
+        |                                                        ^
+    900 |                  </div>
+    901 |                `
+ > renderHomeDashboard src/main.ts:899:34
+ > render src/main.ts:690:13
+ > boot src/main.ts:337:2
+
+[2m8:51:30 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3296:19
+    3294 |  
+    3295 |  function getObjectUrl(sheet: SheetRecord): string {
+    3296 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3297 |  
+    3298 |    if (existing) {
+ > renderPageOrganizerCard src/main.ts:2241:20
+ > src/main.ts:1300:49
+ > renderTestOrganizerScreen src/main.ts:1300:27
+ > render src/main.ts:697:15
+ > boot src/main.ts:318:4
+ > src/main.ts:308:5
+
+[2m8:52:30 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3296:19
+    3294 |  
+    3295 |  function getObjectUrl(sheet: SheetRecord): string {
+    3296 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3297 |  
+    3298 |    if (existing) {
+ > renderTestScoringScreen src/main.ts:1390:51
+ > render src/main.ts:693:15
+ > boot src/main.ts:318:4
+ > src/main.ts:308:5
+
+[2m8:53:31 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: Cannot access 'objectUrlCache' before initialization
+[39m > getObjectUrl src/main.ts:3296:19
+    3294 |  
+    3295 |  function getObjectUrl(sheet: SheetRecord): string {
+    3296 |    const existing = objectUrlCache.get(sheet.id)
+         |                     ^
+    3297 |  
+    3298 |    if (existing) {
+ > renderTestResultScreen src/main.ts:1533:31
+ > render src/main.ts:695:15
+ > boot src/main.ts:318:4
+ > src/main.ts:308:5
+
+[2m9:43:57 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+      at transformWithOxc (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3720:19)
+      at TransformPluginContext.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3788:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:30048:51)
+      at async loadAndTransform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24177:26)
+[2m9:43:57 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+      at transformWithOxc (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3720:19)
+      at TransformPluginContext.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3788:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:30048:51)
+      at async loadAndTransform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24177:26)
+      at async viteTransformMiddleware (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24986:20)
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+      at transformWithOxc (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3720:19)
+      at TransformPluginContext.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3788:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:30048:51)
+      at async loadAndTransform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24177:26)
+      at async viteTransformMiddleware (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24986:20)
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+      at transformWithOxc (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3720:19)
+      at TransformPluginContext.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3788:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:30048:51)
+      at async loadAndTransform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24177:26)
+      at async viteTransformMiddleware (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24986:20)
+[2m9:43:58 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected a semicolon or an implicit semicolon after a statement, but found none
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/main.ts:889:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m889 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249ms[0m[38;5;249mc[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mw[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mk[0m[38;5;249ms[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mh[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m$[0m[38;5;249m{[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249m'[0m[38;5;249m [0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m'[0m[38;5;249m}[0m[38;5;249m"[0m[38;5;249m [0m[38;5;249m>[0m
+ [38;5;240m    │[0m              │ 
+ [38;5;240m    │[0m              ╰─ 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Try inserting a semicolon here
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Projects/teachers/src/main.ts[39m
+      at transformWithOxc (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3720:19)
+      at TransformPluginContext.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:3788:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:30048:51)
+      at async loadAndTransform (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24177:26)
+      at async viteTransformMiddleware (file:///C:/Projects/teachers/node_modules/vite/dist/node/chunks/node.js:24986:20)

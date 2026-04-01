@@ -1,0 +1,16 @@
+[  950978ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4174/src/style.css?t=1774981108693:0
+[  950980ms] [ERROR] [vite] Failed to reload /src/style.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:4174/@vite/client:509
+[ 1044449ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:4174/@vite/client:968
+[10693560ms] ReferenceError: isPortraitViewport is not defined
+    at render (http://127.0.0.1:4174/src/main.ts?t=1774990851202:369:19)
+    at boot (http://127.0.0.1:4174/src/main.ts?t=1774990851202:70:2)
+    at http://127.0.0.1:4174/src/main.ts?t=1774990851202:68:6
+[10744650ms] ReferenceError: isPortraitViewport is not defined
+    at render (http://127.0.0.1:4174/src/main.ts?t=1774990902300:369:19)
+    at boot (http://127.0.0.1:4174/src/main.ts?t=1774990902300:70:2)
+    at http://127.0.0.1:4174/src/main.ts?t=1774990902300:68:6
+[10801670ms] ReferenceError: isPortraitViewport is not defined
+    at render (http://127.0.0.1:4174/src/main.ts?t=1774990959289:369:19)
+    at boot (http://127.0.0.1:4174/src/main.ts?t=1774990959289:70:2)
+    at http://127.0.0.1:4174/src/main.ts?t=1774990959289:68:6
+[36679774ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:4174/src/main.ts?t=1775016837356:0

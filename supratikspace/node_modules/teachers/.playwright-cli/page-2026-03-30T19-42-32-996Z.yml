@@ -1,0 +1,48 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Create
+        - generic [ref=e12]: Create at workspace root
+      - generic [ref=e13]:
+        - textbox "Folder name" [ref=e14]
+        - button "Create" [ref=e15] [cursor=pointer]
+      - generic [ref=e16]:
+        - button "Student" [ref=e17] [cursor=pointer]
+        - button "Test" [ref=e18] [cursor=pointer]
+        - button "Folder" [ref=e19] [cursor=pointer]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: Workspace
+        - generic [ref=e23]: 0 folders
+      - paragraph [ref=e25]: Create a student or test folder to start organizing papers.
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - text: Students
+        - strong [ref=e28]: "0"
+      - generic [ref=e29]:
+        - text: Tests
+        - strong [ref=e30]: "0"
+      - generic [ref=e31]:
+        - text: Marked pages
+        - strong [ref=e32]: "0"
+    - button "Reset local workspace" [ref=e33] [cursor=pointer]
+  - main [ref=e34]:
+    - generic [ref=e36]:
+      - paragraph [ref=e37]: Current view
+      - generic [ref=e39]: Workspace
+      - heading "No folder selected" [level=2] [ref=e40]
+      - paragraph [ref=e41]: Pick a student or test folder from the left rail to continue.
+    - generic [ref=e43]:
+      - paragraph [ref=e44]: Start with structure
+      - heading "Create a student folder, then nest each test inside it." [level=3] [ref=e45]
+      - paragraph [ref=e46]: Once a test folder is selected, bulk-upload the images, reorder the pages, and mark them one by one.
+  - complementary [ref=e47]:
+    - generic [ref=e48]:
+      - paragraph [ref=e49]: Flow
+      - heading "Organize by student, then by test." [level=3] [ref=e50]
+      - paragraph [ref=e51]: After that, each page can be marked, scored, and shared as a plain image bundle.

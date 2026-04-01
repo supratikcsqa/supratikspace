@@ -1,0 +1,98 @@
+- generic [ref=e1745]:
+  - complementary [ref=e1746]:
+    - generic [ref=e1747]:
+      - paragraph [ref=e1748]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e1749]
+      - paragraph [ref=e1750]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e1751]:
+      - generic [ref=e1752]:
+        - paragraph [ref=e1753]: Create
+        - generic [ref=e1754]: Create at workspace root
+      - generic [ref=e1755]:
+        - textbox "Folder name" [ref=e1756]
+        - button "Create" [ref=e1757] [cursor=pointer]
+      - generic [ref=e1758]:
+        - button "Student" [ref=e1759] [cursor=pointer]
+        - button "Test" [ref=e1760] [cursor=pointer]
+        - button "Folder" [ref=e1761] [cursor=pointer]
+    - generic [ref=e1762]:
+      - generic [ref=e1763]:
+        - paragraph [ref=e1764]: Workspace
+        - generic [ref=e1765]: 2 folders
+      - generic [ref=e1766]:
+        - button "Riya Student" [ref=e1767] [cursor=pointer]:
+          - generic [ref=e1769]:
+            - strong [ref=e1770]: Riya
+            - generic [ref=e1771]: Student
+        - button "Monday Test - 21 Aug Test" [ref=e1772] [cursor=pointer]:
+          - generic [ref=e1774]:
+            - strong [ref=e1775]: Monday Test - 21 Aug
+            - generic [ref=e1776]: Test
+    - generic [ref=e1777]:
+      - generic [ref=e1778]:
+        - text: Students
+        - strong [ref=e1779]: "1"
+      - generic [ref=e1780]:
+        - text: Tests
+        - strong [ref=e1781]: "1"
+      - generic [ref=e1782]:
+        - text: Marked pages
+        - strong [ref=e1783]: "1"
+    - button "Reset local workspace" [ref=e1784] [cursor=pointer]
+  - main [ref=e1785]:
+    - generic [ref=e1787]:
+      - paragraph [ref=e1788]: Current view
+      - generic [ref=e1789]:
+        - generic [ref=e1790]: Workspace
+        - generic [ref=e1791]: Riya
+      - heading "Riya" [level=2] [ref=e1792]
+      - paragraph [ref=e1793]: Viewing Riya. Use this space to inspect tests, scores, and progress over time.
+    - generic [ref=e1794]:
+      - generic [ref=e1795]:
+        - generic [ref=e1796]:
+          - paragraph [ref=e1797]: Children
+          - generic [ref=e1798]: 1 item
+        - button "Monday Test - 21 Aug Test" [ref=e1799] [cursor=pointer]:
+          - generic [ref=e1801]:
+            - strong [ref=e1802]: Monday Test - 21 Aug
+            - generic [ref=e1803]: Test
+      - generic [ref=e1804]:
+        - generic [ref=e1805]:
+          - paragraph [ref=e1806]: Performance
+          - generic [ref=e1807]: 1 scored test
+        - generic [ref=e1808]:
+          - generic [ref=e1809]:
+            - text: Average
+            - strong [ref=e1810]: 64.3%
+          - generic [ref=e1811]:
+            - text: Best
+            - strong [ref=e1812]: 64.3%
+          - generic [ref=e1813]:
+            - text: Tests
+            - strong [ref=e1814]: "1"
+        - button "Monday Test - 21 Aug 4.5 / 7 64.3%" [ref=e1815] [cursor=pointer]:
+          - generic [ref=e1816]: Monday Test - 21 Aug
+          - generic [ref=e1817]: 4.5 / 7
+          - generic [ref=e1818]: 64.3%
+  - complementary [ref=e1819]:
+    - generic [ref=e1820]:
+      - generic [ref=e1821]:
+        - paragraph [ref=e1822]: Summary
+        - generic [ref=e1823]: Student
+      - generic [ref=e1824]:
+        - generic [ref=e1825]:
+          - generic [ref=e1826]: Child folders
+          - strong [ref=e1827]: "1"
+        - generic [ref=e1828]:
+          - generic [ref=e1829]: Tests below
+          - strong [ref=e1830]: "1"
+        - generic [ref=e1831]:
+          - generic [ref=e1832]: Average
+          - strong [ref=e1833]: 64.3%
+    - generic [ref=e1834]:
+      - generic [ref=e1835]:
+        - paragraph [ref=e1836]: Recent results
+        - generic [ref=e1837]: "1"
+      - button "Monday Test - 21 Aug 64.3%" [ref=e1838] [cursor=pointer]:
+        - generic [ref=e1839]: Monday Test - 21 Aug
+        - generic [ref=e1840]: 64.3%

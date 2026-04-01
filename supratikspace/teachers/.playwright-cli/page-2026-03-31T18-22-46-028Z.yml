@@ -1,0 +1,90 @@
+- generic [ref=e179]:
+  - complementary [ref=e180]:
+    - generic [ref=e181]:
+      - paragraph [ref=e182]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e183]
+      - paragraph [ref=e184]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - paragraph [ref=e187]: Create
+        - generic [ref=e188]: Create inside Riya
+      - generic [ref=e189]:
+        - textbox "Folder name" [ref=e190]
+        - button "Create" [ref=e191] [cursor=pointer]
+      - generic [ref=e192]:
+        - button "Student" [ref=e193] [cursor=pointer]
+        - button "Test" [ref=e194] [cursor=pointer]
+        - button "Folder" [ref=e195] [cursor=pointer]
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - paragraph [ref=e198]: Workspace
+        - generic [ref=e199]: 1 folders
+      - button "Riya Student" [ref=e201] [cursor=pointer]:
+        - generic [ref=e203]:
+          - strong [ref=e204]: Riya
+          - generic [ref=e205]: Student
+    - generic [ref=e206]:
+      - generic [ref=e207]:
+        - paragraph [ref=e208]: Snapshot
+        - generic [ref=e209]: This device
+      - generic [ref=e210]:
+        - generic [ref=e211]:
+          - generic [ref=e212]: Students
+          - strong [ref=e213]: "1"
+        - generic [ref=e214]:
+          - generic [ref=e215]: Tests
+          - strong [ref=e216]: "0"
+        - generic [ref=e217]:
+          - generic [ref=e218]: Marked pages
+          - strong [ref=e219]: "0"
+    - button "Reset local workspace" [ref=e220] [cursor=pointer]
+  - main [ref=e221]:
+    - generic [ref=e223]:
+      - paragraph [ref=e224]: Current view
+      - generic [ref=e225]:
+        - generic [ref=e226]: Workspace
+        - generic [ref=e227]: Riya
+      - heading "Riya" [level=2] [ref=e228]
+      - paragraph [ref=e229]: Viewing Riya. Use this space to inspect tests, scores, and progress over time.
+    - generic [ref=e230]: Student created.
+    - generic [ref=e231]:
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - paragraph [ref=e234]: Children
+          - generic [ref=e235]: 0 items
+        - paragraph [ref=e236]: No child folders yet. Create a test folder here and then upload pages into it.
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - paragraph [ref=e239]: Performance
+          - generic [ref=e240]: 0 scored tests
+        - generic [ref=e241]:
+          - generic [ref=e242]:
+            - generic [ref=e243]: Average
+            - strong [ref=e244]: Not yet
+          - generic [ref=e245]:
+            - generic [ref=e246]: Best
+            - strong [ref=e247]: Not yet
+          - generic [ref=e248]:
+            - generic [ref=e249]: Tests
+            - strong [ref=e250]: "0"
+        - paragraph [ref=e251]: Once scores are recorded inside test folders, this student timeline appears here.
+  - complementary [ref=e252]:
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - paragraph [ref=e255]: Summary
+        - generic [ref=e256]: Student
+      - generic [ref=e257]:
+        - generic [ref=e258]:
+          - generic [ref=e259]: Child folders
+          - strong [ref=e260]: "0"
+        - generic [ref=e261]:
+          - generic [ref=e262]: Tests below
+          - strong [ref=e263]: "0"
+        - generic [ref=e264]:
+          - generic [ref=e265]: Average
+          - strong [ref=e266]: Not yet
+    - generic [ref=e267]:
+      - generic [ref=e268]:
+        - paragraph [ref=e269]: Recent results
+        - generic [ref=e270]: "0"
+      - paragraph [ref=e271]: Scores from child test folders appear here.

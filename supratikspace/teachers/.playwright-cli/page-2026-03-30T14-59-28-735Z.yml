@@ -1,0 +1,69 @@
+- generic [ref=e3]:
+  - complementary "Library" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Teacher marking desk
+      - heading "Paper Marking Desk" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Upload answer-sheet images in bulk, tap one sheet, and mark directly with touch or pen. Every mark is saved locally in this browser.
+    - generic [ref=e9]:
+      - button "Drop many images here or tap to browse JPG, PNG, or WebP sheets" [ref=e10] [cursor=pointer]
+      - generic [ref=e11]: Drop many images here
+      - generic [ref=e12]: or tap to browse JPG, PNG, or WebP sheets
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - strong [ref=e15]: "1"
+        - generic [ref=e16]: Total sheets
+      - generic [ref=e17]:
+        - strong [ref=e18]: "1"
+        - generic [ref=e19]: Marked
+      - generic [ref=e20]:
+        - strong [ref=e21]: "0"
+        - generic [ref=e22]: Ready
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Library
+        - heading "Answer sheets" [level=2] [ref=e26]
+      - button "Clear all" [ref=e27] [cursor=pointer]
+    - button "test-sheet.png 1 strokes - updated Mar 30, 08:28 PM Marked" [ref=e29] [cursor=pointer]:
+      - generic [ref=e30]:
+        - strong [ref=e31]: test-sheet.png
+        - generic [ref=e32]: 1 strokes - updated Mar 30, 08:28 PM
+      - generic [ref=e33]: Marked
+  - main [ref=e34]:
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Selected sheet
+        - heading "test-sheet.png" [level=2] [ref=e38]
+        - paragraph [ref=e39]: 600 x 900px - 1 saved strokes
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - button "Add sheets" [ref=e42] [cursor=pointer]
+          - generic [ref=e43]: Add sheets
+        - button "Download PNG" [ref=e44] [cursor=pointer]
+        - button "Remove" [ref=e45] [cursor=pointer]
+    - region "Annotation tools" [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: Ink
+        - generic [ref=e49]:
+          - button "Red ink" [ref=e50] [cursor=pointer]
+          - button "Green ink" [ref=e51] [cursor=pointer]
+          - button "Blue ink" [ref=e52] [cursor=pointer]
+          - button "Amber ink" [ref=e53] [cursor=pointer]
+          - button "Ink ink" [ref=e54] [cursor=pointer]
+      - generic [ref=e55]:
+        - generic [ref=e56]: Stroke
+        - slider "Stroke 6px" [ref=e57]: "6"
+        - strong [ref=e58]: 6px
+      - generic [ref=e59]:
+        - generic [ref=e60]: Zoom
+        - slider "Zoom 100%" [ref=e61]: "100"
+        - strong [ref=e62]: 100%
+      - generic [ref=e63]:
+        - button "Undo" [ref=e64] [cursor=pointer]
+        - button "Clear marks" [ref=e65] [cursor=pointer]
+      - generic [ref=e66]: Local library ready.
+    - generic [ref=e69]:
+      - img "test-sheet.png answer sheet"
+      - img "Annotation layer" [ref=e70]
+    - generic [ref=e71]:
+      - generic [ref=e72]: test-sheet.png is marked and saved locally
+      - generic [ref=e73]: Touch marking uses native pointer events and saves locally after every edit.

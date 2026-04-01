@@ -1,0 +1,69 @@
+- generic [ref=e3]:
+  - complementary "Library" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Teacher marking desk
+      - heading "Paper Marking Desk" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Upload answer-sheet images in bulk, tap one sheet, and mark directly with touch or pen. Every mark is saved locally in this browser.
+    - generic [ref=e9]:
+      - button "Drop many images here or tap to browse JPG, PNG, or WebP sheets" [ref=e10] [cursor=pointer]
+      - generic [ref=e11]: Drop many images here
+      - generic [ref=e12]: or tap to browse JPG, PNG, or WebP sheets
+    - generic [ref=e13]:
+      - generic [ref=e94]:
+        - strong [ref=e95]: "1"
+        - generic [ref=e96]: Total sheets
+      - generic [ref=e97]:
+        - strong [ref=e98]: "1"
+        - generic [ref=e99]: Marked
+      - generic [ref=e100]:
+        - strong [ref=e101]: "0"
+        - generic [ref=e102]: Ready
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Library
+        - heading "Answer sheets" [level=2] [ref=e26]
+      - button "Clear all" [ref=e27] [cursor=pointer]
+    - button "test-sheet.png 1 strokes - updated Mar 30, 08:28 PM Marked" [ref=e103] [cursor=pointer]:
+      - generic [ref=e104]:
+        - strong [ref=e105]: test-sheet.png
+        - generic [ref=e106]: 1 strokes - updated Mar 30, 08:28 PM
+      - generic [ref=e107]: Marked
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: Selected sheet
+        - heading "test-sheet.png" [level=2] [ref=e85]
+        - paragraph [ref=e35]: 600 x 900px - 1 saved strokes
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - button "Add sheets" [active] [ref=e38] [cursor=pointer]
+          - generic [ref=e39]: Add sheets
+        - button "Download PNG" [ref=e40] [cursor=pointer]
+        - button "Remove" [ref=e41] [cursor=pointer]
+    - region "Annotation tools" [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: Ink
+        - generic [ref=e45]:
+          - button "Red ink" [ref=e108] [cursor=pointer]
+          - button "Green ink" [ref=e109] [cursor=pointer]
+          - button "Blue ink" [ref=e110] [cursor=pointer]
+          - button "Amber ink" [ref=e111] [cursor=pointer]
+          - button "Ink ink" [ref=e112] [cursor=pointer]
+      - generic [ref=e51]:
+        - generic [ref=e52]: Stroke
+        - slider "Stroke 6px" [ref=e53]: "6"
+        - strong [ref=e54]: 6px
+      - generic [ref=e55]:
+        - generic [ref=e56]: Zoom
+        - slider "Zoom 100%" [ref=e57]: "100"
+        - strong [ref=e58]: 100%
+      - generic [ref=e59]:
+        - button "Undo" [ref=e60] [cursor=pointer]
+        - button "Clear marks" [ref=e61] [cursor=pointer]
+      - generic [ref=e62]: Saved locally
+    - generic [ref=e92]:
+      - img "test-sheet.png answer sheet"
+      - img "Annotation layer" [ref=e93]
+    - generic [ref=e68]:
+      - generic [ref=e69]: test-sheet.png is marked and saved locally
+      - generic [ref=e70]: Touch marking uses native pointer events and saves locally after every edit.

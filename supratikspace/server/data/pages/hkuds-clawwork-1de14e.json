@@ -1,0 +1,117 @@
+{
+  "slug": "hkuds-clawwork-1de14e",
+  "generatedAt": "2026-03-31T06:56:12.411Z",
+  "source": {
+    "owner": "HKUDS",
+    "repo": "ClawWork",
+    "repoUrl": "https://github.com/HKUDS/ClawWork",
+    "branch": "main",
+    "subPath": "",
+    "homepage": "",
+    "stars": 7757,
+    "forks": 996,
+    "watchers": 83,
+    "openIssues": 28
+  },
+  "hero": {
+    "title": "ClawWork",
+    "tagline": "\"ClawWork: OpenClaw as Your AI Coworker - 💰 $15K earned in 11 Hours\"",
+    "description": "\"ClawWork: OpenClaw as Your AI Coworker - 💰 $15K earned in 11 Hours\"",
+    "topics": []
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "7757"
+    },
+    {
+      "label": "Forks",
+      "value": "996"
+    },
+    {
+      "label": "Watchers",
+      "value": "83"
+    },
+    {
+      "label": "Issues",
+      "value": "28"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "Python",
+      "share": 57
+    },
+    {
+      "name": "Jupyter Notebook",
+      "share": 22
+    },
+    {
+      "name": "JavaScript",
+      "share": 16
+    },
+    {
+      "name": "HCL",
+      "share": 2
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by Python (57%), Jupyter Notebook (22%), JavaScript (16%), HCL (2%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "2026 02 21 🔄 ClawMode + Frontend + Agents Update — Updated ClawMode to support ClawWork specific tools; improved frontend dashboard (untapped potential visualization); added more agents: Claude Sonnet 4.6, Gemini 3.1 Pro and Qwen 3.5 Plus.",
+    "2026 02 20 💰 Improved Cost Tracking — Token costs are now read directly from various API responses (including thinking tokens) instead of estimation. OpenRouter's reported cost is used verbatim when available.",
+    "2026 02 19 📊 Agent Results Updated — Added Qwen3 Max, Kimi K2.5, GLM 4.7 through Feb 19. Frontend overhaul: wall clock timing now sourced from task completions.jsonl.",
+    "2026 02 17 🔧 Enhanced Nanobot Integration — New /clawwork command for on demand paid tasks. Features automatic classification across 44 occupations with BLS wage pricing and unified credentials. Try locally: python m clawmode integration.cli agent.",
+    "2026 02 16 🎉 ClawWork Launch — ClawWork is now officially available! Welcome to explore ClawWork.",
+    "💼 Real Professional Tasks : 220 GDP validation tasks spanning 44 economic sectors (Manufacturing, Finance, Healthcare, and more) from the GDPVal dataset — testing real world work capability"
+  ],
+  "quickstart": [
+    "./start_dashboard.sh",
+    "./run_test_agent.sh"
+  ],
+  "readmeSections": [
+    {
+      "title": "🚀 AI Assistant → AI Coworker Evolution",
+      "body": "Transforms AI assistants into true AI coworkers that complete real work tasks and create genuine economic value.",
+      "bullets": []
+    },
+    {
+      "title": "💰 Real-World Economic Benchmark",
+      "body": "Real world economic testing system where AI agents must earn income by completing professional tasks from the GDPVal dataset, pay for their own token usage, and maintain economic solvency.",
+      "bullets": []
+    },
+    {
+      "title": "📊 Production AI Validation",
+      "body": "Measures what truly matters in production environments: work quality , cost efficiency , and long term survival not just technical benchmarks.",
+      "bullets": []
+    },
+    {
+      "title": "🤖 Multi-Model Competition Arena",
+      "body": "Supports different AI models (GLM, Kimi, Qwen, etc.) competing head to head to determine the ultimate \"AI worker champion\" through actual work performance",
+      "bullets": []
+    },
+    {
+      "title": "📢 News",
+      "body": "2026 02 21 🔄 ClawMode + Frontend + Agents Update — Updated ClawMode to support ClawWork specific tools; improved frontend dashboard (untapped potential visualization); added more agents: Claude Sonnet 4.6, Gemini 3.1 Pro and Qwen 3.5 Plus. 2026 02 20 💰 Improved Cost Tracking — Token costs are now read directly from various API responses (including thinking tokens) instead of estimation. OpenRouter's reported cost is used verbatim when available. 2026 02 19 📊 Agent Results Updated — Added Qwen3 Max, Kimi K2.5, GLM 4.7 through Feb 19. Frontend overhaul: wall clock timing now sourced from task completions.jsonl. 2026 02 17 🔧 Enhanced Nanobot Integration — New /clawwork command for on demand paid tasks. Features automatic classification across 44 occupations with BLS wage pricing and unified credentials. Try locally: python m clawmode integration.cli agent. 2026 02 16 🎉 ClawWork Launch — ClawWork is now officially available! Welcome to explore ClawWork.",
+      "bullets": [
+        "2026 02 21 🔄 ClawMode + Frontend + Agents Update — Updated ClawMode to support ClawWork specific tools; improved frontend dashboard (untapped potential visualization); added more agents: Claude Sonnet 4.6, Gemini 3.1 Pro and Qwen 3.5 Plus.",
+        "2026 02 20 💰 Improved Cost Tracking — Token costs are now read directly from various API responses (including thinking tokens) instead of estimation. OpenRouter's reported cost is used verbatim when available.",
+        "2026 02 19 📊 Agent Results Updated — Added Qwen3 Max, Kimi K2.5, GLM 4.7 through Feb 19. Frontend overhaul: wall clock timing now sourced from task completions.jsonl.",
+        "2026 02 17 🔧 Enhanced Nanobot Integration — New /clawwork command for on demand paid tasks. Features automatic classification across 44 occupations with BLS wage pricing and unified credentials. Try locally: python m clawmode integration.cli agent."
+      ]
+    }
+  ],
+  "readmeLead": [],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/hkuds-clawwork-1de14e",
+    "subdomainUrl": "https://hkuds-clawwork-1de14e.supratik.space"
+  }
+}

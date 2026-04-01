@@ -1,0 +1,150 @@
+- generic [ref=e2]:
+  - generic [ref=e446]:
+    - complementary [ref=e447]:
+      - generic [ref=e448]:
+        - paragraph [ref=e449]: Teacher workspace
+        - heading "Paper Review Desk" [level=1] [ref=e450]
+        - paragraph [ref=e451]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - paragraph [ref=e454]: Create
+          - generic [ref=e455]: Create inside Riya
+        - generic [ref=e456]:
+          - textbox "Folder name" [ref=e457]
+          - button "Create" [ref=e458] [cursor=pointer]
+        - generic [ref=e459]:
+          - button "Student" [ref=e460] [cursor=pointer]
+          - button "Test" [ref=e461] [cursor=pointer]
+          - button "Folder" [ref=e462] [cursor=pointer]
+      - generic [ref=e463]:
+        - generic [ref=e464]:
+          - paragraph [ref=e465]: Workspace
+          - generic [ref=e466]: 2 folders
+        - generic [ref=e467]:
+          - button "Riya Student" [ref=e468] [cursor=pointer]:
+            - generic [ref=e470]:
+              - strong [ref=e471]: Riya
+              - generic [ref=e472]: Student
+          - button "Monday Test Test" [ref=e473] [cursor=pointer]:
+            - generic [ref=e475]:
+              - strong [ref=e476]: Monday Test
+              - generic [ref=e477]: Test
+      - generic [ref=e478]:
+        - generic [ref=e479]:
+          - text: Students
+          - strong [ref=e480]: "1"
+        - generic [ref=e481]:
+          - text: Tests
+          - strong [ref=e482]: "1"
+        - generic [ref=e483]:
+          - text: Marked pages
+          - strong [ref=e484]: "0"
+      - button "Reset local workspace" [ref=e485] [cursor=pointer]
+    - main [ref=e486]:
+      - generic [ref=e487]:
+        - generic [ref=e488]:
+          - paragraph [ref=e489]: Current view
+          - generic [ref=e490]:
+            - generic [ref=e491]: Workspace
+            - generic [ref=e492]: Riya
+            - generic [ref=e493]: Monday Test
+          - heading "Monday Test" [level=2] [ref=e494]
+          - paragraph [ref=e495]: 1 page in this test. Draw directly on the page and each stroke saves locally.
+        - generic [ref=e497]:
+          - button "Previous" [disabled] [ref=e498]
+          - generic [ref=e499]: 1 / 1
+          - button "Next" [disabled] [ref=e500]
+      - generic [ref=e501]:
+        - generic [ref=e502]:
+          - generic [ref=e503]:
+            - generic [ref=e504]: Review
+            - paragraph [ref=e505]: Open the page in edit mode for pencil-first marking with scroll lock, draft strokes, and save or cancel controls.
+          - generic [ref=e506]:
+            - button "Edit full screen" [ref=e507] [cursor=pointer]
+            - button "Download PNG" [ref=e508] [cursor=pointer]
+            - generic [ref=e509]: Pages imported and ready to mark.
+        - generic [ref=e512]:
+          - img "hero.png"
+        - generic [ref=e513]:
+          - generic [ref=e514]: Monday Test
+          - generic [ref=e515]: 0 marked
+          - generic [ref=e516]: 1 total
+    - complementary [ref=e517]:
+      - generic [ref=e518]:
+        - generic [ref=e519]:
+          - paragraph [ref=e520]: Pages
+          - generic [ref=e521]: 1 uploaded
+        - button "Add pages" [ref=e522] [cursor=pointer]
+        - button "Choose File"
+        - button "Share marked bundle" [disabled] [ref=e523]
+        - generic [ref=e525]:
+          - button "Page 1 Ready / 1" [ref=e526] [cursor=pointer]:
+            - generic [ref=e527]:
+              - strong [ref=e528]: Page 1
+              - generic [ref=e529]: Ready / 1
+          - generic [ref=e530]:
+            - generic [ref=e531]:
+              - checkbox "AI" [disabled] [ref=e532]
+              - generic [ref=e533]: AI
+            - button "Up" [disabled] [ref=e534]
+            - button "Dn" [disabled] [ref=e535]
+            - button "Del" [ref=e536] [cursor=pointer]
+      - generic [ref=e537]:
+        - generic [ref=e538]:
+          - paragraph [ref=e539]: Marks
+          - generic [ref=e540]: "0"
+        - generic [ref=e541]:
+          - generic [ref=e542]:
+            - text: Total
+            - strong [ref=e543]: "0"
+          - generic [ref=e544]:
+            - text: Possible
+            - strong [ref=e545]: Unknown
+          - generic [ref=e546]:
+            - text: Percent
+            - strong [ref=e547]: Pending
+        - button "Add score row" [ref=e548] [cursor=pointer]
+        - paragraph [ref=e550]: Manual or AI-extracted scores show up here. Use separate fields for awarded and total marks.
+      - generic [ref=e551]:
+        - generic [ref=e552]:
+          - paragraph [ref=e553]: AI total draft
+          - generic [ref=e554]: Not run yet
+        - generic [ref=e555]:
+          - generic [ref=e556]: OpenAI API key
+          - textbox "OpenAI API key" [ref=e557]:
+            - /placeholder: sk-...
+        - generic [ref=e558]:
+          - generic [ref=e559]: Model
+          - textbox "Model" [ref=e560]:
+            - /placeholder: gpt-5
+            - text: gpt-5
+        - button "Calculate from selected pages" [ref=e561] [cursor=pointer]
+        - paragraph [ref=e562]: Select the marked pages you want AI to read, then review and edit the suggested score rows.
+  - generic [ref=e564]:
+    - banner [ref=e565]:
+      - generic [ref=e566]:
+        - paragraph [ref=e567]: Edit mode
+        - heading "Page 1" [level=2] [ref=e568]
+        - paragraph [ref=e569]: Nothing scrolls here. Mark the page, then Save to commit or Cancel to discard this edit session.
+      - generic [ref=e570]:
+        - button "Cancel" [ref=e571] [cursor=pointer]
+        - button "Save marks" [ref=e572] [cursor=pointer]
+    - generic [ref=e573]:
+      - generic [ref=e574]:
+        - generic [ref=e575]: Ink
+        - generic [ref=e576]:
+          - button "Set ink color" [ref=e577] [cursor=pointer]
+          - button "Set ink color" [ref=e578] [cursor=pointer]
+          - button "Set ink color" [ref=e579] [cursor=pointer]
+          - button "Set ink color" [ref=e580] [cursor=pointer]
+          - button "Set ink color" [ref=e581] [cursor=pointer]
+        - generic [ref=e582]:
+          - generic [ref=e583]: Stroke
+          - slider "Stroke 9px" [ref=e584]: "9"
+          - strong [ref=e585]: 9px
+      - generic [ref=e586]:
+        - generic [ref=e587]: 0 strokes
+        - button "Undo" [disabled] [ref=e588]
+        - button "Clear" [disabled] [ref=e589]
+    - generic [ref=e591]:
+      - img "hero.png"

@@ -1,0 +1,115 @@
+{
+  "slug": "chenglou-pretext-cdca01",
+  "generatedAt": "2026-03-31T07:02:45.152Z",
+  "source": {
+    "owner": "chenglou",
+    "repo": "pretext",
+    "repoUrl": "https://github.com/chenglou/pretext",
+    "branch": "main",
+    "subPath": "",
+    "homepage": "",
+    "stars": 23444,
+    "forks": 966,
+    "watchers": 76,
+    "openIssues": 47
+  },
+  "hero": {
+    "title": "pretext",
+    "tagline": "Pure JavaScript/TypeScript library for multiline text measurement & layout. Fast, accurate & supports all the languages you didn't even know about. Allows rendering to DOM, Canvas, SVG and soon, server side.",
+    "description": "Pure JavaScript/TypeScript library for multiline text measurement & layout. Fast, accurate & supports all the languages you didn't even know about. Allows rendering to DOM, Canvas, SVG and soon, server side.",
+    "topics": []
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "23444"
+    },
+    {
+      "label": "Forks",
+      "value": "966"
+    },
+    {
+      "label": "Watchers",
+      "value": "76"
+    },
+    {
+      "label": "Issues",
+      "value": "47"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "TypeScript",
+      "share": 90
+    },
+    {
+      "name": "HTML",
+      "share": 10
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by TypeScript (90%), HTML (10%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "is about for the shared 500 text batch",
+    "is about for that same batch",
+    "proper virtualization/occlusion without guesstimates & caching",
+    "fancy userland layouts: masonry, JS driven flexbox like implementations, nudging a few layout values without CSS hacks (imagine that), etc.",
+    "development time verification (especially now with AI) that labels on e.g. buttons don't overflow to the next line, browser free",
+    "prevent layout shift when new text loads and you wanna re anchor the scroll position"
+  ],
+  "quickstart": [
+    "npm install @chenglou/pretext"
+  ],
+  "readmeSections": [
+    {
+      "title": "Installation",
+      "body": "See the quickstart commands above for the fastest credible path into the repository.",
+      "bullets": []
+    },
+    {
+      "title": "Demos",
+      "body": "Clone the repo, run , then , and open the in your browser (no trailing slash. Bun devserver bugs on those) Alternatively, see them live at chenglou.me/pretext. Some more at somnai dreams.github.io/pretext demos",
+      "bullets": []
+    },
+    {
+      "title": "1. Measure a paragraph's height _without ever touching DOM_",
+      "body": "ts import { prepare, layout } from '@chenglou/pretext'",
+      "bullets": [
+        "is about for the shared 500 text batch",
+        "is about for that same batch",
+        "proper virtualization/occlusion without guesstimates & caching",
+        "fancy userland layouts: masonry, JS driven flexbox like implementations, nudging a few layout values without CSS hacks (imagine that), etc."
+      ]
+    },
+    {
+      "title": "2. Lay out the paragraph lines manually yourself",
+      "body": "gives you all the lines at a fixed width:",
+      "bullets": [
+        "gives you all the lines at a fixed width:",
+        "gives you line widths and cursors without building the text strings:",
+        "lets you route text one row at a time when width changes as you go:"
+      ]
+    },
+    {
+      "title": "API Glossary",
+      "body": "Use case 1 APIs: layout()fontfontfontmyCanvasContext.font = ...16px InterlineHeightline height",
+      "bullets": []
+    }
+  ],
+  "readmeLead": [
+    "Pure JavaScript/TypeScript library for multiline text measurement & layout. Fast, accurate & supports all the languages you didn't even know about. Allows rendering to DOM, Canvas, SVG and soon, server side.",
+    "Clone the repo, run , then , and open the in your browser (no trailing slash. Bun devserver bugs on those) Alternatively, see them live at chenglou.me/pretext. Some more at somnai dreams.github.io/pretext demos"
+  ],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/chenglou-pretext-cdca01",
+    "subdomainUrl": "https://chenglou-pretext-cdca01.supratik.space"
+  }
+}

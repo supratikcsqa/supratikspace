@@ -1,0 +1,122 @@
+{
+  "slug": "vercel-swr-ad92aa",
+  "generatedAt": "2026-03-31T06:22:37.772Z",
+  "source": {
+    "owner": "vercel",
+    "repo": "swr",
+    "repoUrl": "https://github.com/vercel/swr",
+    "branch": "main",
+    "subPath": "",
+    "homepage": "https://swr.vercel.app",
+    "stars": 32349,
+    "forks": 1325,
+    "watchers": 214,
+    "openIssues": 189
+  },
+  "hero": {
+    "title": "swr",
+    "tagline": "SWR is a React Hooks library for data fetching.",
+    "description": "React Hooks for Data Fetching",
+    "topics": [
+      "cache",
+      "data",
+      "data-fetching",
+      "fetch",
+      "hook",
+      "hooks",
+      "nextjs",
+      "react",
+      "react-native",
+      "stale-while-revalidate",
+      "suspense",
+      "swr",
+      "vercel"
+    ]
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "32349"
+    },
+    {
+      "label": "Forks",
+      "value": "1325"
+    },
+    {
+      "label": "Watchers",
+      "value": "214"
+    },
+    {
+      "label": "Issues",
+      "value": "189"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "TypeScript",
+      "share": 99
+    },
+    {
+      "name": "JavaScript",
+      "share": 1
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Built Around Clear Themes",
+      "description": "Tagged around cache, data, data-fetching, fetch so visitors understand the project fast."
+    },
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by TypeScript (99%), JavaScript (1%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "Fast , lightweight and reusable data fetching",
+    "Transport and protocol agnostic",
+    "Built in cache and request deduplication",
+    "Real time experience",
+    "Revalidation on focus",
+    "Revalidation on network recovery"
+  ],
+  "quickstart": [],
+  "readmeSections": [
+    {
+      "title": "Introduction",
+      "body": "SWR is a React Hooks library for data fetching.",
+      "bullets": [
+        "Fast , lightweight and reusable data fetching",
+        "Transport and protocol agnostic",
+        "Built in cache and request deduplication",
+        "Real time experience"
+      ]
+    },
+    {
+      "title": "Quick Start",
+      "body": "function Profile() { const { data, error, isLoading } = useSWR('/api/user', fetcher)",
+      "bullets": []
+    },
+    {
+      "title": "Authors",
+      "body": "This library is created by the team behind Next.js, with contributions from our community:",
+      "bullets": [
+        "Shu Ding (@shuding\\ ) Vercel",
+        "Jiachi Liu (@huozhi) Vercel",
+        "Guillermo Rauch (@rauchg) Vercel",
+        "Joe Haddad (@timer150) Vercel"
+      ]
+    }
+  ],
+  "readmeLead": [
+    "SWR is a React Hooks library for data fetching.",
+    "With just one hook, you can significantly simplify the data fetching logic in your project. And it also covered in all aspects of speed, correctness, and stability to help you build better experiences:"
+  ],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/vercel-swr-ad92aa",
+    "subdomainUrl": "https://vercel-swr-ad92aa.supratik.space"
+  }
+}

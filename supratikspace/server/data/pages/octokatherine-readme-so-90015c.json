@@ -1,0 +1,129 @@
+{
+  "slug": "octokatherine-readme-so-90015c",
+  "generatedAt": "2026-03-31T08:22:10.793Z",
+  "source": {
+    "owner": "octokatherine",
+    "repo": "readme.so",
+    "repoUrl": "https://github.com/octokatherine/readme.so",
+    "branch": "main",
+    "subPath": "",
+    "homepage": "https://readme.so",
+    "stars": 4635,
+    "forks": 368,
+    "watchers": 28,
+    "openIssues": 62
+  },
+  "hero": {
+    "title": "readme.so",
+    "tagline": "Readme.so is an online editor to help developers make readmes for their project.",
+    "description": "An online drag-and-drop editor to easily build READMEs",
+    "topics": [
+      "markdown",
+      "nextjs",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "4635"
+    },
+    {
+      "label": "Forks",
+      "value": "368"
+    },
+    {
+      "label": "Watchers",
+      "value": "28"
+    },
+    {
+      "label": "Issues",
+      "value": "62"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "JavaScript",
+      "share": 95
+    },
+    {
+      "name": "CSS",
+      "share": 5
+    },
+    {
+      "name": "Dockerfile",
+      "share": 0
+    },
+    {
+      "name": "Shell",
+      "share": 0
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Built Around Clear Themes",
+      "description": "Tagged around markdown, nextjs, react, tailwindcss so visitors understand the project fast."
+    },
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by JavaScript (95%), CSS (5%), Dockerfile (0%), Shell (0%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "Choose from list of sections to add to your readme",
+    "Edit the contents of each section",
+    "Drag and drop to rearrange sections",
+    "Download your readme file",
+    "TailwindCSS",
+    "react markdown"
+  ],
+  "quickstart": [],
+  "readmeSections": [
+    {
+      "title": "Features",
+      "body": "Choose from list of sections to add to your readme Edit the contents of each section Drag and drop to rearrange sections Download your readme file",
+      "bullets": [
+        "Choose from list of sections to add to your readme",
+        "Edit the contents of each section",
+        "Drag and drop to rearrange sections",
+        "Download your readme file"
+      ]
+    },
+    {
+      "title": "Contributing",
+      "body": "See CONTRIBUTING.md for ways to get started.",
+      "bullets": []
+    },
+    {
+      "title": "Tech Stack",
+      "body": "Next.js TailwindCSS dnd kit react markdown",
+      "bullets": [
+        "TailwindCSS",
+        "react markdown"
+      ]
+    },
+    {
+      "title": "Running the Dev Server",
+      "body": "To run the dev server, run and navigate to",
+      "bullets": []
+    },
+    {
+      "title": "Feedback",
+      "body": "Feedback is appreciated! Reach out on Twitter or submit a new issue!",
+      "bullets": []
+    }
+  ],
+  "readmeLead": [
+    "Readme.so is an online editor to help developers make readmes for their project.",
+    "Choose from list of sections to add to your readme Edit the contents of each section Drag and drop to rearrange sections Download your readme file"
+  ],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/octokatherine-readme-so-90015c",
+    "subdomainUrl": "https://octokatherine-readme-so-90015c.supratik.space"
+  }
+}

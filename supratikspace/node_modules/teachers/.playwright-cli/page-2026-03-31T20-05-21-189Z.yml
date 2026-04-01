@@ -1,0 +1,175 @@
+- generic [ref=e304]:
+  - complementary [ref=e305]:
+    - generic [ref=e306]:
+      - paragraph [ref=e307]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e308]
+      - paragraph [ref=e309]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e310]:
+      - generic [ref=e311]:
+        - paragraph [ref=e312]: Create
+        - generic [ref=e313]: Create inside Riya
+      - generic [ref=e314]:
+        - textbox "Folder name" [ref=e315]
+        - button "Create" [ref=e316] [cursor=pointer]
+      - generic [ref=e317]:
+        - button "Student" [ref=e318] [cursor=pointer]
+        - button "Test" [ref=e319] [cursor=pointer]
+        - button "Folder" [ref=e320] [cursor=pointer]
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - paragraph [ref=e323]: Workspace
+        - generic [ref=e324]: 2 folders
+      - generic [ref=e325]:
+        - button "Riya Student" [ref=e326] [cursor=pointer]:
+          - generic [ref=e328]:
+            - strong [ref=e329]: Riya
+            - generic [ref=e330]: Student
+        - button "Monday Test" [ref=e331] [cursor=pointer]:
+          - generic [ref=e333]:
+            - strong [ref=e334]: Monday
+            - generic [ref=e335]: Test
+    - generic [ref=e336]:
+      - generic [ref=e337]:
+        - paragraph [ref=e338]: Snapshot
+        - generic [ref=e339]: This device
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - generic [ref=e342]: Students
+          - strong [ref=e343]: "1"
+        - generic [ref=e344]:
+          - generic [ref=e345]: Tests
+          - strong [ref=e346]: "1"
+        - generic [ref=e347]:
+          - generic [ref=e348]: Marked pages
+          - strong [ref=e349]: "0"
+    - button "Reset local workspace" [ref=e350] [cursor=pointer]
+  - main [ref=e351]:
+    - generic [ref=e352]:
+      - generic [ref=e353]:
+        - paragraph [ref=e354]: Test workspace
+        - generic [ref=e355]:
+          - generic [ref=e356]: Workspace
+          - generic [ref=e357]: Riya
+          - generic [ref=e358]: Monday
+        - heading "Monday" [level=2] [ref=e359]
+        - paragraph [ref=e360]: "One calm desk for this paper: organize the pages, jump into full-screen Pencil edit mode, then finish with scoring and sharing."
+        - generic [ref=e361]:
+          - generic [ref=e362]: 0 pages
+          - generic [ref=e363]: 0 marked
+          - generic [ref=e364]: 0 waiting
+      - generic [ref=e366]:
+        - button "Previous" [disabled] [ref=e367]
+        - generic [ref=e368]: 0 / 0
+        - button "Next" [disabled] [ref=e369]
+    - generic [ref=e370]: Test created.
+    - generic [ref=e371]:
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - paragraph [ref=e375]: Test workspace
+            - heading "Monday" [level=3] [ref=e376]
+            - paragraph [ref=e377]: Keep the paper order clean, mark one page in the focused canvas, then finish from the score and share summary.
+          - generic [ref=e378]:
+            - generic [ref=e379]: 0 uploaded
+            - generic [ref=e380]: 0 marked
+            - generic [ref=e381]: Score pending
+        - generic [ref=e382]:
+          - button "Edit full screen" [disabled] [ref=e383]
+          - button "Download PNG" [disabled] [ref=e384]
+          - generic [ref=e385]: Monday is ready.
+      - generic [ref=e386]:
+        - generic [ref=e387]:
+          - generic [ref=e389]:
+            - paragraph [ref=e390]: Current page
+            - heading "Choose a page" [level=3] [ref=e391]
+          - generic [ref=e393]:
+            - paragraph [ref=e394]: Upload pages
+            - heading "This test is ready for a batch of answer-sheet photos." [level=3] [ref=e395]
+            - paragraph [ref=e396]: Add pages below, then tap any card to inspect it before opening the full-screen edit canvas.
+          - generic [ref=e397]:
+            - generic [ref=e398]:
+              - button "Previous" [disabled] [ref=e399]
+              - generic [ref=e400]: 0 / 0
+              - button "Next" [disabled] [ref=e401]
+            - generic [ref=e402]:
+              - generic [ref=e403]: 0 saved locally
+              - generic [ref=e404]: 0 still to review
+        - complementary [ref=e405]:
+          - generic [ref=e406]:
+            - paragraph [ref=e407]: Result summary
+            - generic [ref=e408]: Local only
+          - generic [ref=e409]:
+            - strong [ref=e410]: 0/1
+            - generic [ref=e411]: Pages marked
+          - paragraph [ref=e412]: Once the first page is marked, this panel becomes the quick completion and share checkpoint for the whole test.
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - generic [ref=e415]: Selected
+              - strong [ref=e416]: No page
+            - generic [ref=e417]:
+              - generic [ref=e418]: Marked pages
+              - strong [ref=e419]: "0"
+            - generic [ref=e420]:
+              - generic [ref=e421]: Score rows
+              - strong [ref=e422]: "0"
+            - generic [ref=e423]:
+              - generic [ref=e424]: AI draft
+              - strong [ref=e425]: "Off"
+          - button "Share results" [disabled] [ref=e426]
+      - generic [ref=e427]:
+        - generic [ref=e428]:
+          - generic [ref=e429]:
+            - paragraph [ref=e430]: Page organizer
+            - heading "Reorder the batch before or during marking." [level=3] [ref=e431]
+          - button "Add pages" [ref=e432] [cursor=pointer]
+        - button "Choose File"
+        - paragraph [ref=e433]: No pages yet. Add the student images in one batch, then rearrange them here if the order is messy.
+  - complementary [ref=e434]:
+    - generic [ref=e435]:
+      - generic [ref=e436]:
+        - paragraph [ref=e437]: Test details
+        - generic [ref=e438]: Monday
+      - generic [ref=e439]:
+        - generic [ref=e440]:
+          - generic [ref=e441]: Uploaded pages
+          - strong [ref=e442]: "0"
+        - generic [ref=e443]:
+          - generic [ref=e444]: Marked pages
+          - strong [ref=e445]: "0"
+        - generic [ref=e446]:
+          - generic [ref=e447]: AI selected
+          - strong [ref=e448]: "0"
+        - generic [ref=e449]:
+          - generic [ref=e450]: Last shared
+          - strong [ref=e451]: Not yet
+    - generic [ref=e452]:
+      - generic [ref=e453]:
+        - paragraph [ref=e454]: Scoring & totals
+        - generic [ref=e455]: "0"
+      - generic [ref=e456]:
+        - generic [ref=e457]:
+          - generic [ref=e458]: Total
+          - strong [ref=e459]: "0"
+        - generic [ref=e460]:
+          - generic [ref=e461]: Possible
+          - strong [ref=e462]: Unknown
+        - generic [ref=e463]:
+          - generic [ref=e464]: Percent
+          - strong [ref=e465]: Pending
+      - button "Add score row" [ref=e466] [cursor=pointer]
+      - paragraph [ref=e468]: Manual or AI-extracted scores show up here. Use separate fields for awarded and total marks.
+    - generic [ref=e469]:
+      - generic [ref=e470]:
+        - paragraph [ref=e471]: AI total draft
+        - generic [ref=e472]: Not run yet
+      - generic [ref=e473]:
+        - generic [ref=e474]: OpenAI API key
+        - textbox "OpenAI API key" [ref=e475]:
+          - /placeholder: sk-...
+      - generic [ref=e476]:
+        - generic [ref=e477]: Model
+        - textbox "Model" [ref=e478]:
+          - /placeholder: gpt-5
+          - text: gpt-5
+      - button "Calculate from selected pages" [ref=e479] [cursor=pointer]
+      - paragraph [ref=e480]: Select the marked pages you want AI to read, then review and edit the suggested score rows.

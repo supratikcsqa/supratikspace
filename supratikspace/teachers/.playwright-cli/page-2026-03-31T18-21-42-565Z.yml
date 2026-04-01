@@ -1,0 +1,80 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Create
+        - generic [ref=e12]: Create at workspace root
+      - generic [ref=e13]:
+        - textbox "Folder name" [ref=e14]
+        - button "Create" [ref=e15] [cursor=pointer]
+      - generic [ref=e16]:
+        - button "Student" [ref=e17] [cursor=pointer]
+        - button "Test" [ref=e18] [cursor=pointer]
+        - button "Folder" [ref=e19] [cursor=pointer]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: Workspace
+        - generic [ref=e23]: 0 folders
+      - paragraph [ref=e25]: Create a student or test folder to start organizing papers.
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: Snapshot
+        - generic [ref=e29]: This device
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Students
+          - strong [ref=e33]: "0"
+        - generic [ref=e34]:
+          - generic [ref=e35]: Tests
+          - strong [ref=e36]: "0"
+        - generic [ref=e37]:
+          - generic [ref=e38]: Marked pages
+          - strong [ref=e39]: "0"
+    - button "Reset local workspace" [ref=e40] [cursor=pointer]
+  - main [ref=e41]:
+    - generic [ref=e43]:
+      - paragraph [ref=e44]: Current view
+      - generic [ref=e46]: Workspace
+      - heading "No folder selected" [level=2] [ref=e47]
+      - paragraph [ref=e48]: Pick a student or test folder from the left rail to continue.
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - paragraph [ref=e51]: Quick start
+        - heading "Set up the paper desk in three short steps." [level=3] [ref=e52]
+        - paragraph [ref=e53]: Create a student folder, add a test inside it, then upload pages when that test is open.
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - strong [ref=e56]: "1"
+          - generic [ref=e57]:
+            - generic [ref=e58]: Create a student
+            - paragraph [ref=e59]: Use the left rail and choose Student before you create the first folder.
+        - generic [ref=e60]:
+          - strong [ref=e61]: "2"
+          - generic [ref=e62]:
+            - generic [ref=e63]: Add a test
+            - paragraph [ref=e64]: Open that student folder, switch the type to Test, and create the paper folder under it.
+        - generic [ref=e65]:
+          - strong [ref=e66]: "3"
+          - generic [ref=e67]:
+            - generic [ref=e68]: Upload and mark
+            - paragraph [ref=e69]: Choose the test folder, add pages in bulk, then open one page in full-screen edit mode.
+  - complementary [ref=e70]:
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - paragraph [ref=e73]: Flow
+        - generic [ref=e74]: How it works
+      - heading "Organize by student, then by test." [level=3] [ref=e75]
+      - paragraph [ref=e76]: After that, each page can be marked, scored, and shared as a plain image bundle.
+      - list [ref=e77]:
+        - listitem [ref=e78]: Folders help a tutor keep one batch tidy and easy to revisit.
+        - listitem [ref=e79]: Each uploaded page stays local to this browser until it is shared.
+        - listitem [ref=e80]: Marked pages, scores, and AI drafts stay attached to the chosen test folder.
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - paragraph [ref=e83]: Best practice
+        - generic [ref=e84]: Fast setup
+      - paragraph [ref=e85]: Name folders with the student first, then the test name and date, so the history view stays easy to scan later.

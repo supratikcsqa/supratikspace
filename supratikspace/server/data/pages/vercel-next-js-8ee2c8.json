@@ -1,0 +1,130 @@
+{
+  "slug": "vercel-next-js-8ee2c8",
+  "generatedAt": "2026-03-31T06:22:38.994Z",
+  "source": {
+    "owner": "vercel",
+    "repo": "next.js",
+    "repoUrl": "https://github.com/vercel/next.js",
+    "branch": "canary",
+    "subPath": "examples/with-supabase",
+    "homepage": "https://nextjs.org",
+    "stars": 138557,
+    "forks": 30731,
+    "watchers": 1505,
+    "openIssues": 3627
+  },
+  "hero": {
+    "title": "next.js",
+    "tagline": "Visit our Learn Next.js course to get started with Next.js. Visit the Next.js Showcase to see more sites built with Next.js.",
+    "description": "The React Framework",
+    "topics": [
+      "blog",
+      "browser",
+      "compiler",
+      "components",
+      "hybrid",
+      "nextjs",
+      "node",
+      "react",
+      "server-rendering",
+      "ssg",
+      "static",
+      "static-site-generator",
+      "universal",
+      "vercel"
+    ]
+  },
+  "metrics": [
+    {
+      "label": "Stars",
+      "value": "138557"
+    },
+    {
+      "label": "Forks",
+      "value": "30731"
+    },
+    {
+      "label": "Watchers",
+      "value": "1505"
+    },
+    {
+      "label": "Issues",
+      "value": "3627"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "name": "JavaScript",
+      "share": 54
+    },
+    {
+      "name": "TypeScript",
+      "share": 31
+    },
+    {
+      "name": "Rust",
+      "share": 13
+    },
+    {
+      "name": "CSS",
+      "share": 1
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Built Around Clear Themes",
+      "description": "Tagged around blog, browser, compiler, components so visitors understand the project fast."
+    },
+    {
+      "title": "Grounded In The Actual Stack",
+      "description": "The page reflects the repository's real implementation, led by JavaScript (54%), TypeScript (31%), Rust (13%), CSS (1%)."
+    },
+    {
+      "title": "Shareable By Default",
+      "description": "A repo link becomes a cleaner page with quick context, proof signals, and a better first read."
+    }
+  ],
+  "features": [
+    "Visit our Learn Next.js course to get started with Next.js.",
+    "Visit the Next.js Showcase to see more sites built with Next.js."
+  ],
+  "quickstart": [],
+  "readmeSections": [
+    {
+      "title": "Getting Started",
+      "body": "Used by some of the world's largest companies, Next.js enables you to create full stack web applications by extending the latest React features, and integrating powerful Rust based JavaScript tooling for the fastest builds.",
+      "bullets": [
+        "Visit our Learn Next.js course to get started with Next.js.",
+        "Visit the Next.js Showcase to see more sites built with Next.js."
+      ]
+    },
+    {
+      "title": "Documentation",
+      "body": "Visit https://nextjs.org/docs to view the full documentation.",
+      "bullets": []
+    },
+    {
+      "title": "Community",
+      "body": "The Next.js community can be found on GitHub Discussions where you can ask questions, voice ideas, and share your projects with other people.",
+      "bullets": []
+    },
+    {
+      "title": "Contributing",
+      "body": "Contributions to Next.js are welcome and highly appreciated. However, before you jump right into it, we would like you to review our Contribution Guidelines to make sure you have a smooth experience contributing to Next.js.",
+      "bullets": []
+    },
+    {
+      "title": "Good First Issues:",
+      "body": "We have a list of good first issues that contain bugs that have a relatively limited scope. This is a great place for newcomers and beginners alike to get started, gain experience, and get familiar with our contribution process.",
+      "bullets": []
+    }
+  ],
+  "readmeLead": [
+    "Visit our Learn Next.js course to get started with Next.js. Visit the Next.js Showcase to see more sites built with Next.js.",
+    "Visit https://nextjs.org/docs to view the full documentation."
+  ],
+  "urls": {
+    "previewUrl": "http://localhost:3001/launch/vercel-next-js-8ee2c8",
+    "subdomainUrl": "https://vercel-next-js-8ee2c8.supratik.space"
+  }
+}

@@ -1,0 +1,159 @@
+- generic [ref=e1995]:
+  - complementary [ref=e1996]:
+    - generic [ref=e1997]:
+      - paragraph [ref=e1998]: Teacher workspace
+      - heading "Paper Review Desk" [level=1] [ref=e1999]
+      - paragraph [ref=e2000]: Organize students, create tests, mark one page at a time, and keep marks history on this device.
+    - generic [ref=e2001]:
+      - generic [ref=e2002]:
+        - paragraph [ref=e2003]: Create
+        - generic [ref=e2004]: Create at workspace root
+      - generic [ref=e2005]:
+        - textbox "Folder name" [ref=e2006]
+        - button "Create" [ref=e2007] [cursor=pointer]
+      - generic [ref=e2008]:
+        - button "Student" [ref=e2009] [cursor=pointer]
+        - button "Test" [ref=e2010] [cursor=pointer]
+        - button "Folder" [ref=e2011] [cursor=pointer]
+    - generic [ref=e2012]:
+      - generic [ref=e2013]:
+        - paragraph [ref=e2014]: Workspace
+        - generic [ref=e2015]: 2 folders
+      - generic [ref=e2016]:
+        - button "Riya Student" [ref=e2017] [cursor=pointer]:
+          - generic [ref=e2019]:
+            - strong [ref=e2020]: Riya
+            - generic [ref=e2021]: Student
+        - button "Monday Test - 21 Aug Test" [ref=e2022] [cursor=pointer]:
+          - generic [ref=e2024]:
+            - strong [ref=e2025]: Monday Test - 21 Aug
+            - generic [ref=e2026]: Test
+    - generic [ref=e2027]:
+      - generic [ref=e2028]:
+        - text: Students
+        - strong [ref=e2029]: "1"
+      - generic [ref=e2030]:
+        - text: Tests
+        - strong [ref=e2031]: "1"
+      - generic [ref=e2032]:
+        - text: Marked pages
+        - strong [ref=e2033]: "1"
+    - button "Reset local workspace" [ref=e2034] [cursor=pointer]
+  - main [ref=e2035]:
+    - generic [ref=e2036]:
+      - generic [ref=e2037]:
+        - paragraph [ref=e2038]: Current view
+        - generic [ref=e2039]:
+          - generic [ref=e2040]: Workspace
+          - generic [ref=e2041]: Riya
+          - generic [ref=e2042]: Monday Test - 21 Aug
+        - heading "Monday Test - 21 Aug" [level=2] [ref=e2043]
+        - paragraph [ref=e2044]: 2 pages in this test. Draw directly on the page and each stroke saves locally.
+      - generic [ref=e2046]:
+        - button "Previous" [disabled] [ref=e2047]
+        - generic [ref=e2048]: 1 / 2
+        - button "Next" [ref=e2049] [cursor=pointer]
+    - generic [ref=e2050]: Add an OpenAI API key on this device before running AI scoring.
+    - generic [ref=e2051]:
+      - generic [ref=e2052]:
+        - generic [ref=e2053]:
+          - generic [ref=e2054]: Pen
+          - generic [ref=e2055]:
+            - button "Set ink color" [ref=e2056] [cursor=pointer]
+            - button "Set ink color" [ref=e2057] [cursor=pointer]
+            - button "Set ink color" [ref=e2058] [cursor=pointer]
+            - button "Set ink color" [ref=e2059] [cursor=pointer]
+            - button "Set ink color" [ref=e2060] [cursor=pointer]
+          - generic [ref=e2061]:
+            - generic [ref=e2062]: Stroke
+            - slider "Stroke 9px" [ref=e2063]: "9"
+            - strong [ref=e2064]: 9px
+          - generic [ref=e2065]:
+            - generic [ref=e2066]: Zoom
+            - slider "Zoom 100%" [ref=e2067]: "1"
+            - strong [ref=e2068]: 100%
+        - generic [ref=e2069]:
+          - button "Undo" [disabled] [ref=e2070]
+          - button "Clear marks" [disabled] [ref=e2071]
+          - button "Download PNG" [ref=e2072] [cursor=pointer]
+          - generic [ref=e2073]: Score entry saved.
+      - generic [ref=e2076]:
+        - img "vite.svg"
+      - generic [ref=e2078]:
+        - generic [ref=e2079]: Monday Test - 21 Aug
+        - generic [ref=e2080]: 1 marked
+        - generic [ref=e2081]: 2 total
+  - complementary [ref=e2082]:
+    - generic [ref=e2083]:
+      - generic [ref=e2084]:
+        - paragraph [ref=e2085]: Pages
+        - generic [ref=e2086]: 2 uploaded
+      - button "Add pages" [ref=e2087] [cursor=pointer]
+      - button "Choose File"
+      - button "Share marked bundle" [ref=e2088] [cursor=pointer]
+      - generic [ref=e2089]:
+        - generic [ref=e2090]:
+          - button "Page 2 Ready · 1" [ref=e2091] [cursor=pointer]:
+            - generic [ref=e2092]:
+              - strong [ref=e2093]: Page 2
+              - generic [ref=e2094]: Ready · 1
+          - generic [ref=e2095]:
+            - generic [ref=e2096]:
+              - checkbox "AI" [disabled] [ref=e2097]
+              - generic [ref=e2098]: AI
+            - button "↑" [disabled] [ref=e2099]
+            - button "↓" [ref=e2100] [cursor=pointer]
+            - button "×" [ref=e2101] [cursor=pointer]
+        - generic [ref=e2102]:
+          - button "Page 1 Marked · 2" [ref=e2103] [cursor=pointer]:
+            - generic [ref=e2104]:
+              - strong [ref=e2105]: Page 1
+              - generic [ref=e2106]: Marked · 2
+          - generic [ref=e2107]:
+            - generic [ref=e2108]:
+              - checkbox "AI" [checked] [ref=e2109]
+              - generic [ref=e2110]: AI
+            - button "↑" [ref=e2111] [cursor=pointer]
+            - button "↓" [disabled] [ref=e2112]
+            - button "×" [ref=e2113] [cursor=pointer]
+    - generic [ref=e2114]:
+      - generic [ref=e2115]:
+        - paragraph [ref=e2116]: Marks
+        - generic [ref=e2117]: 4.5 / 7
+      - generic [ref=e2118]:
+        - generic [ref=e2119]:
+          - text: Total
+          - strong [ref=e2120]: "4.5"
+        - generic [ref=e2121]:
+          - text: Possible
+          - strong [ref=e2122]: "7"
+        - generic [ref=e2123]:
+          - text: Percent
+          - strong [ref=e2124]: 64.3%
+      - button "Add score row" [ref=e2125] [cursor=pointer]
+      - generic [ref=e2127]:
+        - generic [ref=e2128]:
+          - textbox "Question" [ref=e2129]: Q1
+          - textbox "Awarded" [ref=e2130]: 4 1/2
+          - textbox "Out of" [ref=e2131]: "7"
+        - generic [ref=e2132]:
+          - textbox "Teacher note" [ref=e2133]
+          - generic [ref=e2134]:
+            - generic [ref=e2135]: Manual
+            - generic [ref=e2136]: "Awarded: 4.5"
+            - button "Remove" [ref=e2137] [cursor=pointer]
+    - generic [ref=e2138]:
+      - generic [ref=e2139]:
+        - paragraph [ref=e2140]: AI total draft
+        - generic [ref=e2141]: Not run yet
+      - generic [ref=e2142]:
+        - generic [ref=e2143]: OpenAI API key
+        - textbox "OpenAI API key" [ref=e2144]:
+          - /placeholder: sk-...
+      - generic [ref=e2145]:
+        - generic [ref=e2146]: Model
+        - textbox "Model" [ref=e2147]:
+          - /placeholder: gpt-5
+          - text: gpt-5
+      - button "Calculate from selected pages" [ref=e2148] [cursor=pointer]
+      - paragraph [ref=e2149]: Select the marked pages you want AI to read, then review and edit the suggested score rows.
