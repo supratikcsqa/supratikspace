@@ -45,7 +45,8 @@ interface AppState {
   folderDraftName: string
   folderDraftKind: FolderKind
   homeSearch: string
-  testSurface: 'organizer' | 'scoring' | 'result'
+  testSurface: 'organizer' | 'marking' | 'history'
+  selectionMode: boolean
   multiSelectIds: Set<string>
   penColor: string
   penWidth: number
@@ -81,6 +82,7 @@ const state: AppState = {
   folderDraftKind: 'classroom',
   homeSearch: '',
   testSurface: 'organizer',
+  selectionMode: false,
   multiSelectIds: new Set(),
   penColor: COLORS[0],
   penWidth: 7,
@@ -272,9 +274,14 @@ async function routeAction(action: string, target: HTMLElement): Promise<void> {
       break
 
     case 'select-sheet': {
-      const id = target.dataset.sheetId
-      if (id) {
-        state.selectedSheetId = id
+      const sheetId = target.dataset.sheetId
+      if (sheetId) {
+        if (state.selectionMode) {
+          if (state.multiSelectIds.has(sheetId)) state.multiSelectIds.delete(sheetId)
+          else state.multiSelectIds.add(sheetId)
+        } else {
+          state.selectedSheetId = sheetId
+        }
         render()
       }
       break
@@ -307,6 +314,37 @@ async function routeAction(action: string, target: HTMLElement): Promise<void> {
       state.sidebarOpen = !state.sidebarOpen
       render()
       break
+
+    case 'zoom-in':
+      state.zoom = Math.min(state.zoom + 0.1, 5)
+      render()
+      break
+
+    case 'zoom-out':
+      state.zoom = Math.max(state.zoom - 0.1, 0.2)
+      render()
+      break
+
+    case 'zoom-reset':
+      state.zoom = 1
+      render()
+      break
+
+    case 'toggle-selection-mode':
+      state.selectionMode = !state.selectionMode
+      if (!state.selectionMode) state.multiSelectIds.clear()
+      render()
+      break
+
+    case 'select-all': {
+      const folderId = state.selectedFolderId
+      if (folderId) {
+        const sheets = getSheetsInFolder(state.workspace, folderId)
+        sheets.forEach(s => state.multiSelectIds.add(s.id))
+        render()
+      }
+      break
+    }
 
     case 'close-sidebar':
       state.sidebarOpen = false
@@ -526,6 +564,13 @@ function renderTestOrganizerScreen(folder: FolderRecord, sheets: SheetRecord[], 
             </div>
          </div>
          <div class="workspace-actions">
+            <button class="btn ${state.selectionMode ? 'btn-batch-active' : 'btn-subtle'}" data-action="toggle-selection-mode" style="margin-right:8px;">
+               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+               <span>${state.selectionMode ? 'Lock Selection' : 'Batch Select'}</span>
+            </button>
+            <button class="btn btn-subtle" data-action="select-all" style="margin-right:8px;">
+               <span>Select All</span>
+            </button>
             <button class="btn btn-primary" data-action="open-edit-mode" ${activeSheet ? '' : 'disabled'}>
                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                <span>Mark Selected Page</span>
@@ -549,7 +594,7 @@ function renderTestOrganizerScreen(folder: FolderRecord, sheets: SheetRecord[], 
               <button class="btn btn-primary" data-action="trigger-upload" style="margin-top:24px;">Add Pages</button>
            </div>
          ` : `
-           <div class="page-grid">
+           <div class="page-grid ${state.selectionMode ? 'is-selection-mode' : ''}">
               ${sheets.map((s, i) => renderPageSlug(s, i, s.id === activeSheet?.id)).join('')}
            </div>
          `}
@@ -577,7 +622,10 @@ function renderPageSlug(sheet: SheetRecord, index: number, isActive: boolean): s
           <div class="page-overlay">
              <div class="page-badge">P${index + 1}</div>
              <button class="fleet-select-box" data-action="toggle-fleet-select" data-sheet-id="${sheet.id}" onclick="event.stopPropagation()">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="fleet-select-inner">
+                   <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="3.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span>Select</span>
              </button>
           </div>
        </div>
@@ -688,6 +736,21 @@ function renderEditOverlay(sheet: SheetRecord): string {
               </div>
               <input type="range" class="toolkit-range" min="3" max="40" step="1" value="${state.penWidth}" data-field="pen-width" />
             </div>
+
+             <div class="toolkit-divider"></div>
+
+             <div class="toolkit-section">
+                <span class="toolkit-label">Zoom</span>
+                <div class="toolkit-row">
+                   <button class="toolkit-action-btn-sm" data-action="zoom-out" title="Zoom Out">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 12H4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                   </button>
+                   <button class="toolkit-action-btn-sm" data-action="zoom-in" title="Zoom In">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                   </button>
+                </div>
+                <button class="toolkit-action-btn-sm" data-action="zoom-reset" style="width:100%; margin-top:8px; font-size:0.7rem; font-weight:800;">RESET</button>
+             </div>
 
              <div class="toolkit-divider"></div>
 
@@ -1075,9 +1138,10 @@ function samplePredictedPoints(e: PointerEvent, c: HTMLCanvasElement, s: SheetRe
 }
 
 function getEditorStageSize(sheet: SheetRecord): { width: number; height: number } {
-  const maxWidth = window.innerWidth * 0.9, maxHeight = window.innerHeight * 0.75
-  const scale = Math.min(maxWidth / sheet.width, maxHeight / sheet.height)
-  return { width: sheet.width * scale, height: sheet.height * scale }
+  const maxWidth = window.innerWidth * 0.95, maxHeight = window.innerHeight * 0.8
+  const baseScale = Math.min(maxWidth / sheet.width, maxHeight / sheet.height)
+  const finalScale = baseScale * state.zoom
+  return { width: sheet.width * finalScale, height: sheet.height * finalScale }
 }
 
 function readImageSize(f: File): Promise<{ width: number; height: number }> {
