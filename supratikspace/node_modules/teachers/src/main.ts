@@ -66,6 +66,7 @@ interface AppState {
     sheetId: string
     draftStrokes: InkStroke[]
   } | null
+  editTool: 'pen' | 'hand'
 }
 
 const OPENAI_KEY_STORAGE = 'paper-marking-desk:openai-key'
@@ -102,6 +103,7 @@ const state: AppState = {
   aiBusy: false,
   shareBusy: false,
   editSession: null,
+  editTool: 'pen',
 }
 
 function applyDemoScreen(): void {
@@ -444,6 +446,19 @@ async function routeAction(action: string, target: HTMLElement): Promise<void> {
       setFlash(null)
       render()
       return
+    case 'quick-mark': {
+      const accent = FOLDER_ACCENTS[Math.floor(Math.random() * FOLDER_ACCENTS.length)]
+      const label = `Quick Check — ${new Date().toLocaleDateString([], { month: 'short', day: 'numeric' })} ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`
+      const folder = createFolderRecord(label, 'test', null, accent)
+      state.workspace.folders.unshift(folder) // Put it at the top
+      state.selectedFolderId = folder.id
+      state.homeMode = false
+      state.testSurface = 'organizer'
+      setFlash('Quick session started. Tap "Add Page" below to upload papers.', 'info')
+      await persistWorkspace('Quick check session started.')
+      render()
+      return
+    }
     case 'select-folder': {
       const folderId = target.dataset.folderId
 
@@ -596,6 +611,15 @@ async function routeAction(action: string, target: HTMLElement): Promise<void> {
 
       if (color) {
         state.penColor = color
+        state.editTool = 'pen'
+        render()
+      }
+      return
+    }
+    case 'set-edit-tool': {
+      const tool = target.dataset.tool as 'pen' | 'hand' | undefined
+      if (tool) {
+        state.editTool = tool
         render()
       }
       return
@@ -691,7 +715,7 @@ function render(): void {
   const historySummary = getFolderAnalyticsSummary(history)
   const portrait = isPortraitViewport()
 
-  document.body.style.overflow = state.editSession ? 'hidden' : ''
+  document.body.style.overflow = ''
   let screen = ''
 
   if (state.homeMode || !selectedFolder) {
@@ -898,7 +922,11 @@ function renderHomeDashboard(portrait: boolean): string {
     <section class="screen-home workspace-home-surface ${portrait ? 'is-portrait' : ''}" >
       <div class="stitch-home-header" >
         <h2>All Tests & Copies</h2>
-          </div>
+        <button class="primary-button quick-start-btn" data-action="quick-mark">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Quick Start Marking
+        </button>
+      </div>
       ${featuredTests.length === 0
       ? renderHomeEmptyCard()
       : `<div class="stitch-today-grid">
@@ -966,7 +994,7 @@ function renderHomeTaskCardLegacy(folder: FolderRecord, compact: boolean): strin
       <article class="home-task-card ${compact ? 'is-compact' : ''}" >
         <div class="home-task-copy" >
           <h3>${escapeHtml(folder.name)} </h3>
-            <p > ${escapeHtml([student?.name, classroom?.name].filter(Boolean).join(' Â· ') || 'Class exam')} </p>
+            <p > ${escapeHtml([student?.name, classroom?.name].filter(Boolean).join(' · ') || 'Class exam')} </p>
               <div class="progress-rail" >
                 <span style="width:${percent}%;" > </span>
                   </div>
@@ -1284,7 +1312,7 @@ function renderTestOrganizerScreen(
     }
   <div class="organizer-detail-actions" >
     <button class="primary-button stretch-button" data-action="open-edit-mode" ${activeSheet ? '' : 'disabled'}> Check Copy </button>
-      <button class="subtle-button stretch-button" data-action="open-scoring-surface" > Scoring & amp; Totals </button>
+      <button class="subtle-button stretch-button" data-action="open-scoring-surface" > Scoring & Totals </button>
         </div>
         </aside>
         </div>
@@ -1348,12 +1376,12 @@ function renderTestScoringScreen(
     </div>
     <aside class="stitch-score-panel" >
       <div class="stitch-score-panel-head" >
-        <h3>Scoring & amp; Totals </h3>
-          <button class="icon-square" data-action="open-result-surface" title = "View result" >âœ•</button>
+        <h3>Scoring & Totals </h3>
+          <button class="icon-square" data-action="open-result-surface" title = "View result" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
             </div>
             <div class="stitch-score-current-banner" >
               <span>${escapeHtml(activeEntry?.label || 'No question selected')} </span>
-                <span class="stitch-score-current-value" > ${escapeHtml(currentValue || 'â€”')} / ${escapeHtml(currentPossible)}</span >
+                <span class="stitch-score-current-value" > ${escapeHtml(currentValue || '—')} / ${escapeHtml(currentPossible)}</span >
                   </div>
                   <div class="stitch-keypad" >
                     ${['7', '8', '9', '4', '5', '6', '1', '2', '3']
@@ -1368,7 +1396,7 @@ function renderTestScoringScreen(
       <button class="stitch-key stitch-key-enter" data-action="score-enter" > ENTER </button>
         </div>
         <div style = "padding:6px 14px;background:#0f2744;display:flex;gap:6px;" >
-          <button class="subtle-button" data-action="score-backspace" style = "flex:1;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.07);border-color:transparent;" >âŒ« Back </button>
+          <button class="subtle-button" data-action="score-backspace" style = "flex:1;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.07);border-color:transparent;" >⌫ Back </button>
             <button class="subtle-button" data-action="score-clear" style = "flex:1;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.07);border-color:transparent;" > Clear </button>
               </div>
               <div class="stitch-score-question-list" >
@@ -1385,7 +1413,7 @@ function renderTestScoringScreen(
                         data-active="${entry.id === state.scorePadEntryId}"
                       >
                         <strong>${escapeHtml(entry.label || 'Question')}</strong>
-                        <span>${escapeHtml(entry.awardedRaw || 'â€”')} / ${escapeHtml(entry.possibleRaw || 'â€”')}</span>
+                        <span>${escapeHtml(entry.awardedRaw || '—')} / ${escapeHtml(entry.possibleRaw || '—')}</span>
                       </button>
                     `,
         )
@@ -1402,7 +1430,7 @@ function renderTestScoringScreen(
   </span>
     </div>
     <div class="stitch-score-panel-actions" >
-      <button class="stitch-save-next-btn" data-action="open-result-surface" > Save & amp; View Results </button>
+      <button class="stitch-save-next-btn" data-action="open-result-surface" > Save & View Results </button>
         <button class="subtle-button stretch-button" data-action="add-score-entry" > + Add Question </button>
           </div>
           </aside>
@@ -1966,7 +1994,7 @@ function renderTestInspector(
 
     <div class="inspector-section" >
       <div class="section-heading" >
-        <p class="section-kicker" > Scoring & totals </p>
+        <p class="section-kicker" > Scoring & Totals </p>
           <span class="section-caption" > ${scoreTotals ? `${formatScoreValue(scoreTotals.awardedTotal)}${scoreTotals.possibleTotal !== null ? ` / ${formatScoreValue(scoreTotals.possibleTotal)}` : ''}` : 'No scores yet'} </span>
             </div>
             <div class="metric-strip compact-metric-strip" >
@@ -2076,7 +2104,7 @@ function renderTestResultSummaryCard(
       : null
 
   if (percent !== null) {
-    // Full result state â€” stitch completion card
+    // Full result state — stitch completion card
     return `
     <div class="stitch-result-layout" >
       <div class="stitch-result-card" >
@@ -2086,14 +2114,14 @@ function renderTestResultSummaryCard(
               <h3 class="stitch-result-grade" > ${getGradeLabel(percent)} </h3>
           ${awardedStr !== null ? `<p class="stitch-result-points">Total Points: ${awardedStr}</p>` : ''}
   <div class="stitch-result-saved-indicator" >
-    <span class="stitch-result-checkmark" >âœ“</span>
+    <span class="stitch-result-checkmark" >✓</span>
       <span class="stitch-result-saved-label" >
         ${folder.lastSharedAt ? `Shared ${formatDate(folder.lastSharedAt)}` : 'Saved locally'}
   </span>
     </div>
     <div class="stitch-result-actions" >
       <button class="stitch-share-btn" data-action="share-marked" ${shareDisabled ? 'disabled' : ''}>
-        ${state.shareBusy ? 'Preparing...' : 'â¬† Share Results'}
+        ${state.shareBusy ? 'Preparing...' : '↑ Share Results'}
   </button>
     <button class="stitch-done-btn" data-action="go-home" > Done </button>
       </div>
@@ -2102,7 +2130,7 @@ function renderTestResultSummaryCard(
         ${sheets.length > 0
         ? `
                 <div class="stitch-result-preview-card">
-                  <p class="stitch-result-preview-label">Marked Document â€” ${escapeHtml(folder.name)}</p>
+                  <p class="stitch-result-preview-label">Marked Document — ${escapeHtml(folder.name)}</p>
                   <div class="stitch-result-preview-img">
                     <img src="${getObjectUrl(sheets[0])}" alt="Marked sheet preview" />
                   </div>
@@ -2112,14 +2140,14 @@ function renderTestResultSummaryCard(
       }
   <div class="stitch-result-meta-bar" >
     <strong>${escapeHtml(folder.name)} </strong>
-      <span > ${markedCount} of ${sheets.length} pages marked Â· ${folder.scoreEntries.length} score rows </span>
+      <span > ${markedCount} of ${sheets.length} pages marked · ${folder.scoreEntries.length} score rows </span>
         </div>
         </div>
         </div>
           `
   }
 
-  // Progress / empty state â€” compact card
+  // Progress / empty state — compact card
   return `
         <aside class="result-card" data-state="${markedCount > 0 ? 'progress' : 'empty'}" >
           <div class="section-heading" >
@@ -2159,13 +2187,13 @@ function renderPageOrganizerCard(
   data-sheet-id="${sheet.id}"
             ${index === 0 ? 'disabled' : ''}
   title = "Move up"
-    >â†‘</button>
+    ><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <button
   data-action="move-sheet-down"
   data-sheet-id="${sheet.id}"
             ${index === totalSheets - 1 ? 'disabled' : ''}
   title = "Move down"
-    >â†“</button>
+    ><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       </div>
       <button
@@ -2208,7 +2236,7 @@ function renderHistoryTimelineRow(
       ? `${totals.percent}% ${getGradeLabel(totals.percent) ? ` (${getGradeLabel(totals.percent).replace('Grade ', '')})` : ''} `
       : `${markedCount} / ${sheetCount || 0} marked`
   const badgeClass = isGraded ? 'is-graded' : isPending ? 'is-pending' : 'is-idle'
-  const badgeIcon = isGraded ? 'âœ“' : isPending ? '!' : 'â—‹'
+  const badgeIcon = isGraded ? '✓' : isPending ? '!' : '…'
   const badgeLabel = isGraded ? 'Graded' : isPending ? 'Pending Review' : 'Awaiting'
 
   return `
@@ -2223,7 +2251,7 @@ function renderHistoryTimelineRow(
         ${totals.percent !== null ? `<p class="stitch-history-score">${scoreDisplay}</p>` : `<p class="stitch-history-score" style="font-size:0.92rem;font-weight:500;color:var(--muted);">${scoreDisplay}</p>`}
         <div class="stitch-history-actions">
           ${isGraded
-      ? `<button class="stitch-history-btn" data-action="open-result-surface" data-folder-id="${folder.id}">View &amp; Share</button>`
+      ? `<button class="stitch-history-btn" data-action="open-result-surface" data-folder-id="${folder.id}">View & Share</button>`
       : isPending
         ? `<button class="stitch-history-btn is-primary" data-action="select-folder" data-folder-id="${folder.id}">Review Now</button>`
         : `<button class="stitch-history-btn is-primary" data-action="select-folder" data-folder-id="${folder.id}">Open Test</button>`
@@ -2265,6 +2293,32 @@ function renderEditOverlay(sheet: SheetRecord): string {
         <div class="edit-workbench">
           <aside class="edit-tool-rail">
             <div class="tool-rail-group">
+              <span class="section-kicker">Marking Mode</span>
+              <div class="tool-picker-stack">
+                <button 
+                  class="tool-picker-btn" 
+                  data-action="set-edit-tool" 
+                  data-tool="pen" 
+                  data-active="${state.editTool === 'pen'}"
+                  title="Mark (Pencil)"
+                >
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Mark</span>
+                </button>
+                <button 
+                  class="tool-picker-btn" 
+                  data-action="set-edit-tool" 
+                  data-tool="hand" 
+                  data-active="${state.editTool === 'hand'}"
+                  title="Move (Hand)"
+                >
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 11.5V5a2 2 0 114 0v6.5m0 0V3.5a2 2 0 114 0v8m0 0V5.5a2 2 0 114 0V12a7 7 0 11-14 0V9a2 2 0 114 0v2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Move</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="tool-rail-group" style="${state.editTool === 'hand' ? 'opacity:0.3; pointer-events:none;' : ''}">
               <span class="section-kicker">Ink</span>
               <div class="swatch-column">
                 ${COLORS.map(
@@ -2281,21 +2335,25 @@ function renderEditOverlay(sheet: SheetRecord): string {
   ).join('')}
               </div>
             </div>
-            <div class="tool-rail-group">
+            
+            <div class="tool-rail-group" style="${state.editTool === 'hand' ? 'opacity:0.3; pointer-events:none;' : ''}">
               <label class="range-control rail-range">
                 <span>Stroke</span>
                 <input type="range" min="3" max="24" step="1" value="${state.penWidth}" data-field="pen-width" />
                 <strong>${state.penWidth}px</strong>
               </label>
             </div>
+
             <div class="tool-rail-group">
               <span class="section-kicker">Session</span>
               <span class="info-chip">${draftStrokes} stroke${draftStrokes === 1 ? '' : 's'}</span>
-              <span class="edit-footnote">Pinch to zoom, drag to pan. Use stylus or mouse to draw marks.</span>
+              <span class="edit-footnote">
+                ${state.editTool === 'pen' ? 'Canvas is locked for marking. Switch to Move to pan/zoom.' : 'Free pan and zoom active. Switch to Mark to write.'}
+              </span>
             </div>
           </aside>
 
-          <div class="edit-stage-shell edit-stage-shell-focus" style="overflow: auto; touch-action: pan-x pan-y pinch-zoom; -webkit-overflow-scrolling: touch;">
+          <div class="edit-stage-shell edit-stage-shell-focus" style="overflow: auto; touch-action: ${state.editTool === 'hand' ? 'pan-x pan-y pinch-zoom' : 'pinch-zoom'}; -webkit-overflow-scrolling: touch;">
             <div
               class="edit-stage-frame"
               data-edit-stage-frame
@@ -2519,10 +2577,11 @@ function attachEditStage(): void {
   }
 
   previewCanvas.addEventListener('pointerdown', (event) => {
-    // Only draw with mouse or pen/stylus — let finger touches pass through for pinch-zoom & pan
-    if (event.pointerType === 'touch') {
+    // Only draw if Mark tool is active
+    if (state.editTool !== 'pen') {
       return
     }
+
     if (event.button !== 0 && event.pointerType === 'mouse') {
       return
     }
@@ -2868,54 +2927,62 @@ async function shareMarkedSheets(): Promise<void> {
     const blobs = await Promise.all(sheets.map(renderMarkedSheetBlob))
 
     // 2. Load them all into HTMLImageElements
-    const images = await Promise.all(blobs.map(blob => {
-      return new Promise<HTMLImageElement>((resolve, reject) => {
+    type ImgUrlPair = { img: HTMLImageElement, url: string }
+    const pairs = await Promise.all(blobs.map(blob => {
+      return new Promise<ImgUrlPair>((resolve, reject) => {
         const url = URL.createObjectURL(blob)
         const img = new Image()
-        img.onload = () => { URL.revokeObjectURL(url); resolve(img) }
-        img.onerror = reject
+        img.onload = () => resolve({ img, url })
+        img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Page image failed to load')) }
         img.src = url
       })
     }))
 
+    const images = pairs.map(p => p.img)
+
     // 3. Calculate canvas dimensions to stack vertically
-    const maxWidth = Math.max(...images.map(img => img.naturalWidth))
-    const totalHeight = images.reduce((sum, img) => sum + img.naturalHeight, 0)
+    const maxWidth = Math.max(...images.map(img => img.naturalWidth || 800))
+    const totalHeight = images.reduce((sum, img) => sum + (img.naturalHeight || 1100), 0)
 
-    // 4. Create master canvas and draw each image
-    const canvas = document.createElement('canvas')
-    canvas.width = maxWidth
-    canvas.height = totalHeight
-    const ctx = canvas.getContext('2d')
+    // 4. Create master canvas and draw each image (Safe limit for canvas memory is ~16kpx height)
+    let finalBlob: Blob | null = null
+    const MAX_CANVAS_HEIGHT = 16384 // iOS Safari limit
 
-    if (ctx) {
-      ctx.fillStyle = '#ffffff'
-      ctx.fillRect(0, 0, maxWidth, totalHeight)
-      let yOffset = 0
-      for (const img of images) {
-        const xOffset = (maxWidth - img.naturalWidth) / 2
-        ctx.drawImage(img, xOffset, yOffset, img.naturalWidth, img.naturalHeight)
+    if (totalHeight > 0 && totalHeight <= MAX_CANVAS_HEIGHT) {
+      const canvas = document.createElement('canvas')
+      canvas.width = maxWidth
+      canvas.height = totalHeight
+      const ctx = canvas.getContext('2d')
 
-        // draw a dark line separator between pages
-        if (yOffset > 0) {
-          ctx.fillStyle = '#111827'
-          ctx.fillRect(0, yOffset - 2, maxWidth, 4)
+      if (ctx) {
+        ctx.fillStyle = '#ffffff'
+        ctx.fillRect(0, 0, maxWidth, totalHeight)
+        let yOffset = 0
+        for (const img of images) {
+          const xOffset = (maxWidth - img.naturalWidth) / 2
+          ctx.drawImage(img, xOffset, yOffset, img.naturalWidth, img.naturalHeight)
+
+          if (yOffset > 0) {
+            ctx.fillStyle = '#111827'
+            ctx.fillRect(0, yOffset - 2, maxWidth, 4)
+          }
+          yOffset += img.naturalHeight
         }
-        yOffset += img.naturalHeight
+        finalBlob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85))
       }
     }
 
-    // 5. Get the stitched blob as JPEG (best for WhatsApp)
-    const finalBlob = ctx ? await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85)) : null
+    // Cleanup URLs only AFTER draw is complete
+    pairs.forEach(p => URL.revokeObjectURL(p.url))
 
     let shareFiles: File[] = []
 
     if (finalBlob) {
       shareFiles = [new File([finalBlob], `${buildSafeFilename(folder.name)}_Checked.jpg`, { type: 'image/jpeg' })]
     } else {
-      // Fallback for canvas memory limits on huge exams (e.g., Safari iOS 16kpx limit)
+      // Fallback for canvas memory limits on huge exams OR if stitching failed
       shareFiles = blobs.map((blob, idx) =>
-        new File([blob], `${buildSafeFilename(sheets[idx].pageLabel || sheets[idx].name)}.jpg`, { type: 'image/jpeg' })
+        new File([blob], `${buildSafeFilename(sheets[idx].pageLabel || sheets[idx].name)}.png`, { type: 'image/png' })
       )
     }
 
@@ -3367,6 +3434,7 @@ function clamp(value: number, min: number, max: number): number {
 function getErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error ? error.message : fallback
 }
+
 
 
 

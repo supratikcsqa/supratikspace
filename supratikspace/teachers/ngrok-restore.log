@@ -62,3 +62,12 @@ t=2026-04-01T21:23:22+0530 lvl=info msg="started tunnel" obj=tunnels name=sunny-
 t=2026-04-01T21:23:22+0530 lvl=info msg=end pg=/api/tunnels id=66853261d9415770 status=201 dur=387.9951ms
 t=2026-04-01T21:23:22+0530 lvl=info msg=start pg=/api/tunnels id=969f7dc8eafc0e65
 t=2026-04-01T21:23:22+0530 lvl=info msg=end pg=/api/tunnels id=969f7dc8eafc0e65 status=200 dur=1.0301ms
+t=2026-04-01T22:20:15+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=6729e6118ff5 clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-01T22:20:16+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-01T22:20:16+0530 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-04-01T22:20:19+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-01T22:20:19+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-04-02T00:24:43+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=e93abd286ac5 clientid=9e81dcea47c98e0fe66845b365f04671
+t=2026-04-02T00:24:47+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=ad522847f934 err="session closed"
+t=2026-04-02T00:24:49+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-04-02T00:24:49+0530 lvl=info msg="tunnel session started" obj=tunnels.session
