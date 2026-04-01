@@ -67,6 +67,7 @@ interface AppState {
     draftStrokes: InkStroke[]
   } | null
   editTool: 'pen' | 'hand'
+  activePointingType: PointerEvent['pointerType']
 }
 
 const OPENAI_KEY_STORAGE = 'paper-marking-desk:openai-key'
@@ -104,6 +105,7 @@ const state: AppState = {
   shareBusy: false,
   editSession: null,
   editTool: 'pen',
+  activePointingType: 'mouse',
 }
 
 function applyDemoScreen(): void {
@@ -704,6 +706,12 @@ async function routeAction(action: string, target: HTMLElement): Promise<void> {
 }
 
 function render(): void {
+  // Capture scroll state to prevent 'Recentering' jitter
+  const stageSurface = app.querySelector('.edit-stage-surface')
+  const scrollPos = stageSurface
+    ? { left: stageSurface.scrollLeft, top: stageSurface.scrollTop }
+    : null
+
   const selectedFolder = getSelectedFolder()
   const selectedSheet = getSelectedSheet()
   const editingSheet = getEditingSheet()
@@ -750,6 +758,15 @@ function render(): void {
   `
 
   attachStageLayers()
+
+  // Top 1% Experience: Restore scroll positioning to ensure 'The Sacred Canvas' stays locked during marking
+  if (scrollPos) {
+    const newStageSurface = app.querySelector('.edit-stage-surface')
+    if (newStageSurface) {
+      newStageSurface.scrollLeft = scrollPos.left
+      newStageSurface.scrollTop = scrollPos.top
+    }
+  }
 }
 
 function renderWorkspaceShell(content: string, className = ''): string {
@@ -2273,97 +2290,117 @@ function renderEditOverlay(sheet: SheetRecord): string {
   return `
     <div class="edit-overlay">
       <div class="edit-shell edit-shell-focus">
-        <header class="edit-topbar">
-          <div class="edit-title-block">
-            <button class="subtle-button" data-action="cancel-edit-mode">Back</button>
-            <div class="header-copy">
-              <p class="eyebrow">Focused marking canvas</p>
-              <h2>${escapeHtml(student?.name || folder?.name || 'Current page')}</h2>
-              <p class="supporting-copy">${escapeHtml(sheet.pageLabel || sheet.name)}${folder ? ` | ${folder.name}` : ''}</p>
+        <header class="edit-liquid-header">
+          <div class="header-left">
+            <button class="liquid-back-btn" data-action="cancel-edit-mode" aria-label="Exit workspace">
+               <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          
+          <div class="header-center">
+            <div class="liquid-marker-pill">
+              <span class="pill-eyebrow">Marking in context</span>
+              <div class="pill-pair">
+                 <span class="student-name">${escapeHtml(student?.name || 'Quick Session')}</span>
+                 <span class="exam-label">${escapeHtml(folder?.name || 'Class Exam')}</span>
+              </div>
             </div>
           </div>
-          <div class="edit-action-row">
-            <span class="info-chip">${currentIndex >= 0 ? `Page ${currentIndex + 1} of ${sheets.length}` : 'Single page'}</span>
-            <button class="subtle-button" data-action="undo-edit-stroke" ${draftStrokes === 0 ? 'disabled' : ''}>Undo</button>
-            <button class="subtle-button" data-action="clear-edit-strokes" ${draftStrokes === 0 ? 'disabled' : ''}>Clear</button>
-            <button class="primary-button" data-action="save-edit-mode">Save marks</button>
+
+          <div class="header-right">
+             <div class="header-pagination">
+                <span class="pag-label">Page</span>
+                <span class="pag-value">${currentIndex >= 0 ? `${currentIndex + 1} <small>of</small> ${sheets.length}` : 'Solo'}</span>
+             </div>
+             <button class="liquid-done-btn" data-action="save-edit-mode">
+                <span>Save & Close</span>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+             </button>
           </div>
         </header>
 
-        <div class="edit-workbench">
-          <aside class="edit-tool-rail">
-            <div class="tool-rail-group">
-              <span class="section-kicker">Marking Mode</span>
-              <div class="tool-picker-stack">
-                <button 
-                  class="tool-picker-btn" 
-                  data-action="set-edit-tool" 
-                  data-tool="pen" 
-                  data-active="${state.editTool === 'pen'}"
-                  title="Mark (Pencil)"
-                >
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Mark</span>
-                </button>
-                <button 
-                  class="tool-picker-btn" 
-                  data-action="set-edit-tool" 
-                  data-tool="hand" 
-                  data-active="${state.editTool === 'hand'}"
-                  title="Move (Hand)"
-                >
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 11.5V5a2 2 0 114 0v6.5m0 0V3.5a2 2 0 114 0v8m0 0V5.5a2 2 0 114 0V12a7 7 0 11-14 0V9a2 2 0 114 0v2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Move</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="tool-rail-group" style="${state.editTool === 'hand' ? 'opacity:0.3; pointer-events:none;' : ''}">
-              <span class="section-kicker">Ink</span>
-              <div class="swatch-column">
-                ${COLORS.map(
-    (color) => `
-                    <button
-                      class="swatch-button"
-                      data-action="set-color"
-                      data-color="${color}"
-                      data-active="${state.penColor === color}"
-                      style="--swatch:${color};"
-                      aria-label="Set ink color"
-                    ></button>
-                  `,
-  ).join('')}
-              </div>
-            </div>
-            
-            <div class="tool-rail-group" style="${state.editTool === 'hand' ? 'opacity:0.3; pointer-events:none;' : ''}">
-              <label class="range-control rail-range">
-                <span>Stroke</span>
-                <input type="range" min="3" max="24" step="1" value="${state.penWidth}" data-field="pen-width" />
-                <strong>${state.penWidth}px</strong>
-              </label>
-            </div>
-
-            <div class="tool-rail-group">
-              <span class="section-kicker">Session</span>
-              <span class="info-chip">${draftStrokes} stroke${draftStrokes === 1 ? '' : 's'}</span>
-              <span class="edit-footnote">
-                ${state.editTool === 'pen' ? 'Canvas is locked for marking. Switch to Move to pan/zoom.' : 'Free pan and zoom active. Switch to Mark to write.'}
-              </span>
-            </div>
-          </aside>
-
-          <div class="edit-stage-shell edit-stage-shell-focus" style="overflow: auto; touch-action: ${state.editTool === 'hand' ? 'pan-x pan-y pinch-zoom' : 'pinch-zoom'}; -webkit-overflow-scrolling: touch;">
-            <div
+        <div class="edit-workbench-v2">
+          <!-- Sacred Canvas Surface (Clear Center 80%) -->
+          <div class="edit-stage-surface" style="touch-action: ${state.editTool === 'hand' ? 'pan-x pan-y pinch-zoom' : 'pinch-zoom'};">
+             <div
               class="edit-stage-frame"
               data-edit-stage-frame
-              style="width:${stageSize.width}px; height:${stageSize.height}px; margin: auto;"
+              style="width:${stageSize.width}px; height:${stageSize.height}px;"
             >
               <img id="edit-stage-image" src="${getObjectUrl(sheet)}" alt="${escapeHtml(sheet.name)}" />
               <canvas id="edit-ink-layer"></canvas>
               <canvas id="edit-ink-preview-layer"></canvas>
             </div>
           </div>
+
+          <!-- Lateral Thumb-Reach Floating Toolkit (Left 15%) -->
+          <aside class="edit-floating-toolkit">
+            <div class="toolkit-section">
+              <span class="toolkit-label">Tools</span>
+              <div class="toolkit-row">
+                 <button 
+                  class="toolkit-tool-btn" 
+                  data-action="set-edit-tool" 
+                  data-tool="pen" 
+                  data-active="${state.editTool === 'pen'}"
+                  title="Mark Mode"
+                >
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                 <button 
+                  class="toolkit-tool-btn" 
+                  data-action="set-edit-tool" 
+                  data-tool="hand" 
+                  data-active="${state.editTool === 'hand'}"
+                  title="Move Mode"
+                >
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 11.5V5a2 2 0 114 0v6.5m0 0V3.5a2 2 0 114 0v8m0 0V5.5a2 2 0 114 0V12a7 7 0 11-14 0V9a2 2 0 114 0v2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="toolkit-divider"></div>
+
+            <div class="toolkit-section" style="${state.editTool === 'hand' ? 'opacity:0.3; pointer-events:none;' : ''}">
+              <span class="toolkit-label">Ink</span>
+              <div class="toolkit-swatch-grid">
+                 ${COLORS.map(
+    (color) => `
+                    <button
+                      class="toolkit-swatch"
+                      data-action="set-color"
+                      data-color="${color}"
+                      data-active="${state.penColor === color}"
+                      style="--ink:${color};"
+                    ></button>
+                  `,
+  ).join('')}
+              </div>
+              <div class="toolkit-range-cell">
+                <input type="range" min="3" max="32" step="1" value="${state.penWidth}" data-field="pen-width" />
+                <strong>${state.penWidth}px</strong>
+              </div>
+            </div>
+
+             <div class="toolkit-divider"></div>
+
+             <div class="toolkit-section">
+                <span class="toolkit-label">Session Controls</span>
+                <div class="toolkit-row">
+                   <button class="toolkit-action-btn-sm" data-action="undo-edit-stroke" ${draftStrokes === 0 ? 'disabled' : ''} title="Undo">
+                      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 10h10a5 5 0 110 10H8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                   </button>
+                   <button class="toolkit-action-btn-sm" data-action="clear-edit-strokes" ${draftStrokes === 0 ? 'disabled' : ''} title="Clear All">
+                      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                   </button>
+                </div>
+                <div class="toolkit-status-indicator">
+                   <div class="status-dot ${state.activePointingType === 'pen' ? 'is-pen' : ''}"></div>
+                   <span>${state.activePointingType === 'pen' ? 'Stylus' : 'Non-Stylus'}</span>
+                </div>
+             </div>
+          </aside>
+        </div>
         </div>
 
         <footer class="edit-footer">
@@ -2577,6 +2614,17 @@ function attachEditStage(): void {
   }
 
   previewCanvas.addEventListener('pointerdown', (event) => {
+    // Top 1% Experience: Capture pointing type for status and rejection logic
+    state.activePointingType = event.pointerType
+    if (event.pointerType === 'pen') {
+      app.querySelector('.status-dot')?.classList.add('is-pen')
+    }
+
+    // Smart Palm Rejection: If stylus is active, ignore accidental finger taps for marking
+    if (event.pointerType === 'touch' && state.activePointingType === 'pen') {
+      return
+    }
+
     // Only draw if Mark tool is active
     if (state.editTool !== 'pen') {
       return
@@ -2588,12 +2636,15 @@ function attachEditStage(): void {
 
     event.preventDefault()
     currentPointerId = event.pointerId
+
+    // Input Latency Control: Use coalesced and predicted events for zero-lag marking
+    const capturedPoints = samplePoints(event, previewCanvas, sheet)
     currentStroke = {
       id: crypto.randomUUID(),
       color: state.penColor,
       width: state.penWidth,
       opacity: 1,
-      points: samplePoints(event, previewCanvas, sheet),
+      points: capturedPoints,
     }
     predictedPoints = samplePredictedPoints(event, previewCanvas, sheet)
     previewCanvas.setPointerCapture(event.pointerId)
