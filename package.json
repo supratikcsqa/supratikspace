@@ -3,12 +3,20 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "supratikspace/teachers"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "concurrently \"npm:server:dev\" \"vite\"",
+    "build": "tsc && vite build && npm run build --workspace=supratikspace/teachers",
+    "preview": "vite preview",
+    "server:dev": "node --watch server/index.mjs",
+    "server": "node server/index.mjs",
+    "test": "node --test server/**/*.test.mjs"
   },
   "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
@@ -20,6 +28,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.6.3",

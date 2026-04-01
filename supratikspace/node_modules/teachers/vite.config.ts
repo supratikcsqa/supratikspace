@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/teachers/',
   build: {
-    outDir: '../dist/teachers',
+    outDir: '../../dist/teachers',
     emptyOutDir: true,
   },
   server: {
