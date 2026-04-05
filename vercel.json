@@ -1,16 +1,23 @@
 {
-    "rewrites": [
-        {
-            "source": "/teachers",
-            "destination": "/teachers/index.html"
-        },
-        {
-            "source": "/teachers/(.*)",
-            "destination": "/teachers/index.html"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/agents/*.js": {
+      "includeFiles": "AgentGenerator/core/**/*",
+      "maxDuration": 300
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/teachers",
+      "destination": "/teachers/index.html"
+    },
+    {
+      "source": "/teachers/(.*)",
+      "destination": "/teachers/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

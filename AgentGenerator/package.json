@@ -1,0 +1,44 @@
+{
+  "name": "agent-forge",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "setup": "npx tsx tests/setup.ts",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@google/generative-ai": "^0.24.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.6.5",
+    "lucide-react": "^0.487.0",
+    "next": "^16.2.2",
+    "openai": "^4.96.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.3",
+    "react-syntax-highlighter": "^15.6.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "dotenv": "^17.4.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "tailwindcss": "^4",
+    "tsx": "^4.19.3",
+    "typescript": "^5"
+  }
+}

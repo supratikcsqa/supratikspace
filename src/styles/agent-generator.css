@@ -1,0 +1,202 @@
+.agents-app {
+  --bg-primary: #080d1a;
+  --bg-secondary: #0d1428;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --accent-start: #6366f1;
+  --accent-end: #8b5cf6;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.agents-app,
+.agents-app * {
+  box-sizing: border-box;
+}
+
+.agents-app a {
+  color: inherit;
+}
+
+.agents-app .gradient-text {
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.agents-app .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.agents-app .card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 0 36px rgba(99, 102, 241, 0.14);
+}
+
+.agents-app .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.agents-app .btn-primary:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+.agents-app .btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.agents-app .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.agents-app .btn-ghost:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.agents-app .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(8, 13, 26, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+
+.agents-app .page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.agents-app .hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.agents-app .hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 820px;
+  height: 820px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(99, 102, 241, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.agents-app .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: agents-spin 0.7s linear infinite;
+}
+
+.agents-app .score-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.agents-app .score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agents-app .animate-fade-in {
+  animation: agents-fade-in 0.4s ease forwards;
+}
+
+@keyframes agents-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes agents-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes agents-pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.12);
+  }
+}
+
+@media (max-width: 960px) {
+  .agents-app .navbar {
+    gap: 12px;
+    height: auto;
+    padding: 14px 16px;
+    flex-wrap: wrap;
+  }
+}
