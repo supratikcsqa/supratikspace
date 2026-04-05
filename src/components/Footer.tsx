@@ -1,23 +1,33 @@
 import React from 'react';
-import { Terminal } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 const Footer: React.FC = () => (
-    <footer className="relative z-10 py-12 border-t border-slate-200 bg-slate-50 px-6 mt-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <div className="flex items-center justify-center md:justify-start gap-2 text-slate-900 font-display font-bold">
-                    <Terminal size={18} className="text-emerald-500" />
-                    AGENTIC ARMY
-                </div>
-                <p className="text-[10px] text-slate-400 font-mono mt-2 tracking-widest uppercase">&copy; 2024 SYSTEM_CORE. ALL RIGHTS RESERVED.</p>
-            </div>
-            <div className="flex gap-6 text-[10px] font-mono text-slate-500 tracking-widest uppercase">
-                <a href="#" className="hover:text-emerald-600 transition-colors">TERMINAL</a>
-                <a href="#" className="hover:text-emerald-600 transition-colors">PROTOCOLS</a>
-                <a href="#" className="hover:text-emerald-600 transition-colors">SECURITY</a>
-            </div>
-        </div>
-    </footer>
+  <footer className="landing-footer">
+    <div className="landing-footer__brand">
+      <span className="landing-footer__mark">
+        <Sparkles size={16} />
+      </span>
+      <div>
+        <strong>Supratik Space</strong>
+        <p>Turn public repos into pages that feel ready to share.</p>
+      </div>
+    </div>
+
+    <div className="landing-footer__links">
+      <a href="https://github.com/supratikcsqa/supratikspace" target="_blank" rel="noreferrer">
+        Repository
+        <ArrowUpRight size={14} />
+      </a>
+      <a href="https://github.com/supratikpm/GitMe" target="_blank" rel="noreferrer">
+        GitMe
+        <ArrowUpRight size={14} />
+      </a>
+      <a href="https://www.linkedin.com/in/supratik-kundu" target="_blank" rel="noreferrer">
+        LinkedIn
+        <ArrowUpRight size={14} />
+      </a>
+    </div>
+  </footer>
 );
 
 export default Footer;
