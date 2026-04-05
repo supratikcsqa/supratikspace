@@ -1,17 +1,13 @@
 import { getHistoryPage } from '../../server/lib/agent-generator/service.mjs';
 
-export async function GET(request) {
+export default async function handler(request, response) {
   try {
-    const { searchParams } = new URL(request.url);
-    const page = Number.parseInt(searchParams.get('page') || '1', 10) || 1;
+    const page = Number.parseInt(`${request.query?.page || '1'}`, 10) || 1;
 
-    return Response.json(await getHistoryPage({ page }));
+    response.status(200).json(await getHistoryPage({ page }));
   } catch (error) {
-    return Response.json(
-      {
-        error: error instanceof Error ? error.message : 'History could not be loaded.',
-      },
-      { status: 500 }
-    );
+    response.status(500).json({
+      error: error instanceof Error ? error.message : 'History could not be loaded.',
+    });
   }
 }

@@ -1,14 +1,11 @@
 import { getStatsSnapshot } from '../../server/lib/agent-generator/service.mjs';
 
-export async function GET() {
+export default async function handler(_request, response) {
   try {
-    return Response.json(await getStatsSnapshot());
+    response.status(200).json(await getStatsSnapshot());
   } catch (error) {
-    return Response.json(
-      {
-        error: error instanceof Error ? error.message : 'Stats could not be loaded.',
-      },
-      { status: 500 }
-    );
+    response.status(500).json({
+      error: error instanceof Error ? error.message : 'Stats could not be loaded.',
+    });
   }
 }
