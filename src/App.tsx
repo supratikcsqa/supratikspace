@@ -43,9 +43,10 @@ function App() {
                     <WebMCPProvider>
                         <WebMCPRPCBootstrap>
                             <Routes>
-                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <ContributionDashboard />} />
+                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Frontend />} />
                                 <Route path="/launch-builder" element={<Frontend />} />
                                 <Route path="/launch/:slug" element={<LaunchPage />} />
+                                <Route path="/contribution-dashboard" element={<ContributionDashboard />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/agent/:agentId" element={<AgentWorkspace />} />
                                 <Route path="/agents" element={<AgentGeneratorLayout />}>
