@@ -87,7 +87,7 @@ export const products: Product[] = [
         title: 'Agentic Mermaid Workflow Executor',
         subtitle: '(like n8n/make.com) - can do more than n8n - but never commercialized',
         category: 'Agentic Systems & Workflows',
-        status: 'Ideas',
+        status: 'Idea',
         tags: ['Complex Architecture', 'No-Code'],
     },
     {

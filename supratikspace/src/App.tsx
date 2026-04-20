@@ -46,7 +46,7 @@ function App() {
                         <WebMCPRPCBootstrap>
                             <Routes>
                                 <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Showcase />} />
-                                <Route path="/old-home" element={<Frontend />} />
+                                <Route path="/gitme" element={<Frontend />} />
                                 <Route path="/launch/:slug" element={<LaunchPage />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/agent/:agentId" element={<AgentWorkspace />} />
