@@ -4,6 +4,7 @@ import { AgentProvider } from './contexts/AgentContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { WebMCPProvider } from './webmcp';
 import { initWebMCPPostMessageListener } from './webmcp';
+import Showcase from './pages/Showcase';
 import Frontend from './pages/Frontend';
 import ContributionDashboard from './pages/ContributionDashboard';
 import AdminDashboard from './pages/AdminDashboard';
@@ -43,8 +44,8 @@ function App() {
                     <WebMCPProvider>
                         <WebMCPRPCBootstrap>
                             <Routes>
-                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Frontend />} />
-                                <Route path="/launch-builder" element={<Frontend />} />
+                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Showcase />} />
+                                <Route path="/gitme" element={<Frontend />} />`n                                <Route path="/launch-builder" element={<Frontend />} />
                                 <Route path="/launch/:slug" element={<LaunchPage />} />
                                 <Route path="/contribution-dashboard" element={<ContributionDashboard />} />
                                 <Route path="/login" element={<Login />} />
@@ -73,3 +74,4 @@ function App() {
 }
 
 export default App;
+
