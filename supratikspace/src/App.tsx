@@ -4,12 +4,20 @@ import { AgentProvider } from './contexts/AgentContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { WebMCPProvider } from './webmcp';
 import { initWebMCPPostMessageListener } from './webmcp';
+import Showcase from './pages/Showcase';
 import Frontend from './pages/Frontend';
+
+// (Other imports are already there, we just need to add Showcase and ensure Frontend is preserved)
 import AdminDashboard from './pages/AdminDashboard';
 import AgentWorkspace from './pages/AgentWorkspace';
 import Login from './pages/Login';
 import LaunchPage from './pages/LaunchPage';
 import { getLaunchSlugFromHost } from './lib/repoLaunch';
+import AgentGeneratorLayout from './features/agent-generator/AgentGeneratorLayout';
+import AgentGeneratorHomePage from './features/agent-generator/AgentGeneratorHomePage';
+import AgentGeneratorDocsPage from './features/agent-generator/AgentGeneratorDocsPage';
+import AgentGeneratorHistoryPage from './features/agent-generator/AgentGeneratorHistoryPage';
+import AgentGeneratorStatsPage from './features/agent-generator/AgentGeneratorStatsPage';
 
 // Higher order component for route protection
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -37,10 +45,17 @@ function App() {
                     <WebMCPProvider>
                         <WebMCPRPCBootstrap>
                             <Routes>
-                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Frontend />} />
+                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Showcase />} />
+                                <Route path="/old-home" element={<Frontend />} />
                                 <Route path="/launch/:slug" element={<LaunchPage />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/agent/:agentId" element={<AgentWorkspace />} />
+                                <Route path="/agents" element={<AgentGeneratorLayout />}>
+                                    <Route index element={<AgentGeneratorHomePage />} />
+                                    <Route path="docs" element={<AgentGeneratorDocsPage />} />
+                                    <Route path="history" element={<AgentGeneratorHistoryPage />} />
+                                    <Route path="stats" element={<AgentGeneratorStatsPage />} />
+                                </Route>
                                 <Route
                                     path="/admin"
                                     element={
