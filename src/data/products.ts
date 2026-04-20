@@ -12,6 +12,7 @@ export interface Product {
     category: ProductCategory;
     status: 'Live' | 'Beta' | 'Idea' | 'Investor Backed';
     tags: string[];
+    link?: string;
 }
 
 export const products: Product[] = [
@@ -63,6 +64,7 @@ export const products: Product[] = [
         category: 'Sales & Outreach',
         status: 'Live',
         tags: ['GTM Ready', 'Developer Tools'],
+        link: '/gitme',
     },
 
     // B. Agentic Systems, Development & Workflows

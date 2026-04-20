@@ -119,16 +119,30 @@ const Showcase: React.FC = () => {
                                         <span className="px-3 py-1 text-xs font-semibold rounded-full bg-white/10 text-white/90 border border-white/5">
                                             {product.status}
                                         </span>
-                                        <Link to={`/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="text-white/30 hover:text-cyan-400 transition-colors">
-                                            <ExternalLink className="w-5 h-5" />
-                                        </Link>
+                                        {product.link ? (
+                                            <Link to={product.link} className="text-white/30 hover:text-cyan-400 transition-colors cursor-pointer">
+                                                <ExternalLink className="w-5 h-5" />
+                                            </Link>
+                                        ) : (
+                                            <div className="text-white/10">
+                                                <ExternalLink className="w-5 h-5" />
+                                            </div>
+                                        )}
                                     </div>
 
-                                    <Link to={`/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="group-hover:text-cyan-300 transition-colors block">
-                                        <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-cyan-300 transition-colors">
-                                            {product.title}
-                                        </h3>
-                                    </Link>
+                                    {product.link ? (
+                                        <Link to={product.link} className="group-hover:text-cyan-300 transition-colors block cursor-pointer">
+                                            <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-cyan-300 transition-colors">
+                                                {product.title}
+                                            </h3>
+                                        </Link>
+                                    ) : (
+                                        <div className="group-hover:text-cyan-300 transition-colors block cursor-default">
+                                            <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-cyan-300 transition-colors">
+                                                {product.title}
+                                            </h3>
+                                        </div>
+                                    )}
                                     <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
                                         {product.subtitle}
                                     </p>
