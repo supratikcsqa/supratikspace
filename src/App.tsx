@@ -4,6 +4,7 @@ import { AgentProvider } from './contexts/AgentContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { WebMCPProvider } from './webmcp';
 import { initWebMCPPostMessageListener } from './webmcp';
+import OrbisNft from './pages/OrbisNft';
 import Showcase from './pages/Showcase';
 import Frontend from './pages/Frontend';
 import ContributionDashboard from './pages/ContributionDashboard';
@@ -44,7 +45,7 @@ function App() {
                     <WebMCPProvider>
                         <WebMCPRPCBootstrap>
                             <Routes>
-                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <Showcase />} />
+                                <Route path="/" element={hostLaunchSlug ? <LaunchPage forcedSlug={hostLaunchSlug} /> : <OrbisNft />} />
                                 <Route path="/gitme" element={<Frontend />} />`n                                <Route path="/launch-builder" element={<Frontend />} />
                                 <Route path="/launch/:slug" element={<LaunchPage />} />
                                 <Route path="/contribution-dashboard" element={<ContributionDashboard />} />
@@ -74,4 +75,5 @@ function App() {
 }
 
 export default App;
+
 

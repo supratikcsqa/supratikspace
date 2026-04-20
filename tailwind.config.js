@@ -4,11 +4,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                grotesk: ['Anton', 'sans-serif'],
+                condiment: ['Condiment', 'cursive'],
                 sans: ['Inter', 'system-ui', 'sans-serif'],
                 mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
                 display: ['Outfit', 'Inter', 'sans-serif'],
             },
             colors: {
+                neon: '#6FFF00',
+                cream: '#EFF4FF',
                 primary: {
                     50: '#ecfdf5',
                     100: '#d1fae5',
@@ -53,3 +57,4 @@ export default {
     },
     plugins: [],
 };
+
