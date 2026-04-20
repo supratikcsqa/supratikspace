@@ -4,6 +4,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                sans: ['PP Neue Montreal', 'Inter', 'system-ui', 'sans-serif'],
+                serif: ['EB Garamond', 'serif'],
+                grotesk: ['Anton', 'sans-serif'],
+                condiment: ['Condiment', 'cursive'],
                 grotesk: ['Anton', 'sans-serif'],
                 condiment: ['Condiment', 'cursive'],
                 sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -57,4 +61,5 @@ export default {
     },
     plugins: [],
 };
+
 

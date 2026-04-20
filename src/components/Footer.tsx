@@ -1,33 +1,31 @@
 import React from 'react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { Button } from './Button';
+import { ArrowUpRight } from 'lucide-react';
 
-const Footer: React.FC = () => (
-  <footer className="landing-footer">
-    <div className="landing-footer__brand">
-      <span className="landing-footer__mark">
-        <Sparkles size={16} />
-      </span>
-      <div>
-        <strong>Supratik Space</strong>
-        <p>Turn public repos into pages that feel ready to share.</p>
-      </div>
-    </div>
+export const Footer: React.FC = () => {
+    return (
+        <footer className="w-full bg-white flex flex-col items-center">
+            <div className="w-full max-w-[1200px] px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-12">
+                <Button variant="primary">Start a chat</Button>
 
-    <div className="landing-footer__links">
-      <a href="https://github.com/supratikcsqa/supratikspace" target="_blank" rel="noreferrer">
-        Repository
-        <ArrowUpRight size={14} />
-      </a>
-      <a href="https://github.com/supratikpm/GitMe" target="_blank" rel="noreferrer">
-        GitMe
-        <ArrowUpRight size={14} />
-      </a>
-      <a href="https://www.linkedin.com/in/supratik-kundu" target="_blank" rel="noreferrer">
-        LinkedIn
-        <ArrowUpRight size={14} />
-      </a>
-    </div>
-  </footer>
-);
+                <div className="flex gap-4 md:gap-16">
+                    <ArrowUpRight className="w-6 h-6 text-[#051A24]" />
+                    <div className="flex flex-col gap-4 text-base text-[#051A24]">
+                        <a href="#" className="hover:opacity-70 transition-opacity">Services</a>
+                        <a href="#" className="hover:opacity-70 transition-opacity">Work</a>
+                        <a href="#" className="hover:opacity-70 transition-opacity">About</a>
+                    </div>
+                    <div className="flex flex-col gap-4 text-base text-[#051A24]">
+                        <a href="#" target="_blank" className="hover:opacity-70 transition-opacity">x.com</a>
+                        <a href="#" target="_blank" className="hover:opacity-70 transition-opacity">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
 
-export default Footer;
+            <div className="w-full max-w-[1200px] px-6 py-4 flex justify-between items-center text-sm text-[#051A24] border-t border-[#051A24]/5">
+                <span>Vortex Studio Limited</span>
+                <span>Austin, USA</span>
+            </div>
+        </footer>
+    );
+};
