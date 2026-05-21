@@ -1,42 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/health.js": {
-      "includeFiles": "server/**/*",
-      "maxDuration": 60
-    },
-    "api/templates.js": {
-      "includeFiles": "server/**/*",
-      "maxDuration": 300
-    },
-    "api/pages/**/*.js": {
-      "includeFiles": "server/**/*",
-      "maxDuration": 300
-    },
-    "api/jobs/**/*.js": {
-      "includeFiles": "server/**/*",
-      "maxDuration": 60
-    },
-    "api/agents/*.js": {
-      "includeFiles": "AgentGenerator/core/**/*",
-      "maxDuration": 300
-    }
-  },
   "rewrites": [
     {
-      "source": "/teachers",
-      "destination": "/teachers/index.html"
-    },
-    {
-      "source": "/teachers/(.*)",
-      "destination": "/teachers/index.html"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:path((?!api(?:/|$)).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
