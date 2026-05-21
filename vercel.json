@@ -1,6 +1,22 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
+    "api/health.js": {
+      "includeFiles": "server/**/*",
+      "maxDuration": 60
+    },
+    "api/templates.js": {
+      "includeFiles": "server/**/*",
+      "maxDuration": 300
+    },
+    "api/pages/**/*.js": {
+      "includeFiles": "server/**/*",
+      "maxDuration": 300
+    },
+    "api/jobs/**/*.js": {
+      "includeFiles": "server/**/*",
+      "maxDuration": 60
+    },
     "api/agents/*.js": {
       "includeFiles": "AgentGenerator/core/**/*",
       "maxDuration": 300

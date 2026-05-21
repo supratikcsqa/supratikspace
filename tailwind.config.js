@@ -4,62 +4,63 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['PP Neue Montreal', 'Inter', 'system-ui', 'sans-serif'],
-                serif: ['EB Garamond', 'serif'],
-                grotesk: ['Anton', 'sans-serif'],
-                condiment: ['Condiment', 'cursive'],
-                grotesk: ['Anton', 'sans-serif'],
-                condiment: ['Condiment', 'cursive'],
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-                display: ['Outfit', 'Inter', 'sans-serif'],
+                sans:    ['Manrope', 'system-ui', 'sans-serif'],
+                mono:    ['JetBrains Mono', 'Courier New', 'monospace'],
+                serif:   ['Cormorant Garamond', 'Georgia', 'serif'],
+                display: ['Cormorant Garamond', 'Georgia', 'serif'],
             },
             colors: {
-                neon: '#6FFF00',
-                cream: '#EFF4FF',
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
+                highlight:  'var(--highlight)',
+                card: {
+                    DEFAULT:    'var(--card)',
+                    foreground: 'var(--card-foreground)',
+                },
                 primary: {
-                    50: '#ecfdf5',
-                    100: '#d1fae5',
-                    400: '#34d399',
-                    500: '#10b981',
-                    600: '#059669',
-                    700: '#047857',
-                    900: '#064e3b',
-                    DEFAULT: '#10b981',
+                    DEFAULT:    'var(--primary)',
+                    foreground: 'var(--primary-foreground)',
                 },
-                surface: {
-                    DEFAULT: '#ffffff',
-                    50: '#fafafa',
-                    100: '#f4f4f5',
-                    200: '#e4e4e7',
-                    300: '#d4d4d8',
+                muted: {
+                    DEFAULT:    'var(--muted)',
+                    foreground: 'var(--muted-foreground)',
                 },
-                slate: {
-                    900: '#0f172a',
-                    800: '#1e293b',
-                    700: '#334155',
-                    600: '#475569',
-                    500: '#64748b',
-                    400: '#94a3b8',
-                }
+                border: 'var(--border)',
+                input:  'var(--input)',
+                ring:   'var(--ring)',
+            },
+            borderColor: {
+                DEFAULT: 'var(--border)',
+                border:  'var(--border)',
+            },
+            borderRadius: {
+                DEFAULT: 'var(--radius)',
+                sm:      'var(--radius-sm)',
+                lg:      'var(--radius)',
+                xl:      'var(--radius)',
+                '2xl':   'var(--radius-lg)',
+            },
+            boxShadow: {
+                'card':  '0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05)',
+                'card-hover': '0 8px 32px rgba(0,0,0,0.10)',
+                'soft':  '0 2px 12px rgba(0,0,0,0.06)',
             },
             animation: {
-                'float': 'float 6s ease-in-out infinite',
-                'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
+                ticker:         'ticker 40s linear infinite',
+                'pulse-dot':    'pulse-dot 2s ease-out infinite',
+                'fade-in-up':   'fadeInUp 0.6s ease-out forwards',
             },
             keyframes: {
-                float: {
-                    '0%, 100%': { transform: 'translateY(0px)' },
-                    '50%': { transform: 'translateY(-6px)' },
+                ticker: {
+                    from: { transform: 'translateX(0)' },
+                    to:   { transform: 'translateX(-50%)' },
                 },
-                pulseSubtle: {
-                    '0%, 100%': { opacity: '1' },
-                    '50%': { opacity: '0.7' },
+                fadeInUp: {
+                    from: { opacity: '0', transform: 'translateY(20px)' },
+                    to:   { opacity: '1', transform: 'translateY(0)' },
                 },
             },
         },
     },
     plugins: [],
 };
-
-

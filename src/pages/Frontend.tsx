@@ -208,6 +208,18 @@ const Frontend: React.FC = () => {
     try {
       const nextJob = await createRepoGenerationJob(repoUrl, defaultTemplate?.id);
       setJob(nextJob);
+
+      if (nextJob.status === 'completed' && nextJob.slug && nextJob.previewUrl && nextJob.subdomainUrl) {
+        setPreview({
+          slug: nextJob.slug,
+          previewUrl: nextJob.previewUrl,
+          subdomainUrl: nextJob.subdomainUrl,
+        });
+      }
+
+      if (nextJob.status === 'failed') {
+        setError(nextJob.error || 'Generation failed.');
+      }
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : 'Failed to start generation.');
     }

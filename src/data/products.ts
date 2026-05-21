@@ -83,6 +83,7 @@ export const products: Product[] = [
         category: 'Agentic Systems & Workflows',
         status: 'Live',
         tags: ['Video to Workflow', 'Productivity'],
+        link: 'https://stepstack.live?utm_campaign=supratikspace',
     },
     {
         id: 21,
@@ -165,6 +166,7 @@ export const products: Product[] = [
         category: 'Content & SEO',
         status: 'Live',
         tags: ['High Demand', 'Plug & Play'],
+        link: 'https://citescale.com?utm_campaign=supratikspace',
     },
     {
         id: 32,
@@ -251,6 +253,15 @@ export const products: Product[] = [
 
     // E. Platforms, Vertical SaaS & Operations
     {
+        id: 37,
+        title: 'EV Aggregator Platform',
+        subtitle: 'A first-of-its-kind EV aggregator — discover, compare, and buy electric vehicles across brands, price ranges, and use cases. Built for India\'s accelerating EV transition.',
+        category: 'Platforms & SaaS',
+        status: 'Live',
+        tags: ['EV', 'CleanTech', 'Marketplace'],
+        link: 'https://onroadev.com?utm_campaign=supratikspace',
+    },
+    {
         id: 4,
         title: 'MockInterview',
         subtitle: 'A Self Serve Interview platform based on any Role or JD',
@@ -297,6 +308,7 @@ export const products: Product[] = [
         category: 'Platforms & SaaS',
         status: 'Live',
         tags: ['HealthTech', 'Enterprise'],
+        link: 'https://medikunj.com?utm_campaign=supratikspace',
     },
     {
         id: 17,

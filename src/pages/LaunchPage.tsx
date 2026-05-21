@@ -163,6 +163,14 @@ const LaunchPage: React.FC<{ forcedSlug?: string }> = ({ forcedSlug }) => {
     try {
       const job = await createRepoGenerationJob(page.source.repoUrl);
       setRegenerationJob(job);
+
+      if (job.status === 'completed') {
+        window.location.assign(job.previewUrl || `/launch/${job.slug || slug}`);
+      }
+
+      if (job.status === 'failed') {
+        setRegenerationError(job.error || 'AI regeneration failed.');
+      }
     } catch (regenerateError) {
       setRegenerationError(regenerateError instanceof Error ? regenerateError.message : 'Could not start AI regeneration.');
     }
@@ -359,7 +367,8 @@ const LaunchPage: React.FC<{ forcedSlug?: string }> = ({ forcedSlug }) => {
               title={`${page.source.repo} launch page`}
               srcDoc={page.renderedHtml}
               style={{ width: '100%', height: 'calc(100vh - 9rem)', border: 0, display: 'block' }}
-              sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+              sandbox="allow-popups"
+              referrerPolicy="no-referrer"
             />
           </div>
 
