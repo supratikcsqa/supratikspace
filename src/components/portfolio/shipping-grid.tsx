@@ -51,7 +51,6 @@ export function ShippingGrid() {
 
         <header className="flex flex-col gap-4 border-b border-border py-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">02 // shipping_log</p>
             <h2 className="mt-3 font-serif text-4xl tracking-tight text-foreground md:text-5xl">
               Products in{" "}
               <span
@@ -61,7 +60,7 @@ export function ShippingGrid() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground font-sans">
-            A live registry of {products.length}+ products shipped, scaled, and sunset.
+
             Updated as I push to main.
           </p>
         </header>

@@ -39,7 +39,7 @@ export function BookingPanel() {
 
         <header className="flex flex-col gap-4 border-b border-border py-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">04 // direct_line</p>
+
             <h2 className="mt-3 font-serif text-4xl tracking-tight text-foreground md:text-5xl">
               Book a{" "}
               <span
@@ -49,8 +49,7 @@ export function BookingPanel() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground font-sans">
-            Founders, operators, builders. 30 minutes. No deck required.
-            Bring the hardest problem you have right now.
+
           </p>
         </header>
 
@@ -127,7 +126,7 @@ export function BookingPanel() {
             <div className="flex h-full flex-col items-center justify-center gap-6 rounded-2xl border border-border bg-white p-8 shadow-card text-center min-h-[420px]">
               <div className="w-full max-w-md">
                 <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-8 font-mono">
-                  // session_context
+
                 </p>
 
                 <div className="space-y-0 divide-y divide-border rounded-xl border border-border overflow-hidden text-left">

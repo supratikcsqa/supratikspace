@@ -26,7 +26,6 @@ export function Timeline() {
 
         <header className="flex flex-col gap-4 border-b border-border py-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">03 // career_log</p>
             <h2 className="mt-3 font-serif text-4xl tracking-tight text-foreground md:text-5xl">
               The{" "}
               <span
@@ -36,7 +35,7 @@ export function Timeline() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground font-sans">
-            A decade of compounding: PM craft → distribution leadership → AI-native solo building.
+
           </p>
         </header>
 

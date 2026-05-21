@@ -8,8 +8,7 @@ export function SiteFooter() {
 
         {/* Col 1 — Branding */}
         <div className="md:col-span-4">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">// end_of_transmission</p>
-          <p className="mt-4 max-w-xs font-serif text-2xl tracking-tight text-foreground md:text-3xl" style={{ fontWeight: 300 }}>
+          <p className="max-w-xs font-serif text-2xl tracking-tight text-foreground md:text-3xl" style={{ fontWeight: 300 }}>
             Built solo. Shipped in public.{" "}
             <span
               className="not-italic text-foreground"

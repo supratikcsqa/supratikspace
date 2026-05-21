@@ -232,10 +232,7 @@ export function StackMatrix() {
 
         {/* ── Section header ── */}
         <header className="border-b border-border py-10">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">
-            01 // operator_stack
-          </p>
-          <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <h2
               className="font-serif text-4xl tracking-tight text-foreground md:text-5xl"
               style={{ fontWeight: 300 }}
@@ -254,9 +251,6 @@ export function StackMatrix() {
               </span>{" "}
               I run on.
             </h2>
-            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground font-sans">
-              Five phases. One operator. Built to find, ship, distribute, grow, and sustain.
-            </p>
           </div>
 
           {/* Phase navigation tabs */}
@@ -307,32 +301,7 @@ export function StackMatrix() {
           {/* ── ALL TOOLS VIEW ── */}
           {activeId === "all" && (
             <>
-              <div className="mb-7 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
-                <div>
-                  <span
-                    className="inline-block font-mono text-[10px] uppercase tracking-[0.3em] px-2 py-1 rounded-md mb-2"
-                    style={{ color: GREEN, background: GREEN_BG, border: `1px solid ${GREEN_RING}` }}
-                  >
-                    /ALL_TOOLS
-                  </span>
-                  <h3
-                    className="font-serif text-3xl tracking-tight text-foreground"
-                    style={{ fontWeight: 300 }}
-                  >
-                    Every tool in the{" "}
-                    <span
-                      className="not-italic text-foreground"
-                      style={{
-                        textDecoration: "underline",
-                        textDecorationColor: "#C6F54A",
-                        textDecorationThickness: "4px",
-                        textUnderlineOffset: "5px",
-                      }}
-                    >
-                      arsenal
-                    </span>.
-                  </h3>
-                </div>
+              <div className="mb-7 flex items-center justify-end">
                 <p className="text-sm text-muted-foreground font-mono">
                   {ALL_TOOLS.length} tools · 5 phases
                 </p>
@@ -373,36 +342,25 @@ export function StackMatrix() {
           {phase && (
             <>
               {/* Phase header */}
-              <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div>
+              <div className="mb-8">
+                <h3
+                  className="font-serif text-3xl tracking-tight text-foreground md:text-4xl"
+                  style={{ fontWeight: 300 }}
+                >
+                  {phase.headline.split(phase.accentWord)[0]}
                   <span
-                    className="mb-2 inline-block font-mono text-[10px] uppercase tracking-[0.3em] px-2 py-1 rounded-md"
-                    style={{ color: GREEN, background: GREEN_BG, border: `1px solid ${GREEN_RING}` }}
+                    className="not-italic text-foreground"
+                    style={{
+                      textDecoration: "underline",
+                      textDecorationColor: "#C6F54A",
+                      textDecorationThickness: "4px",
+                      textUnderlineOffset: "5px",
+                    }}
                   >
-                    {phase.slug}
+                    {phase.accentWord}
                   </span>
-                  <h3
-                    className="font-serif text-3xl tracking-tight text-foreground md:text-4xl"
-                    style={{ fontWeight: 300 }}
-                  >
-                    {phase.headline.split(phase.accentWord)[0]}
-                    <span
-                      className="not-italic text-foreground"
-                      style={{
-                        textDecoration: "underline",
-                        textDecorationColor: "#C6F54A",
-                        textDecorationThickness: "4px",
-                        textUnderlineOffset: "5px",
-                      }}
-                    >
-                      {phase.accentWord}
-                    </span>
-                    {phase.headline.split(phase.accentWord)[1]}
-                  </h3>
-                </div>
-                <p className="max-w-md text-sm leading-relaxed text-muted-foreground font-sans md:text-right">
-                  {phase.narrative}
-                </p>
+                  {phase.headline.split(phase.accentWord)[1]}
+                </h3>
               </div>
 
               {/* Category cards */}
@@ -464,8 +422,7 @@ export function StackMatrix() {
               {/* Phase total */}
               <div className="mt-6 flex items-center justify-end gap-2">
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                  {phase.categories.reduce((s, c) => s + c.tools.length, 0)} tools ·{" "}
-                  {phase.categories.length} categories
+                  {phase.categories.reduce((s, c) => s + c.tools.length, 0)} tools
                 </span>
                 <span className="h-1.5 w-1.5 rounded-full" style={{ background: GREEN }} />
               </div>

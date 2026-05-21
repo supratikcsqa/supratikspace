@@ -21,16 +21,6 @@ export function Hero() {
         {/* Left — identity */}
         <div className="md:col-span-7 flex flex-col justify-start">
 
-          {/* Session badge */}
-          <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-muted-foreground shadow-sm font-mono">
-            <Terminal className="h-3 w-3 text-highlight" />
-            <span>session.init — handshake_ok</span>
-          </div>
-
-          <p className="mb-2 text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">
-            // operator_id: 0x4A · location: bengaluru, in
-          </p>
-
           {/* H1 — Cormorant Garamond shines at Light weight (300) and large sizes */}
           <h1 className="font-serif text-balance leading-[0.92] tracking-tight text-foreground text-[46px] md:text-[62px] lg:text-[72px]" style={{ fontWeight: 300 }}>
             I ship{" "}
@@ -97,12 +87,8 @@ export function Hero() {
         {/* Right — photo + status card */}
         <aside className="md:col-span-5 flex flex-col gap-4">
 
-          {/* Photo — flipped horizontally + aspect-ratio container */}
+          {/* Photo */}
           <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
-            <div className="flex items-center justify-between border-b border-border px-4 py-2.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground bg-muted font-mono">
-              <span>~/operator/identity</span>
-              <span className="text-highlight font-medium">● VERIFIED</span>
-            </div>
             <div className="relative w-full" style={{ paddingBottom: "90%" }}>
               <img
                 src="/supratik.jpg"
