@@ -1,18 +1,36 @@
-import { useEffect, useState } from "react";
-import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export function BookingPanel() {
-  const [ready, setReady] = useState(false);
-
   useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "awesomespace" });
-      cal("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      } as Parameters<typeof cal>[1]);
-      setReady(true);
-    })();
+    // Inject Cal.com embed script — no npm package needed
+    if (document.getElementById("cal-embed-script")) return;
+    const script = document.createElement("script");
+    script.id = "cal-embed-script";
+    script.async = true;
+    script.innerHTML = `
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal; let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {}; cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1]; api.q = api.q || [];
+            if (typeof namespace === "string") { C.Cal.ns[namespace] = api; p(api, ar); return; }
+            p(cal, ar); return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "awesomespace", { origin: "https://cal.com" });
+      Cal.ns.awesomespace("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    `;
+    document.head.appendChild(script);
   }, []);
 
   return (
@@ -100,7 +118,7 @@ export function BookingPanel() {
               data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
               className="w-full rounded-xl bg-foreground px-5 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-soft transition hover:bg-foreground/90 hover:shadow-card-hover"
             >
-              {ready ? "open_calendar →" : "loading_calendar…"}
+              {"open_calendar →"}
             </button>
           </aside>
 
